@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import './Hero.css';
-import animatedImg from "./assets/about_1.jpeg";
+
 
 /* ── Animation variants ── */
 const containerVariants = {
@@ -136,74 +136,9 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT — Floating Bottle */}
-        <motion.div
-          className="hero__bottle-wrapper"
-          variants={fadeRight}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Glow rings */}
-          <div className="hero__bottle-glow"     aria-hidden="true" />
-          <div className="hero__bottle-glow-2"   aria-hidden="true" />
-
-          {/* Floating & rotating bottle */}
-          <motion.div
-            className="hero__bottle"
-            animate={{
-              y:      [0, -18, 0],
-              rotate: [-1.5, 1.5, -1.5],
-            }}
-            transition={{
-              duration: 5.5,
-              repeat:   Infinity,
-              ease:     'easeInOut',
-            }}
-          >
-            <img
-              src={animatedImg}
-              alt="Ethio-Nug Premium Niger Oil Bottle"
-              className="hero__bottle-img"
-            />
-          </motion.div>
-
-          {/* Soft shadow beneath bottle */}
-          <motion.div
-            className="hero__bottle-shadow"
-            animate={{ scaleX: [1, 0.82, 1], opacity: [0.55, 0.3, 0.55] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-            aria-hidden="true"
-          />
-
-          {/* Floating badge card */}
-          <motion.div
-            className="hero__floating-card"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="hero__floating-card-icon">✦</span>
-            <div>
-              <p className="hero__floating-card-title">Farm Fresh</p>
-              <p className="hero__floating-card-sub">Sourced &amp; Refined in Ethiopia</p>
-            </div>
-          </motion.div>
-        </motion.div>
+      
       </div>
 
-      {/* ── Scroll Indicator ── */}
-      <motion.div
-        className="hero__scroll-indicator"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.8, duration: 0.6 }}
-      >
-        <motion.span
-          className="hero__scroll-dot"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      </motion.div>
     </section>
   );
 }

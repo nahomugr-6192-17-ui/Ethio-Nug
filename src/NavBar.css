@@ -52,8 +52,7 @@
   justify-content: center;
   filter: drop-shadow(0 2px 6px rgba(212,160,23,0.4));
   transition: filter var(--transition-base);
-  width: 120px;
-  margin-top: 14px;
+  width: 100px;
   margin-right: -14px;
 }
 
@@ -80,10 +79,10 @@
 /* ── Desktop nav links ── */
 .navbar__links {
   display: flex;
-  align-items: center;
+  align-items: right;
   gap: var(--space-1);
   flex: 1;
-  justify-content: center;
+  justify-content: right;
 }
 
 .navbar__link {
@@ -148,6 +147,7 @@
     background var(--transition-base),
     border-color var(--transition-base);
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .navbar__lang-btn:hover {

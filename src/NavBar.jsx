@@ -73,7 +73,6 @@ export default function NavBar() {
     >
       <div className="navbar__inner container">
 
-        <div className='navbar__logo-wrapper'>
         {/* ── LOGO ── */}
         <motion.a
           href="#home"
@@ -87,7 +86,20 @@ export default function NavBar() {
             <span className="navbar__logo-accent"> NUG</span>
           </span>
         </motion.a>
-        </div>
+
+          {/* Language Selector */}
+          <motion.button
+            className="navbar__lang-btn"
+            onClick={toggleLang}
+            variants={linkVariants}
+            aria-label="Toggle language"
+            title="Switch language"
+          >
+            <Globe size={14} strokeWidth={2} />
+            <span>{lang === 'En' ? 'En' : 'En'}</span>
+            <span className="navbar__lang-sep">/</span>
+            <span>{lang === 'En' ? 'አማ' : 'En'}</span>
+          </motion.button>
 
         {/* ── DESKTOP NAV ── */}
         <motion.nav
@@ -118,19 +130,6 @@ export default function NavBar() {
           initial="hidden"
           animate="visible"
         >
-          {/* Language Selector */}
-          <motion.button
-            className="navbar__lang-btn"
-            onClick={toggleLang}
-            variants={linkVariants}
-            aria-label="Toggle language"
-            title="Switch language"
-          >
-            <Globe size={14} strokeWidth={2} />
-            <span>{lang === 'En' ? 'En' : 'En'}</span>
-            <span className="navbar__lang-sep">/</span>
-            <span>{lang === 'En' ? 'አማ' : 'En'}</span>
-          </motion.button>
 
           {/* CTA */}
           <motion.a
