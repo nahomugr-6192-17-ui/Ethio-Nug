@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import './Hero.css';
-import animatedImg from "./assets/logo.png";
+import animatedImg from "./assets/about_1.jpeg";
 
 /* ── Animation variants ── */
 const containerVariants = {
