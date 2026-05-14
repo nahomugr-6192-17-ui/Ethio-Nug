@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, Leaf, Users, Star, Clock} from 'lucide-react';
 import './Hero.css';
+import { label } from 'framer-motion/client';
 
 
 /* ── Animation variants ── */
@@ -78,11 +79,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          {/* Badge */}
-          <motion.div className="hero__badge" variants={badgeVariant}>
-            <span className="hero__badge-dot" aria-hidden="true" />
-            <span>Premium Ethiopian Niger Oil</span>
-          </motion.div>
+
 
           {/* Headline */}
           <motion.h1 className="hero__headline" variants={fadeUp}>
@@ -124,12 +121,16 @@ export default function Hero() {
           {/* Trust stats */}
           <motion.div className="hero__stats" variants={fadeUp}>
             {[
-              { value: '100%', label: 'Pure Niger Oil' },
-              { value: '15+',  label: 'Years of Excellence' },
-              { value: '50K+', label: 'Happy Families' },
-            ].map(({ value, label }) => (
+              { icon: <Leaf size={24} />, value: '100% PURE NIGER OIL', label: 'Made from Carefully Selected Ethiopian Niger Seed.' },
+              { icon: <Star size={24} />, value: "6-Step Purification", label: "Advanced Cleaning and Refining for Maximum Purity."},
+              { icon: <Clock size={24} />, value: 'Farm Fresh Quality', label: 'Direct Sourced from Trusted Ethiopian Farmers.' },
+              { icon: <Users size={24} />, value: 'Fast & Reliable Delivery', label: 'Safe Packaging and Timely Delivaery for Every Order.' },
+            ].map(({ icon, value, label }) => (
               <div className="hero__stat" key={label}>
-                <span className="hero__stat-value">{value}</span>
+                <div className='hero__stat-top'>
+                  <span className="hero__stat-icon">{icon}</span>
+                  <span className="hero__stat-value">{value}</span>
+                </div>
                 <span className="hero__stat-label">{label}</span>
               </div>
             ))}

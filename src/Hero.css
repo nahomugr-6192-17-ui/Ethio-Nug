@@ -163,7 +163,7 @@
 
 .hero__btn--primary {
   color: var(--color-neutral-900);
-  background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-500));
+  background: var(--color-gold-400);
   box-shadow: 0 8px 28px rgba(212, 160, 23, 0.45);
 }
 
@@ -194,8 +194,9 @@
 
 /* Stats row */
 .hero__stats {
-  display: flex;
-  gap: var(--space-8);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
   padding-top: var(--space-2);
   border-top: 1px solid rgba(255,255,255,0.12);
   flex-wrap: wrap;
@@ -208,15 +209,36 @@
   border: 3px solid rgba(255,255,255,0.15);
   border-radius: var(--radius-lg);
   padding: 12px 20px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.hero__stat:hover{
+  border-color: rgba(212,160,23,0.35);
+  background: var(--color-gold-400);
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.45);
+  transform: scale(1.06);
+}
+
+.hero__stat-top{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
 }
 
 .hero__stat-value {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--color-gold-400);
   line-height: 1;
+  width: 180px;
 }
 
 .hero__stat-label {
@@ -224,21 +246,19 @@
   font-size: 0.76rem;
   color: rgba(255,255,255,0.6);
   letter-spacing: 0.03em;
+  margin-left: 26px;
 }
 
-/* Shadow beneath bottle */
-.hero__bottle-shadow {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  translate: -50% 0;
-  width: 200px;
-  height: 28px;
-  background: radial-gradient(ellipse, rgba(0,0,0,0.55) 0%, transparent 75%);
-  border-radius: 50%;
-  filter: blur(8px);
-  will-change: transform, opacity;
+.hero__stat-icon{
+  color: var(--color-gold-400);
 }
+
+.hero__stat:hover .hero__stat-icon,
+.hero__stat:hover .hero__stat-value,
+.hero__stat:hover .hero__stat-label {
+  color: var(--color-neutral-900);
+}
+
 
 /* Floating card badge */
 .hero__floating-card {

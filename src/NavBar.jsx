@@ -55,11 +55,31 @@ export default function NavBar() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const [lang, setLang]           = useState('En');
+  const [activeLink, setActiveLink] = useState('home');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          setActiveLink(sectionId);
+        }
+      })
+    }
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleLang = () => setLang(prev => prev === 'En' ? 'አማ' : 'En');
@@ -73,34 +93,55 @@ export default function NavBar() {
     >
       <div className="navbar__inner container">
 
-        {/* ── LOGO ── */}
-        <motion.a
-          href="#home"
-          className="navbar__logo"
-          variants={logoVariants}
-          onClick={closeMenu}
-        >
-          <img src= {logo} alt="logo" className='navbar__logo-icon' />
-          <span className="navbar__logo-text">
-            <span className="navbar__logo-primary">ETHIO</span>
-            <span className="navbar__logo-accent"> NUG</span>
-          </span>
-        </motion.a>
-
-          {/* Language Selector */}
-          <motion.button
-            className="navbar__lang-btn"
-            onClick={toggleLang}
-            variants={linkVariants}
-            aria-label="Toggle language"
-            title="Switch language"
+      
+        <div className="navbar__logo-container">
+          {/* ── LOGO ── */}
+          <motion.a
+            href="#home"
+            className="navbar__logo"
+            variants={logoVariants}
+            onClick={closeMenu}
           >
-            <Globe size={14} strokeWidth={2} />
-            <span>{lang === 'En' ? 'En' : 'En'}</span>
-            <span className="navbar__lang-sep">/</span>
-            <span>{lang === 'En' ? 'አማ' : 'En'}</span>
-          </motion.button>
+            <img src= {logo} alt="logo" className='navbar__logo-icon' />
+            <span className="navbar__logo-text">
+              <span className="navbar__logo-primary">ETHIO</span>
+              <span className="navbar__logo-accent"> NUG</span>
+            </span>
+          </motion.a>
 
+            {/* Language Selector */}
+            <motion.div
+              className="navbar__lang-toggle"
+              variants={linkVariants}
+            >
+              {/* Sliding Background */}
+              <div
+                className={`navbar__lang-slider ${
+                  lang === "En" ? "left" : "right"
+                }`}
+              />
+
+              {/* EN */}
+              <button
+                className={`navbar__lang-option ${
+                  lang === "En" ? "active" : ""
+                }`}
+                onClick={() => setLang("En")}
+              >
+                En
+              </button>
+
+              {/* AMH */}
+              <button
+                className={`navbar__lang-option ${
+                  lang === "Am" ? "active" : ""
+                }`}
+                onClick={() => setLang("Am")}
+              >
+                አማ
+              </button>
+            </motion.div>
+        </div>
         {/* ── DESKTOP NAV ── */}
         <motion.nav
           className="navbar__links"
@@ -114,7 +155,9 @@ export default function NavBar() {
             <motion.a
               key={link.label}
               href={link.href}
-              className="navbar__link"
+              className={`navbar__link ${
+                activeLink === link.href.replace('#', '') ? 'active' : ''
+              }`}
               variants={linkVariants}
             >
               {link.label}
