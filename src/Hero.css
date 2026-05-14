@@ -309,6 +309,10 @@
     gap: var(--space-8);
   }
 
+  .hero__headline {
+    font-size: clamp(2.7rem, 8vw, 2.4rem);
+  }
+
   .hero__ctas {
     flex-direction: column;
     align-items: stretch;
