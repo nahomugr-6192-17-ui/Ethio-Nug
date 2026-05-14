@@ -1,0 +1,307 @@
+/* =============================================
+   OUR PRODUCTS SECTION — ETHIO-NUG
+   ============================================= */
+
+/* ── Section shell ─────────────────────────── */
+.products {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  padding-block: var(--space-24);
+  overflow: hidden;
+}
+
+.products::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--color-gold-500);
+  opacity: 0.2;
+}
+
+/* ── Section Header ────────────────────────── */
+.products__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-16);
+}
+
+.products__label {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-600);
+  background: rgba(212, 160, 23, 0.08);
+  border: 1px solid rgba(212, 160, 23, 0.25);
+  border-radius: var(--radius-full);
+  padding: 6px 18px;
+  width: fit-content;
+}
+
+.products__heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--color-neutral-900);
+}
+
+.products__heading-accent {
+  color: var(--color-gold-500);
+}
+
+.products__subheading {
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  line-height: 1.8;
+  color: var(--color-neutral-500);
+  max-width: 480px;
+}
+
+/* ── Product Grid ──────────────────────────── */
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+/* ── Card Wrapper (handles dimming) ────────── */
+.products__card-wrap {
+  will-change: opacity, transform;
+}
+
+/* ── Product Card ──────────────────────────── */
+.products__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-neutral-50);
+  border: 1.5px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  height: 100%;
+  transition:
+    border-color var(--transition-base),
+    box-shadow   var(--transition-base),
+    background   var(--transition-base);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+/* Active (hovered) card */
+.products__card--active {
+  border-color: var(--color-gold-400);
+  box-shadow: var(--shadow-gold);
+  background: var(--color-white);
+}
+
+/* ── Tag Badge ─────────────────────────────── */
+.products__tag {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neutral-900);
+  background: var(--color-gold-400);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  line-height: 1.6;
+  z-index: 2;
+}
+
+/* ── Bottle Image ──────────────────────────── */
+.products__img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  margin-bottom: var(--space-4);
+  overflow: visible;
+}
+
+.products__bottle-img {
+  width: auto;
+  height: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.1));
+}
+
+/* ── Card Body ─────────────────────────────── */
+.products__card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  flex: 1;
+}
+
+.products__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.products__size {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-neutral-900);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.products__size-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-neutral-400);
+  letter-spacing: 0.03em;
+}
+
+.products__price {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-gold-600);
+  white-space: nowrap;
+}
+
+/* ── Card Footer / Button ──────────────────── */
+.products__card-footer {
+  display: flex;
+  align-items: center;
+}
+
+.products__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-neutral-900);
+  background: var(--color-gold-400);
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(212, 160, 23, 0.35);
+  transition:
+    box-shadow var(--transition-base),
+    background var(--transition-base);
+}
+
+.products__btn:hover {
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.55);
+  background: var(--color-gold-300);
+}
+
+/* ── RESPONSIVE — Tablet (≤ 1024px) ───────── */
+@media (max-width: 1024px) {
+  .products {
+    padding-block: var(--space-20);
+  }
+
+  .products__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .products__img-wrap {
+    height: 170px;
+  }
+
+  .products__bottle-img {
+    max-height: 170px;
+  }
+}
+
+/* ── RESPONSIVE — Tablet small (≤ 768px) ───── */
+@media (max-width: 768px) {
+  .products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 5th card centered on 2-col grid */
+  .products__card-wrap:last-child {
+    grid-column: 1 / 3;
+    max-width: calc(50% - var(--space-2));
+    margin-inline: auto;
+  }
+}
+
+/* ── RESPONSIVE — Mobile (≤ 560px) ──────────── */
+@media (max-width: 560px) {
+  .products {
+    padding-block: var(--space-12);
+  }
+
+  .products__header {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: var(--space-10);
+  }
+
+  .products__subheading {
+    max-width: 100%;
+  }
+
+  .products__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .products__card-wrap:last-child {
+    grid-column: 1 / 3;
+    max-width: calc(50% - var(--space-2));
+    margin-inline: auto;
+  }
+
+  .products__card {
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+  }
+
+  .products__img-wrap {
+    height: 110px;
+  }
+
+  .products__bottle-img {
+    max-height: 140px;
+  }
+
+  .products__size {
+    font-size: 1.1rem;
+  }
+
+  .products__btn {
+    font-size: 0.72rem;
+    padding: 9px 14px;
+  }
+}

@@ -1,0 +1,225 @@
+/* =============================================
+   FOOTER SECTION — ETHIO-NUG
+   ============================================= */
+
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-neutral-900);
+  color: var(--color-white);
+  padding-top: var(--space-20);
+  border-top: 4px solid var(--color-gold-500);
+}
+
+/* ── Main Footer Row ─────────────────────── */
+.footer__main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-12);
+  padding-bottom: var(--space-16);
+}
+
+/* Brand Column */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 420px;
+}
+
+.footer__logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.footer__logo-img {
+  width: 80px;
+  filter: drop-shadow(0 2px 6px rgba(212, 160, 23, 0.3));
+}
+
+.footer__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.footer__logo-primary {
+  color: var(--color-white);
+}
+
+.footer__logo-accent {
+  color: var(--color-gold-500);
+}
+
+.footer__slogan {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-gold-400);
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.footer__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-neutral-300);
+}
+
+/* Column Titles */
+.footer__col-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.footer__col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--color-gold-500);
+  border-radius: var(--radius-full);
+}
+
+/* Nav Links */
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__nav-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-neutral-300);
+  text-decoration: none;
+  transition: color var(--transition-base), transform var(--transition-base);
+  display: inline-block;
+}
+
+.footer__nav-link:hover {
+  color: var(--color-gold-400);
+  transform: translateX(4px);
+}
+
+/* Contact Info */
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-neutral-300);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__contact-icon {
+  color: var(--color-gold-500);
+  flex-shrink: 0;
+}
+
+.footer__contact-item:hover {
+  color: var(--color-gold-400);
+}
+
+/* ── Bottom Bar ──────────────────────────── */
+.footer__bottom {
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-block: var(--space-5);
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer__copy,
+.footer__powered {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-neutral-400);
+}
+
+.footer__powered-link {
+  color: var(--color-gold-500);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-base);
+}
+
+.footer__powered-link:hover {
+  color: var(--color-gold-400);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1024px) {
+  .footer__main {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 860px) {
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .footer__logo-img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding-top: var(--space-16);
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-2);
+  }
+}
