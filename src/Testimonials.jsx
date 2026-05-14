@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import avatar1 from './assets/avatar1.png';
 import avatar2 from './assets/avatar2.png';
 import avatar3 from './assets/avatar3.png';
@@ -118,11 +118,11 @@ export default function Testimonials() {
   const bodyInView = useInView(bodyRef, { once: true, margin: '-80px' });
 
   /* Desktop advance — wraps silently within the extended array */
-  const advanceDesk = useCallback(() => {
+  const advanceDesk = useCallback((step = 1) => {
     setDeskOffset((prev) => {
-      const next = prev + 1;
-      // When we've consumed the last full copy, jump back to middle copy silently
-      if (next > TESTIMONIALS.length * 2) return TESTIMONIALS.length;
+      let next = prev + step;
+      if (next >= TESTIMONIALS.length * 2) next = TESTIMONIALS.length;
+      if (next < TESTIMONIALS.length) next = TESTIMONIALS.length * 2 - 1;
       return next;
     });
   }, []);
@@ -134,7 +134,10 @@ export default function Testimonials() {
 
   const resetTimer = useCallback(() => {
     clearInterval(timerRef.current);
-    timerRef.current = setInterval(isMobile ? advanceMob : advanceDesk, AUTO_DELAY);
+    timerRef.current = setInterval(() => {
+      if (isMobile) advanceMob();
+      else advanceDesk(1);
+    }, AUTO_DELAY);
   }, [isMobile, advanceMob, advanceDesk]);
 
   useEffect(() => { resetTimer(); return () => clearInterval(timerRef.current); }, [resetTimer]);
@@ -175,6 +178,35 @@ export default function Testimonials() {
             Trusted by families, restaurants, and businesses across Ethiopia.
           </p>
         </motion.div>
+
+        {/* Desktop Carousel Navigation */}
+        {!isMobile && (
+          <motion.div
+            className="testimonials__desktop-nav"
+            initial={{ opacity: 0, x: -20 }}
+            animate={bodyInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <motion.button
+              className="testimonials__nav-btn"
+              onClick={() => { advanceDesk(-1); resetTimer(); }}
+              aria-label="Previous testimonials"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.92 }}
+            >
+              <ChevronLeft size={20} strokeWidth={2} />
+            </motion.button>
+            <motion.button
+              className="testimonials__nav-btn"
+              onClick={() => { advanceDesk(1); resetTimer(); }}
+              aria-label="Next testimonials"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.92 }}
+            >
+              <ChevronRight size={20} strokeWidth={2} />
+            </motion.button>
+          </motion.div>
+        )}
 
         {/* Desktop carousel */}
         {!isMobile && (

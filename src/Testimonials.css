@@ -61,6 +61,43 @@
   max-width: 440px;
 }
 
+/* ── Desktop Navigation ─────────────────── */
+.testimonials__desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding-inline: var(--space-3);
+}
+
+.testimonials__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(212, 160, 23, 0.08);
+  border: 1.5px solid rgba(212, 160, 23, 0.25);
+  color: var(--color-gold-600);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition:
+    background   var(--transition-base),
+    border-color var(--transition-base),
+    color        var(--transition-base),
+    box-shadow   var(--transition-base);
+}
+
+.testimonials__nav-btn:hover {
+  background: var(--color-gold-400);
+  border-color: var(--color-gold-400);
+  color: var(--color-neutral-900);
+  box-shadow: var(--shadow-gold);
+}
+
 /* ── Desktop viewport + track ───────────── */
 .testimonials__viewport {
   overflow: hidden;
