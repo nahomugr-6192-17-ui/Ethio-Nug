@@ -105,6 +105,8 @@ export default function Testimonials() {
 
   /* Desktop offset (index into EXTENDED array) */
   const [deskOffset, setDeskOffset] = useState(TESTIMONIALS.length); // start at middle copy
+  const [isSnapping, setIsSnapping] = useState(false);
+
   /* Mobile index */
   const [mobIdx,  setMobIdx]  = useState(0);
   const [mobDir,  setMobDir]  = useState(1);
@@ -117,15 +119,33 @@ export default function Testimonials() {
   const bodyRef    = useRef(null);
   const bodyInView = useInView(bodyRef, { once: true, margin: '-80px' });
 
-  /* Desktop advance — wraps silently within the extended array */
+  /* Desktop advance */
   const advanceDesk = useCallback((step = 1) => {
     setDeskOffset((prev) => {
       let next = prev + step;
-      if (next >= TESTIMONIALS.length * 2) next = TESTIMONIALS.length;
-      if (next < TESTIMONIALS.length) next = TESTIMONIALS.length * 2 - 1;
+      const maxOffset = EXTENDED.length - DESKTOP_COLS;
+      if (next > maxOffset) return maxOffset;
+      if (next < 0) return 0;
       return next;
     });
   }, []);
+
+  const handleAnimationComplete = () => {
+    if (deskOffset >= TESTIMONIALS.length * 2) {
+      setIsSnapping(true);
+      setDeskOffset(deskOffset - TESTIMONIALS.length);
+    } else if (deskOffset < TESTIMONIALS.length) {
+      setIsSnapping(true);
+      setDeskOffset(deskOffset + TESTIMONIALS.length);
+    }
+  };
+
+  useEffect(() => {
+    if (isSnapping) {
+      const t = setTimeout(() => setIsSnapping(false), 20);
+      return () => clearTimeout(t);
+    }
+  }, [isSnapping]);
 
   const advanceMob = useCallback(() => {
     setMobDir(1);
@@ -158,7 +178,7 @@ export default function Testimonials() {
 
   /* Desktop translateX: each card is 100/DESKTOP_COLS % wide */
   const cardPct  = 100 / DESKTOP_COLS;
-  const trackX   = -((deskOffset - TESTIMONIALS.length) * cardPct); // offset from middle copy start
+  const trackX   = -(deskOffset * cardPct);
 
   return (
     <section id="testimonials" className="testimonials" aria-label="Customer testimonials">
@@ -221,7 +241,11 @@ export default function Testimonials() {
               className="testimonials__track"
               style={{ width: `${(EXTENDED.length / DESKTOP_COLS) * 100}%` }}
               animate={{ x: `${trackX / (EXTENDED.length / DESKTOP_COLS)}%` }}
-              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: isSnapping ? 0 : 0.65,
+                ease: isSnapping ? 'linear' : [0.22, 1, 0.36, 1]
+              }}
+              onAnimationComplete={handleAnimationComplete}
             >
               {EXTENDED.map((item, i) => (
                 <div
