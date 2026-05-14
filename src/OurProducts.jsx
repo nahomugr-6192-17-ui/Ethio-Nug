@@ -63,7 +63,7 @@ export default function OurProducts() {
             Our Available Products
           </motion.span>
           <motion.h2 className="products__heading" variants={fadeUp}>
-            Carefully Refined{' '}
+            Carefully Prepared{' '}
             <span className="products__heading-accent">Edible Oil</span>
           </motion.h2>
           <motion.p className="products__subheading" variants={fadeUp}>
