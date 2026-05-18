@@ -8,7 +8,7 @@ import './Contact.css';
 const INFO_CARDS = [
   {
     id: 'phone', icon: Phone, label: 'Call Us',
-    primary: '+251 911 979 899', secondary: '+251 982 323 334',
+    primary: '+251 91 1979 899', secondary: '+251 98 2323 334',
     badge: 'Recommended',
   },
   {
