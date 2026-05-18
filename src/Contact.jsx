@@ -219,14 +219,14 @@ const submit = async (e) => {
                   href="tel:+251911979899"
                   className="phone-modal__btn"
                 >
-                  +251 911 979 899
+                  +251 91 1979 899
                 </a>
 
                 <a
                   href="tel:+251982323334"
                   className="phone-modal__btn"
                 >
-                  +251 982 323 334
+                  +251 98 2323 334
                 </a>
 
                 <button
