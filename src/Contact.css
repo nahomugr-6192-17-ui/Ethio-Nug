@@ -316,6 +316,133 @@
 
 .cform__btn:hover { box-shadow: 0 10px 32px rgba(212, 160, 23, 0.6); }
 
+.custom-toast {
+  background: rgba(20, 20, 20, 0.82) !important;
+  color: #f5f5f5 !important;
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 18px !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding: 16px 20px !important;
+
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25),
+    0 0 0 1px rgba(255,255,255,0.03);
+
+  min-width: 280px;
+
+  transition:
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
+}
+
+.custom-toast:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.35);
+}
+
+.custom-toast [data-icon] {
+  color: var(--color-gold-400) !important;
+}
+
+.cinfo__phones {
+  display: flex;
+  flex-direction: column;
+}
+
+.cinfo__phone-link:hover {
+  opacity: 0.75;
+}
+
+.phone-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(8px);
+}
+
+.phone-modal {
+  width: min(92%, 360px);
+
+  background: rgba(18,18,18,0.92);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  border-radius: 24px;
+
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+}
+
+.phone-modal__title {
+  color: var(--color-gold-400);
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  margin-bottom: 0.5rem;
+}
+
+.phone-modal__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.04);
+
+  color: white;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.phone-modal__btn:hover {
+  background: var(--color-gold-400);
+  color: black;
+
+  transform: translateY(-2px);
+}
+
+.phone-modal__close {
+  background: transparent;
+
+  border: none;
+
+  color: rgba(255,255,255,0.6);
+
+  cursor: pointer;
+
+  margin-top: 0.5rem;
+}
+
 /* ── Responsive ──────────────────────────── */
 @media (max-width: 1024px) {
   .contact { padding-block: var(--space-20); }

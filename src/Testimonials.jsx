@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import avatar1 from './assets/avatar1.png';
 import avatar2 from './assets/avatar2.png';
 import avatar3 from './assets/avatar3.png';

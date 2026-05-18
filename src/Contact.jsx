@@ -2,13 +2,14 @@ import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Phone, MapPin, Send, MessageCircle, Star } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import toast, {Toaster} from 'react-hot-toast';
 import './Contact.css';
 
 const INFO_CARDS = [
   {
     id: 'phone', icon: Phone, label: 'Call Us',
     primary: '+251 911 979 899', secondary: '+251 982 323 334',
-    href: 'tel:+251911979899', badge: 'Recommended',
+    badge: 'Recommended',
   },
   {
     id: 'location', icon: MapPin, label: 'Our Location',
@@ -27,8 +28,37 @@ const INFO_CARDS = [
   },
 ];
 
-function InfoCard({ icon: Icon, label, primary, secondary, href, badge }) {
-  const isExternal = href.startsWith('http');
+function InfoCard({ icon: Icon, label, primary, secondary, href, badge, id, setShowPhoneOptions}) {
+
+  if (id === 'phone') {
+  return (
+    <motion.div
+      className="cinfo"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      onClick={() => setShowPhoneOptions(true)}
+      role="button"
+      tabIndex={0}
+    >
+      <div className="cinfo__icon">
+        <Icon size={20} strokeWidth={1.8} />
+      </div>
+
+      <div className="cinfo__body">
+        <span className="cinfo__label">
+          {label}
+          {badge && <span className="cinfo__badge">{badge}</span>}
+        </span>
+
+        <span className="cinfo__primary">{primary}</span>
+        <span className="cinfo__secondary">{secondary}</span>
+      </div>
+    </motion.div>
+  );
+}
+
+  const isExternal = href?.startsWith('http');
+
   return (
     <motion.a
       href={href}
@@ -38,14 +68,21 @@ function InfoCard({ icon: Icon, label, primary, secondary, href, badge }) {
       whileHover={{ y: -4 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="cinfo__icon"><Icon size={20} strokeWidth={1.8} /></div>
+      <div className="cinfo__icon">
+        <Icon size={20} strokeWidth={1.8} />
+      </div>
+
       <div className="cinfo__body">
         <span className="cinfo__label">
           {label}
           {badge && <span className="cinfo__badge">{badge}</span>}
         </span>
+
         <span className="cinfo__primary">{primary}</span>
-        {secondary && <span className="cinfo__secondary">{secondary}</span>}
+
+        {secondary && (
+          <span className="cinfo__secondary">{secondary}</span>
+        )}
       </div>
     </motion.a>
   );
@@ -77,6 +114,7 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1, del
 export default function Contact() {
   const [rating, setRating] = useState(0);
   const [form, setForm] = useState({ name: '', email: '', phone: '', position: '', message: '' });
+  const [showPhoneOptions, setShowPhoneOptions] = useState(false);
 
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, margin: '-60px' });
@@ -86,24 +124,66 @@ export default function Contact() {
   const rightInView = useInView(rightRef, { once: true, margin: '-80px' });
 
   const set = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
-  const submit = (e) => { e.preventDefault(); 
-    emailjs.send(
-      'service_hlafnig',
-      'template_opjndoe',
+  const [sending, setSending] = useState(false);
+
+const submit = async (e) => {
+  e.preventDefault();
+
+  if (rating === 0) {
+    alert('Please select a rating.');
+    return;
+  }
+
+  setSending(true);
+
+  try {
+    await emailjs.send(
+      'service_aolqk5c',
+      'template_gdwli0j',
       {
         from_name: form.name,
         from_email: form.email,
-        from_phone: form.phone,
-        from_position: form.position,
+        phone: form.phone,
+        position: form.position,
         message: form.message,
         rating: rating,
       },
-      'dyYo8ej2s4J8Od2Hx'
-    )
-   };
+      '0vp6GZV5GGLAIBB-O'
+    );
+
+    toast.success('Feedback sent successfully!');
+
+    setForm({
+      name: '',
+      email: '',
+      phone: '',
+      position: '',
+      message: '',
+    });
+
+    setRating(0);
+
+  }  catch (error) {
+  console.log('EMAIL ERROR:', error);
+
+  if (error.text) {
+    toast.error(error.text);
+  } else {
+    toast.error('Something went wrong.');
+  }
+}
+
+  setSending(false);
+};
 
   return (
     <section id="contact" className="contact" aria-label="Contact us">
+      <Toaster
+        position="center"
+        toastOptions={{
+          className: 'custom-toast',
+        }}
+      />
       <div className="container">
 
         {/* Header */}
@@ -118,12 +198,57 @@ export default function Contact() {
 
         <div className="contact__body">
 
+          {showPhoneOptions && (
+            <div
+              className="phone-modal-overlay"
+              onClick={() => setShowPhoneOptions(false)}
+            >
+              <motion.div
+                className="phone-modal"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h3 className="phone-modal__title">
+                  Choose a phone number
+                </h3>
+
+                <a
+                  href="tel:+251911979899"
+                  className="phone-modal__btn"
+                >
+                  +251 911 979 899
+                </a>
+
+                <a
+                  href="tel:+251982323334"
+                  className="phone-modal__btn"
+                >
+                  +251 982 323 334
+                </a>
+
+                <button
+                  className="phone-modal__close"
+                  onClick={() => setShowPhoneOptions(false)}
+                >
+                  Cancel
+                </button>
+              </motion.div>
+            </div>
+          )}
+
           {/* LEFT — info cards */}
           <motion.div ref={leftRef} className="contact__left"
             initial={{ opacity: 0, x: -40 }}
             animate={leftInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}>
-            {INFO_CARDS.map((c) => <InfoCard key={c.id} {...c} />)}
+            {INFO_CARDS.map((c) => <InfoCard 
+                key={c.id}
+                {...c}
+                setShowPhoneOptions={setShowPhoneOptions}
+            />)}
           </motion.div>
 
           {/* RIGHT — form */}
@@ -136,27 +261,27 @@ export default function Contact() {
 
               <div className="cform__row">
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-name">Name</label>
+                  <label className="cform__lbl" htmlFor="cf-name">Full Name</label>
                   <input id="cf-name" name="name" type="text" className="cform__input"
-                    placeholder="Your full name" value={form.name} onChange={set} required />
+                    placeholder="John Doe" value={form.name} onChange={set} required />
                 </div>
                 <div className="cform__field">
                   <label className="cform__lbl" htmlFor="cf-email">Email</label>
                   <input id="cf-email" name="email" type="email" className="cform__input"
-                    placeholder="your@email.com" value={form.email} onChange={set} />
+                    placeholder="johndoe@email.com" value={form.email} onChange={set} />
                 </div>
               </div>
 
               <div className="cform__row">
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-phone">Phone</label>
+                  <label className="cform__lbl" htmlFor="cf-phone">Phone (Optional)</label>
                   <input id="cf-phone" name="phone" type="tel" className="cform__input"
                     placeholder="+251 ..." value={form.phone} onChange={set} />
                 </div>
                 <div className="cform__field">
                   <label className="cform__lbl" htmlFor="cf-pos">Position / Client</label>
                   <input id="cf-pos" name="position" type="text" className="cform__input"
-                    placeholder="e.g. Restaurant Owner" value={form.position} onChange={set} />
+                    placeholder="e.g. Restaurant Owner/Client" value={form.position} onChange={set} />
                 </div>
               </div>
 
@@ -175,8 +300,8 @@ export default function Contact() {
               <motion.button type="submit" className="cform__btn"
                 whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 340, damping: 18 }}
-                disabled={!form.name || !form.message}>
-                Send Feedback
+                disabled={!form.name || !form.message || rating === 0 || sending}>
+                {sending ? 'Sending...' : 'Submit Feedback'}
               </motion.button>
             </form>
           </motion.div>
