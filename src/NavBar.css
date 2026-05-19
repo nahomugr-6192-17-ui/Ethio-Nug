@@ -365,4 +365,9 @@
   .navbar__lang-option {
     font-size: 0.75rem;
   }
+  .navbar__cta--mobile {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+  }
 }

@@ -277,10 +277,6 @@ export default function NavBar() {
                 initial="hidden"
                 animate="visible"
               >
-                <button className="navbar__lang-btn navbar__lang-btn--mobile" onClick={toggleLang}>
-                  <Globe size={14} />
-                  <span>En / አማ</span>
-                </button>
                 <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={(e) => {handleMobileNavClick(e, '#contact');}}>
                   Contact Us
                 </a>
