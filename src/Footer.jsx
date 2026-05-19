@@ -12,7 +12,7 @@ const NAV_LINKS = [
 ];
 
 const CONTACT_INFO = [
-  { icon: Phone,  text: '+251 911 979 899',      href: 'tel:+251911979899'           },
+  { icon: Phone,  text: '+251 91 1979 899',      href: 'tel:+251911979899'           },
   { icon: MapPin, text: 'Addis Ababa, Ethiopia', href: 'https://maps.app.goo.gl/8jGuPBFsBjAXR8xn8?g_st=ac'                           },
   { icon: Send,   text: '@EthioNug (Telegram)',  href: 'https://t.me/stackminds'                           },
   { icon: Mail,   text: 'contact@ethionug.com',  href: 'mailto:contact@ethionug.com' },

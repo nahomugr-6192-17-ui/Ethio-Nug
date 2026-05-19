@@ -78,12 +78,44 @@ export default function NavBar() {
         }
       })
     }
+    const handleMobileNavClick = (href) => {
+    const section = document.querySelector(href);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+          });
+        }
+
+        setTimeout(() => {
+          setMenuOpen(false);
+        }, 200);
+      };
+
       window.addEventListener('scroll', handleScroll, { passive: true });
       return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleLang = () => setLang(prev => prev === 'En' ? 'አማ' : 'En');
   const closeMenu  = () => setMenuOpen(false);
+
+  const handleMobileNavClick = (e, href) => {
+  e.preventDefault();
+
+  const target = document.querySelector(href);
+
+  if (target) {
+    closeMenu();
+
+    setTimeout(() => {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }, 250);
+      }
+    };
 
   return (
     <motion.header
@@ -229,7 +261,9 @@ export default function NavBar() {
                   variants={mobileLinkVariants}
                   initial="hidden"
                   animate="visible"
-                  onClick={closeMenu}
+                  onClick={(e) => {
+                    handleMobileNavClick(e, link.href);
+                  }}
                 >
                   {link.label}
                 </motion.a>
@@ -247,7 +281,7 @@ export default function NavBar() {
                   <Globe size={14} />
                   <span>En / አማ</span>
                 </button>
-                <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={closeMenu}>
+                <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={(e) => {handleMobileNavClick(e, '#contact');}}>
                   Contact Us
                 </a>
               </motion.div>
