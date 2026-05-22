@@ -8,14 +8,16 @@ import fiveLtr from './assets/five-ltr.png';
 import twentyLtr from './assets/twenty-ltr.png';
 import './OurProducts.css';
 import { image } from 'framer-motion/client';
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 /* ─── Product data ──────────────────────────────── */
-const PRODUCTS = [
-  { size: '½ L',  label: 'Half Litre',     price: 'ETB 345',    tag: null     , image: halfLtr },
-  { size: '1 L',  label: 'One Litre',      price: 'ETB 690',    tag: null     , image: oneLtr },
-  { size: '3 L',  label: 'Three Litres',   price: 'ETB 2,070',   tag: null     , image: threeLtr },
-  { size: '5 L',  label: 'Five Litres',    price: 'ETB 3,450',   tag: 'Popular', image: fiveLtr },
-  { size: '20 L', label: 'Twenty Litres',  price: 'ETB 13,800', tag: 'Bulk'       , image: twentyLtr },
+const PRODUCT_IMAGES = [
+  halfLtr,
+  oneLtr,
+  threeLtr,
+  fiveLtr,
+  twentyLtr,
 ];
 
 /* ─── Animation variants ────────────────────────── */
@@ -30,9 +32,10 @@ const headerVariants = {
 };
 
 /* ─── Main Component ────────────────────────────── */
-export default function OurProducts() {
+export default function OurProducts({lang}) {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const t = lang === 'am' ? am:en;
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -60,20 +63,20 @@ export default function OurProducts() {
           animate={headerInView ? 'visible' : 'hidden'}
         >
           <motion.span className="products__label" variants={fadeUp}>
-            Our Available Products
+            {t.products.label}
           </motion.span>
           <motion.h2 className="products__heading" variants={fadeUp}>
-            Carefully Prepared{' '}
-            <span className="products__heading-accent">Edible Oil</span>
+            {t.products.headingTop}{' '}
+            <span className="products__heading-accent">{t.products.headingAccent}</span>
           </motion.h2>
           <motion.p className="products__subheading" variants={fadeUp}>
-            Premium-quality edible oil for homes, restaurants, and businesses.
+            {t.products.subheading}
           </motion.p>
         </motion.div>
 
         {/* ── Product Grid ── */}
         <div ref={gridRef} className="products__grid">
-          {PRODUCTS.map((product, i) => {
+          {t.products.items.map((product, i) => {
             const isDimmed = !isMobile && hoveredIdx !== null && hoveredIdx !== i;
             const isActive = !isMobile && hoveredIdx === i;
 
@@ -108,7 +111,7 @@ export default function OurProducts() {
                   {/* Bottle image */}
                   <div className="products__img-wrap">
                     <motion.img
-                      src={product.image}
+                      src={PRODUCT_IMAGES[i]}
                       alt={`Ethio-Nug ${product.size} edible oil bottle`}
                       className="products__bottle-img"
                       animate={
@@ -148,7 +151,7 @@ export default function OurProducts() {
                       transition={{ type: 'spring', stiffness: 340, damping: 18 }}
                     >
                       <ShoppingBag size={14} strokeWidth={2.2} />
-                      Order Today
+                      {t.products.orderBtn}
                     </motion.a>
                   </div>
                 </motion.div>

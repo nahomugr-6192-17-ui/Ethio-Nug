@@ -4,24 +4,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import about1 from './assets/about1.jpeg';
 import about2 from './assets/about2.jpeg';
 import './About.css';
-
-/* ─── Slide data ─────────────────────────────── */
-const SLIDES = [
-  {
-    id: 0,
-    label: 'About Us',
-    heading: 'ABOUT ETHIO-NUG',
-    body: 'Ethio-Nug is dedicated to producing high-quality edible oil using carefully selected Ethiopian niger seeds. Combining modern processing technology with strict quality standards, we deliver pure, nutritious, and reliable cooking oil trusted by homes and businesses. Our mission is to provide healthy products while supporting local farmers and Ethiopian agriculture.',
-    img: about1,
-  },
-  {
-    id: 1,
-    label: 'Our Promise',
-    heading: 'TRUSTED PURITY YOU CAN TASTE',
-    body: 'Ethio-Nug delivers premium edible oil crafted from high-quality Ethiopian niger seeds. Through modern refining methods and strict quality control, we ensure every bottle provides exceptional purity, freshness, and rich flavor trusted by families, restaurants, and businesses across Ethiopia.',
-    img: about2,
-  },
-];
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 const AUTO_DELAY = 24000;
 
@@ -44,7 +28,25 @@ const sectionFade = {
 };
 
 /* ─── Component ──────────────────────────────── */
-export default function About() {
+export default function About({lang}) {
+  const t = lang === 'am' ? am:en;
+    const SLIDES = [
+    {
+      id: 0,
+      label: t.about.slide1.label,
+      heading: t.about.slide1.heading,
+      body: t.about.slide1.body,
+      img: about1,
+    },
+
+    {
+      id: 1,
+      label: t.about.slide2.label,
+      heading: t.about.slide2.heading,
+      body: t.about.slide2.body,
+      img: about2,
+    },
+  ];
   const [index, setIndex]     = useState(0);
   const [direction, setDir]   = useState(1);
   const timerRef              = useRef(null);

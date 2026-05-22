@@ -3,15 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import './NavBar.css';
 import logo from "./assets/logo.png";
-
-const navLinks = [
-  { label: 'Home',        href: '#home' },
-  { label: 'Process',     href: '#process' },
-  { label: 'Our Products',href: '#products' },
-  { label: 'About Us',    href: '#about' },
-  { label: 'Testimonials',href: '#testimonials' },
-  { label: 'FAQs',        href: '#faqs' },
-];
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 const logoVariants = {
   hidden:  { opacity: 0, x: -30 },
@@ -51,11 +44,37 @@ const mobileLinkVariants = {
   }),
 };
 
-export default function NavBar() {
+export default function NavBar({lang, setLang}) {
+  const navLinks = [
+    {
+      label: lang === 'am' ? 'መነሻ' : 'Home',
+      href: '#home'
+    },
+    {
+      label: lang === 'am' ? 'የማጣራት ሂደት' : 'Process',
+      href: '#process'
+    },
+    {
+      label: lang === 'am' ? 'ምርቶቻችን' : 'Our Products',
+      href: '#products'
+    },
+    {
+      label: lang === 'am' ? 'ስለ እኛ' : 'About Us',
+      href: '#about'
+    },
+    {
+      label: lang === 'am' ? 'አስተያየቶች' : 'Testimonials',
+      href: '#testimonials'
+    },
+    {
+      label: lang === 'am' ? 'ጥያቄዎች' : 'FAQs',
+      href: '#faqs'
+    },
+  ];
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
-  const [lang, setLang]           = useState('En');
   const [activeLink, setActiveLink] = useState('home');
+  const t = lang === 'am' ? am:en;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -78,26 +97,12 @@ export default function NavBar() {
         }
       })
     }
-    const handleMobileNavClick = (href) => {
-    const section = document.querySelector(href);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-          });
-        }
-
-        setTimeout(() => {
-          setMenuOpen(false);
-        }, 200);
-      };
 
       window.addEventListener('scroll', handleScroll, { passive: true });
       return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleLang = () => setLang(prev => prev === 'En' ? 'አማ' : 'En');
+  const toggleLang = () => setLang(prev => prev === 'en' ? 'am' : 'en');
   const closeMenu  = () => setMenuOpen(false);
 
   const handleMobileNavClick = (e, href) => {
@@ -136,8 +141,8 @@ export default function NavBar() {
           >
             <img src= {logo} alt="logo" className='navbar__logo-icon' />
             <span className="navbar__logo-text">
-              <span className="navbar__logo-primary">ETHIO</span>
-              <span className="navbar__logo-accent"> NUG</span>
+              <span className="navbar__logo-primary">{t.nav.name1}</span>
+              <span className="navbar__logo-accent"> {t.nav.name2}</span>
             </span>
           </motion.a>
 
@@ -149,16 +154,16 @@ export default function NavBar() {
               {/* Sliding Background */}
               <div
                 className={`navbar__lang-slider ${
-                  lang === "En" ? "left" : "right"
+                  lang === "en" ? "left" : "right"
                 }`}
               />
 
               {/* EN */}
               <button
                 className={`navbar__lang-option ${
-                  lang === "En" ? "active" : ""
+                  lang === "en" ? "active" : ""
                 }`}
-                onClick={() => setLang("En")}
+                onClick={() => setLang("en")}
               >
                 En
               </button>
@@ -166,9 +171,9 @@ export default function NavBar() {
               {/* AMH */}
               <button
                 className={`navbar__lang-option ${
-                  lang === "Am" ? "active" : ""
+                  lang === "am" ? "active" : ""
                 }`}
-                onClick={() => setLang("Am")}
+                onClick={() => setLang("am")}
               >
                 አማ
               </button>
@@ -214,7 +219,7 @@ export default function NavBar() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
-            Contact Us
+            {t.nav.contact}
           </motion.a>
         </motion.div>
 
@@ -278,7 +283,7 @@ export default function NavBar() {
                 animate="visible"
               >
                 <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={(e) => {handleMobileNavClick(e, '#contact');}}>
-                  Contact Us
+                  {lang === 'am' ? 'ያግኙን' : 'Contact Us'}
                 </a>
               </motion.div>
             </nav>

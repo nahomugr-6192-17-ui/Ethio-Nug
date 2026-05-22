@@ -4,27 +4,29 @@ import { Phone, MapPin, Send, MessageCircle, Star } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast, {Toaster} from 'react-hot-toast';
 import './Contact.css';
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 const INFO_CARDS = [
   {
-    id: 'phone', icon: Phone, label: 'Call Us',
-    primary: '+251 91 1979 899', secondary: '+251 98 2323 334',
-    badge: 'Recommended',
+    id: 'phone',
+    icon: Phone,
+    href: null,
   },
   {
-    id: 'location', icon: MapPin, label: 'Our Location',
-    primary: 'Addis Ababa, Ethiopia', secondary: 'Available for visits by appointment',
-    href: 'https://maps.app.goo.gl/8jGuPBFsBjAXR8xn8?g_st=ac', badge: null,
+    id: 'location',
+    icon: MapPin,
+    href: 'https://maps.app.goo.gl/8jGuPBFsBjAXR8xn8?g_st=ac',
   },
   {
-    id: 'telegram', icon: Send, label: 'Telegram',
-    primary: '@EthioNug', secondary: 'Message us on Telegram',
-    href: 'https://t.me/stackminds', badge: null,
+    id: 'telegram',
+    icon: Send,
+    href: 'https://t.me/stackminds',
   },
   {
-    id: 'whatsapp', icon: MessageCircle, label: 'WhatsApp',
-    primary: '+1 702 561 0844', secondary: 'Chat with us on WhatsApp',
-    href: 'https://wa.me/17025610844', badge: null,
+    id: 'whatsapp',
+    icon: MessageCircle,
+    href: 'https://wa.me/17025610844',
   },
 ];
 
@@ -111,7 +113,16 @@ function StarPicker({ value, onChange }) {
 const fadeUp = { hidden: { opacity: 0, y: 26 }, visible: { opacity: 1, y: 0, transition: { duration: 0.68, ease: [0.22, 1, 0.36, 1] } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.08 } } };
 
-export default function Contact() {
+export default function Contact({ lang }) {
+  const t = lang === 'am' ? am : en;
+
+  const CARD_CONTENT = {
+    phone: t.contact.cards.phone,
+    location: t.contact.cards.location,
+    telegram: t.contact.cards.telegram,
+    whatsapp: t.contact.cards.whatsapp,
+  };
+
   const [rating, setRating] = useState(0);
   const [form, setForm] = useState({ name: '', email: '', phone: '', position: '', message: '' });
   const [showPhoneOptions, setShowPhoneOptions] = useState(false);
@@ -130,7 +141,7 @@ const submit = async (e) => {
   e.preventDefault();
 
   if (rating === 0) {
-    alert('Please select a rating.');
+    alert(t.contact.form.ratingError);
     return;
   }
 
@@ -151,7 +162,7 @@ const submit = async (e) => {
       '0vp6GZV5GGLAIBB-O'
     );
 
-    toast.success('Feedback sent successfully!');
+    toast.success(t.contact.form.success);
 
     setForm({
       name: '',
@@ -169,7 +180,7 @@ const submit = async (e) => {
   if (error.text) {
     toast.error(error.text);
   } else {
-    toast.error('Something went wrong.');
+    toast.error(t.contact.form.error);
   }
 }
 
@@ -189,10 +200,10 @@ const submit = async (e) => {
         {/* Header */}
         <motion.div ref={headerRef} className="contact__header"
           variants={stagger} initial="hidden" animate={headerInView ? 'visible' : 'hidden'}>
-          <motion.span className="contact__label" variants={fadeUp}>Contact Us</motion.span>
-          <motion.h2 className="contact__heading" variants={fadeUp}>Get In Touch</motion.h2>
+          <motion.span className="contact__label" variants={fadeUp}>{t.contact.label}</motion.span>
+          <motion.h2 className="contact__heading" variants={fadeUp}>{t.contact.heading}</motion.h2>
           <motion.p className="contact__sub" variants={fadeUp}>
-            We would love to hear from you. Reach out for orders, business inquiries, or customer support.
+            {t.contact.subheading}
           </motion.p>
         </motion.div>
 
@@ -212,7 +223,7 @@ const submit = async (e) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <h3 className="phone-modal__title">
-                  Choose a phone number
+                  {t.contact.modal.title}
                 </h3>
 
                 <a
@@ -233,7 +244,7 @@ const submit = async (e) => {
                   className="phone-modal__close"
                   onClick={() => setShowPhoneOptions(false)}
                 >
-                  Cancel
+                  {t.contact.modal.cancel}
                 </button>
               </motion.div>
             </div>
@@ -244,11 +255,14 @@ const submit = async (e) => {
             initial={{ opacity: 0, x: -40 }}
             animate={leftInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}>
-            {INFO_CARDS.map((c) => <InfoCard 
+            {INFO_CARDS.map((c) => (
+              <InfoCard
                 key={c.id}
                 {...c}
+                {...CARD_CONTENT[c.id]}
                 setShowPhoneOptions={setShowPhoneOptions}
-            />)}
+              />
+            ))}
           </motion.div>
 
           {/* RIGHT — form */}
@@ -257,43 +271,43 @@ const submit = async (e) => {
             animate={rightInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}>
             <form className="cform" onSubmit={submit} noValidate>
-              <h3 className="cform__title">Share Your Feedback</h3>
+              <h3 className="cform__title">{t.contact.form.title}</h3>
 
               <div className="cform__row">
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-name">Full Name</label>
+                  <label className="cform__lbl" htmlFor="cf-name">{t.contact.form.fullName}</label>
                   <input id="cf-name" name="name" type="text" className="cform__input"
-                    placeholder="John Doe" value={form.name} onChange={set} required />
+                    placeholder={t.contact.form.fullNamePlaceholder} value={form.name} onChange={set} required />
                 </div>
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-email">Email</label>
+                  <label className="cform__lbl" htmlFor="cf-email">{t.contact.form.email}</label>
                   <input id="cf-email" name="email" type="email" className="cform__input"
-                    placeholder="johndoe@email.com" value={form.email} onChange={set} />
+                    placeholder={t.contact.form.emailPlaceholder} value={form.email} onChange={set} />
                 </div>
               </div>
 
               <div className="cform__row">
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-phone">Phone (Optional)</label>
+                  <label className="cform__lbl" htmlFor="cf-phone">{t.contact.form.phone}</label>
                   <input id="cf-phone" name="phone" type="tel" className="cform__input"
-                    placeholder="+251 ..." value={form.phone} onChange={set} />
+                    placeholder={t.contact.form.phonePlaceholder} value={form.phone} onChange={set} />
                 </div>
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-pos">Position / Client</label>
+                  <label className="cform__lbl" htmlFor="cf-pos">{t.contact.form.position}</label>
                   <input id="cf-pos" name="position" type="text" className="cform__input"
-                    placeholder="e.g. Restaurant Owner/Client" value={form.position} onChange={set} />
+                    placeholder={t.contact.form.positionPlaceholder} value={form.position} onChange={set} />
                 </div>
               </div>
 
               <div className="cform__field">
-                <label className="cform__lbl" htmlFor="cf-msg">Message</label>
+                <label className="cform__lbl" htmlFor="cf-msg">{t.contact.form.message}</label>
                 <textarea id="cf-msg" name="message" className="cform__input cform__textarea"
-                  placeholder="Tell us about your experience or inquiry…"
+                  placeholder={t.contact.form.messagePlaceholder}
                   rows={4} value={form.message} onChange={set} required />
               </div>
 
               <div className="cform__rating-row">
-                <span className="cform__rating-lbl">Rate Your Experience</span>
+                <span className="cform__rating-lbl">{t.contact.form.rating}</span>
                 <StarPicker value={rating} onChange={setRating} />
               </div>
 

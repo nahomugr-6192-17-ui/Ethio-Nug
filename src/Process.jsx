@@ -9,52 +9,8 @@ import {
   Brush,
 } from 'lucide-react';
 import './Process.css';
-
-/* ─── Process data ─────────────────────────────────────────────── */
-const STEPS = [
-  {
-    number: '01',
-    icon: ScanSearch,
-    title: 'Initial Screening',
-    description:
-      'Large particles, stones, and stems are removed during the first cleaning stage.',
-  },
-  {
-    number: '02',
-    icon: Filter,
-    title: 'Fine Sieving',
-    description:
-      'Fine dust, sand, and smaller impurities are carefully separated from the seeds.',
-  },
-  {
-    number: '03',
-    icon: Brush,
-    title: 'Brush Cleaning',
-    description:
-      'Soft rotating brushes remove remaining surface dust while protecting seed quality.',
-  },
-  {
-    number: '04',
-    icon: Wind,
-    title: 'Air Separation',
-    description:
-      'Controlled airflow removes husks, chaff, and lightweight impurities.',
-  },
-  {
-    number: '05',
-    icon: Scale,
-    title: 'Density Sorting',
-    description:
-      'Low-quality and hollow seeds are separated to ensure consistent purity.',
-  },
-  {
-    number: '06',
-    icon: BadgeCheck,
-    title: 'Final Quality Check',
-    description:
-      'Only the cleanest, highest-quality seeds continue to the extraction process.',
-  },
-];
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 /* ─── Animation variants ────────────────────────────────────────── */
 const sectionVariants = {
@@ -195,7 +151,46 @@ function ProcessCard({ step, index }) {
 }
 
 /* ─── Main Component ─────────────────────────────────────────────── */
-export default function Process() {
+export default function Process({ lang }) {
+  const t = lang === 'am' ? am : en;
+  const STEPS = [
+    {
+      number: '01',
+      icon: ScanSearch,
+      title: t.process.steps.screening.title,
+      description: t.process.steps.screening.description,
+    },
+    {
+      number: '02',
+      icon: Filter,
+      title: t.process.steps.sieving.title,
+      description: t.process.steps.sieving.description,
+    },
+    {
+      number: '03',
+      icon: Brush,
+      title: t.process.steps.brush.title,
+      description: t.process.steps.brush.description,
+    },
+    {
+      number: '04',
+      icon: Wind,
+      title: t.process.steps.air.title,
+      description: t.process.steps.air.description,
+    },
+    {
+      number: '05',
+      icon: Scale,
+      title: t.process.steps.density.title,
+      description: t.process.steps.density.description,
+    },
+    {
+      number: '06',
+      icon: BadgeCheck,
+      title: t.process.steps.final.title,
+      description: t.process.steps.final.description,
+    },
+  ];
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, margin: '-60px' });
 
@@ -215,19 +210,16 @@ export default function Process() {
           animate={headerInView ? 'visible' : 'hidden'}
         >
           <motion.span className="process__label" variants={fadeUp}>
-            Our Process
+            {t.process.label}
           </motion.span>
 
           <motion.h2 className="process__heading" variants={fadeUp}>
-            Pure oil starts with<br />
-            <span className="process__heading-accent">clean seeds.</span>
+            {t.process.headingTop}<br />
+            <span className="process__heading-accent">{t.process.headingAccent}</span>
           </motion.h2>
 
           <motion.p className="process__subheading" variants={fadeUp}>
-            Ethio-Nug selects only the finest Noug seeds, taking them through a
-            strict 6-stage cleaning system before traditional cold pressing —
-            preserving purity, natural flavor, and nutritional integrity.
-            No additives. No shortcuts.
+            {t.process.subheading}
           </motion.p>
         </motion.div>
 
@@ -253,18 +245,15 @@ export default function Process() {
         >
           <motion.div className="process__story-card" variants={fadeUp}>
             <motion.span className="process__label process__label--center" variants={fadeUp}>
-              Our Commitment
+              {t.process.commitmentLabel}
             </motion.span>
 
             <motion.h2 className="process__story-heading" variants={fadeUp}>
-              Why We Do It
+              {t.process.commitmentHeading}
             </motion.h2>
 
             <motion.p className="process__story-text" variants={fadeUp}>
-              Many oils today are diluted or blended with cheaper ingredients.
-              Ethio-Nug remains committed to purity, honesty, and traditional
-              craftsmanship — delivering authentic Noug oil you can trust,
-              every single time.
+              {t.process.commitmentText}
             </motion.p>
           </motion.div>
         </motion.div>

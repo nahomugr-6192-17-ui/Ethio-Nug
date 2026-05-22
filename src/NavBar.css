@@ -166,8 +166,8 @@
   flex: 1;
   border: none;
   background: transparent;
-  padding: 6px 0;
-  font-size: 0.72rem;
+  padding: 6px 6px;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: rgba(255,255,255,0.7);
@@ -277,6 +277,20 @@
   min-width: 140px;
 }
 
+/* Amharic Fonts */
+
+.lang--am .navbar__logo-text {
+  font-size: 1.5rem;
+}
+
+.lang--am .navbar__link {
+  font-size: 1.2rem;
+}
+
+.lang--am .navbar__cta {
+  font-size: 1.01rem;
+}
+
 /* ─────────────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────────────── */
@@ -342,6 +356,18 @@
     gap: var(--space-1);
     margin-left: -15px;
   }
+
+  .lang--am .navbar__mobile-links{
+    padding: var(--space-4) var(--space-5) var(--space-6);
+  }
+
+  .lang--am .navbar__mobile-link {
+    font-size: 1.1rem;
+  }
+
+  .lang--am .navbar__lang-btn--mobile {
+    font-size: 1.1rem;
+  }
 }
 
 /* Mobile */
@@ -369,5 +395,9 @@
     width: 100%;
     padding: 10px 16px;
     font-size: 0.75rem;
+  }
+
+  .lang--am .navbar__logo-text {
+    font-size: 1.25rem;
   }
 }

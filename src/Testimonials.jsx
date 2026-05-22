@@ -1,59 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import avatar1 from './assets/avatar1.png';
 import avatar2 from './assets/avatar2.png';
 import avatar3 from './assets/avatar3.png';
 import './Testimonials.css';
-
-/* ─── Data ────────────────────────────────────── */
-const TESTIMONIALS = [
-  {
-    id: 1,
-    name: 'Selamawit Tadesse',
-    role: 'Home Cook · Addis Ababa',
-    avatar: avatar1,
-    rating: 5,
-    text: 'Ethio-Nug has completely changed the way I cook. The purity and freshness are unmatched — my family immediately noticed the difference in taste. I will never switch to another brand.',
-  },
-  {
-    id: 2,
-    name: 'Bekele Haile',
-    role: 'Restaurant Owner · Hawassa',
-    avatar: avatar2,
-    rating: 5,
-    text: 'As a restaurant owner, quality matters above everything. Ethio-Nug delivers consistent purity and rich flavor every time. My customers compliment the food and I owe much of that to this oil.',
-  },
-  {
-    id: 3,
-    name: 'Tigist Alemu',
-    role: 'Head Chef · Dire Dawa',
-    avatar: avatar3,
-    rating: 5,
-    text: 'I have been using Ethio-Nug for over two years. The 6-step cleaning process really shows in the final product — clean, light, and full of natural flavor. Highly recommended for any professional kitchen.',
-  },
-  {
-    id: 4,
-    name: 'Dawit Mekonnen',
-    role: 'Hotel Procurement · Bahir Dar',
-    avatar: avatar2,
-    rating: 5,
-    text: 'We supply Ethio-Nug oil to all our hotel kitchens. Delivery is always on time, quality is consistently excellent, and the 20L bulk option is perfect for our volume. A truly trustworthy supplier.',
-  },
-  {
-    id: 5,
-    name: 'Meron Girma',
-    role: 'Food Business Owner · Jimma',
-    avatar: avatar1,
-    rating: 5,
-    text: 'Ethio-Nug proves that local can mean premium. The oil is clean, golden, and completely natural. Supporting an Ethiopian brand this committed to quality is something I am proud to do every day.',
-  },
-];
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 const AUTO_DELAY   = 15000;
 const DESKTOP_COLS = 3;
-const EXTENDED     = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS]; // triple for infinite effect
 
 /* ─── Star row ────────────────────────────────── */
 function Stars({ count = 5 }) {
@@ -94,7 +50,16 @@ function TCard({ item }) {
 }
 
 /* ─── Main component ──────────────────────────── */
-export default function Testimonials() {
+export default function Testimonials({ lang }) {
+  const t = lang === 'am' ? am : en;
+
+  const TESTIMONIALS = t.testimonials.items.map((item, index) => ({
+    ...item,
+    avatar: [avatar1, avatar2, avatar3, avatar2, avatar1][index],
+  }));
+
+  const EXTENDED     = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS]; // triple for infinite effect
+
   /* Responsive mode */
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -193,10 +158,10 @@ export default function Testimonials() {
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="testimonials__label">Testimonials</span>
-          <h2 className="testimonials__heading">What Our Customers Say</h2>
+          <span className="testimonials__label">{t.testimonials.label}</span>
+          <h2 className="testimonials__heading">{t.testimonials.heading}</h2>
           <p className="testimonials__sub">
-            Trusted by families, restaurants, and businesses across Ethiopia.
+            {t.testimonials.subheading}
           </p>
         </motion.div>
 

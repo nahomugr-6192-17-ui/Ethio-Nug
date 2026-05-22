@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BookOpen, Leaf, Users, Star, Clock} from 'lucide-react';
 import './Hero.css';
-import { label } from 'framer-motion/client';
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 
 /* ── Animation variants ── */
@@ -41,8 +42,9 @@ const badgeVariant = {
   },
 };
 
-export default function Hero() {
+export default function Hero({lang}) {
   const sectionRef = useRef(null);
+  const t = lang === 'am' ? am:en;
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
@@ -83,14 +85,13 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1 className="hero__headline" variants={fadeUp}>
-            From Ethiopian Farms<br />
-            <span className="hero__headline-accent">To Your Family Table</span>
+            {t.hero.headlineTop}<br />
+            <span className="hero__headline-accent">{t.hero.headlineAccent}</span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p className="hero__subheadline" variants={fadeUp}>
-            Premium edible oil made from carefully selected Ethiopian niger seeds,
-            refined for purity, freshness, and rich natural taste.
+            {t.hero.subheadline}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -103,7 +104,7 @@ export default function Hero() {
               transition={{ type: 'spring', stiffness: 360, damping: 20 }}
             >
               <BookOpen size={17} strokeWidth={2} />
-              <span>Discover Our Story</span>
+              <span>{t.hero.discoverBtn}</span>
             </motion.a>
 
             <motion.a
@@ -113,7 +114,7 @@ export default function Hero() {
               whileTap={{ scale: 0.96 }}
               transition={{ type: 'spring', stiffness: 360, damping: 20 }}
             >
-              <span>View Products</span>
+              <span>{t.hero.productsBtn}</span>
               <ArrowRight size={17} strokeWidth={2.5} className="hero__btn-arrow" />
             </motion.a>
           </motion.div>
@@ -121,10 +122,11 @@ export default function Hero() {
           {/* Trust stats */}
           <motion.div className="hero__stats" variants={fadeUp}>
             {[
-              { icon: <Leaf size={24} />, value: '100% PURE NIGER OIL', label: 'Made from Carefully Selected Ethiopian Niger Seed.' },
-              { icon: <Star size={24} />, value: "6-Step Purification", label: "Advanced Cleaning and Refining for Maximum Purity."},
-              { icon: <Clock size={24} />, value: 'Farm Fresh Quality', label: 'Direct Sourced from Trusted Ethiopian Farmers.' },
-              { icon: <Users size={24} />, value: 'Fast & Reliable Delivery', label: 'Safe Packaging and Timely Delivaery for Every Order.' },
+              { icon: <Leaf size={24} />, value: t.hero.stats.pureOil.value, label: t.hero.stats.pureOil.label },
+              { icon: <Star size={24} />, value: t.hero.stats.purification.value, label: t.hero.stats.purification.label },
+              { icon: <Clock size={24} />, value: t.hero.stats.fresh.value, label: t.hero.stats.fresh.label },
+
+              { icon: <Users size={24} />, value: t.hero.stats.delivery.value, label: t.hero.stats.delivery.label },
             ].map(({ icon, value, label }) => (
               <div className="hero__stat" key={label}>
                 <div className='hero__stat-top'>

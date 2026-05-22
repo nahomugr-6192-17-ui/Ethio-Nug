@@ -154,16 +154,6 @@
   background: var(--color-gold-500);
 }
 
-/* Spacer col */
-.process__spacer {
-  /* just a flex placeholder */
-}
-
-/* ── Process Card ────────────────────────────── */
-.process__card-wrapper {
-  /* padding applied per-side in row rules above */
-}
-
 .process__card {
   position: relative;
   overflow: hidden;
@@ -337,6 +327,21 @@
   max-width: 520px;
 }
 
+.lang--am .process__label {
+  font-size: 0.78rem;
+  padding: 5px 16px;
+}
+
+.lang--am .process__step-num {
+  font-size: 0.75rem;
+}
+
+.lang--am .process__card-title {
+  font-size: 1.125rem;
+}
+.lang--am .process__story-heading {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
 /* ── RESPONSIVE — Tablet (≤ 900px) ──────────── */
 @media (max-width: 900px) {
   .process {
@@ -435,5 +440,9 @@
 
   .process__label--center {
     margin-inline: unset;
+  }
+
+  .lang--am .process__story-heading {
+    font-size: clamp(1.8rem, 5vw, 3rem);
   }
 }

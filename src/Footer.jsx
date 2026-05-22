@@ -2,14 +2,8 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, Send, Mail } from 'lucide-react';
 import logo from './assets/logo.png';
 import './Footer.css';
-
-const NAV_LINKS = [
-  { label: 'Home',         href: '#home'         },
-  { label: 'Our Products', href: '#products'      },
-  { label: 'Our Story',    href: '#about'         },
-  { label: 'Testimonials', href: '#testimonials'  },
-  { label: 'Contact Us',   href: '#contact'       },
-];
+import en from './Translation/en.js';
+import am from './Translation/am.js';
 
 const CONTACT_INFO = [
   { icon: Phone,  text: '+251 91 1979 899',      href: 'tel:+251911979899'           },
@@ -18,7 +12,17 @@ const CONTACT_INFO = [
   { icon: Mail,   text: 'contact@ethionug.com',  href: 'mailto:contact@ethionug.com' },
 ];
 
-export default function Footer() {
+export default function Footer({ lang }) {
+  const t = lang === 'am' ? am : en;
+
+  const NAV_LINKS = [
+      { label: t.footer.navLinks.home, href: '#home' },
+      { label: t.footer.navLinks.products, href: '#products' },
+      { label: t.footer.navLinks.about, href: '#about' },
+      { label: t.footer.navLinks.testimonials, href: '#testimonials' },
+      { label: t.footer.navLinks.contact, href: '#contact' },
+  ];
+
   return (
     <footer className="footer" aria-label="Site footer">
 
@@ -30,20 +34,19 @@ export default function Footer() {
           <a href="#home" className="footer__logo-link">
             <img src={logo} alt="Ethio-Nug logo" className="footer__logo-img" />
             <span className="footer__logo-text">
-              <span className="footer__logo-primary">ETHIO</span>
-              <span className="footer__logo-accent"> NUG</span>
+              <span className="footer__logo-primary">{t.hero.name1}</span>
+              <span className="footer__logo-accent">{t.hero.name2}</span>
             </span>
           </a>
-          <p className="footer__slogan">From Ethiopian Farms to Your Family Table.</p>
+          <p className="footer__slogan">{t.footer.slogan}</p>
           <p className="footer__desc">
-            Premium edible oil crafted from carefully selected Ethiopian niger seeds —
-            pure, natural, and trusted by homes and businesses across Ethiopia.
+            {t.footer.description}
           </p>
         </div>
 
         {/* Nav links */}
         <nav className="footer__nav" aria-label="Footer navigation">
-          <h4 className="footer__col-title">Quick Links</h4>
+          <h4 className="footer__col-title">{t.footer.quickLinks}</h4>
           <ul className="footer__nav-list">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
@@ -55,7 +58,7 @@ export default function Footer() {
 
         {/* Contact info */}
         <div className="footer__contact-col">
-          <h4 className="footer__col-title">Contact</h4>
+          <h4 className="footer__col-title">{t.footer.contact}</h4>
           <ul className="footer__contact-list">
             {CONTACT_INFO.map((item) => {
               const isExternal = item.href.startsWith('http');
@@ -80,9 +83,9 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p className="footer__copy">© 2026 Ethio-Nug. All Rights Reserved.</p>
+          <p className="footer__copy">{t.footer.copyright}</p>
           <p className="footer__powered">
-            Powered by{' '}
+            {t.footer.powered}{' '}
             <a
               href="https://t.me/stackminds"
               className="footer__powered-link"
