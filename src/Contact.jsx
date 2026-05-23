@@ -22,7 +22,7 @@ const INFO_CARDS = [
   {
     id: 'telegram',
     icon: Send,
-    href: 'https://t.me/stackminds',
+    href: 'https://t.me/+251911979899',
   },
   {
     id: 'whatsapp',

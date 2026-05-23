@@ -312,7 +312,7 @@ const am = {
             location: {
             label: 'አድራሻችን',
             primary: 'አዲስ አበባ፣ ኢትዮጵያ',
-            secondary: '(ቀድመው ቀጠሮ በመያዝ መጥተው መጎብኘት ይችላሉ',
+            secondary: 'ቀድመው ቀጠሮ በመያዝ መጥተው መጎብኘት ይችላሉ',
             },
 
             telegram: {
