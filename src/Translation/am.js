@@ -303,7 +303,7 @@ const am = {
 
         cards: {
             phone: {
-            label: 'በስልክ መስመራችን ይደውሉልን',
+            label: 'በስልክ ይደውሉልን',
             primary: '+251 91 1979 899',
             secondary: '+251 98 2323 334',
             badge: 'ተመራጭ',
