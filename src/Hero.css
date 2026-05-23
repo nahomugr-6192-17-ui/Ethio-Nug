@@ -370,7 +370,7 @@
   }
 
   .lang--am .hero__headline {
-    font-size: clamp(2.5rem, 8vw, 3.2rem);
+    font-size: clamp(3.3rem, 8vw, 6.2rem);
   }
 
   .lang--am .hero__subheadline {
