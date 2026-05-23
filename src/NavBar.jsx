@@ -5,6 +5,7 @@ import './NavBar.css';
 import logo from "./assets/logo.png";
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 const logoVariants = {
   hidden:  { opacity: 0, x: -30 },
@@ -141,8 +142,10 @@ export default function NavBar({lang, setLang}) {
           >
             <img src= {logo} alt="logo" className='navbar__logo-icon' />
             <span className="navbar__logo-text">
-              <span className="navbar__logo-primary">{t.nav.name1}</span>
-              <span className="navbar__logo-accent"> {t.nav.name2}</span>
+              <LocalizedText lang={lang} type="heading">
+                <span className="navbar__logo-primary">{t.nav.name1}</span>
+                <span className="navbar__logo-accent"> {t.nav.name2}</span>
+              </LocalizedText>
             </span>
           </motion.a>
 
@@ -197,7 +200,9 @@ export default function NavBar({lang, setLang}) {
               }`}
               variants={linkVariants}
             >
-              {link.label}
+              <LocalizedText lang={lang} type="heading">
+                {link.label}
+              </LocalizedText>
               <span className="navbar__link-underline" aria-hidden="true" />
             </motion.a>
           ))}
@@ -219,7 +224,9 @@ export default function NavBar({lang, setLang}) {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
-            {t.nav.contact}
+            <LocalizedText lang={lang} type="heading">
+              {t.nav.contact}
+            </LocalizedText>
           </motion.a>
         </motion.div>
 
@@ -274,7 +281,7 @@ export default function NavBar({lang, setLang}) {
                 </motion.a>
               ))}
 
-              {/* Mobile lang + CTA */}
+              {/* CTA */}
               <motion.div
                 className="navbar__mobile-footer"
                 custom={navLinks.length}
@@ -282,9 +289,11 @@ export default function NavBar({lang, setLang}) {
                 initial="hidden"
                 animate="visible"
               >
-                <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={(e) => {handleMobileNavClick(e, '#contact');}}>
-                  {lang === 'am' ? 'ያግኙን' : 'Contact Us'}
-                </a>
+                  <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={(e) => {handleMobileNavClick(e, '#contact');}}>
+                    <LocalizedText lang={lang} type="heading">
+                      {lang === 'am' ? 'ያግኙን' : 'Contact Us'}
+                    </LocalizedText>
+                  </a>
               </motion.div>
             </nav>
           </motion.div>

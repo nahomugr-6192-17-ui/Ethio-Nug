@@ -7,6 +7,7 @@ import avatar3 from './assets/avatar3.png';
 import './Testimonials.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 const AUTO_DELAY   = 15000;
 const DESKTOP_COLS = 3;
@@ -34,8 +35,16 @@ function TCard({ item }) {
 
       <div className="tcard__top">
         <div className="tcard__name-tab">
-          <span className="tcard__name">{item.name}</span>
-          <span className="tcard__role">{item.role}</span>
+          <span className="tcard__name">
+            <LocalizedText lang={item.lang} type="heading">
+              {item.name}
+            </LocalizedText>
+          </span>
+          <span className="tcard__role">
+            <LocalizedText lang={item.lang} type="body">
+              {item.role}
+            </LocalizedText>
+          </span>
         </div>
         <div className="tcard__avatar-ring">
           <img src={item.avatar} alt={item.name} className="tcard__avatar" />
@@ -44,7 +53,11 @@ function TCard({ item }) {
 
       <Stars count={item.rating} />
 
-      <p className="tcard__body">{item.text}</p>
+      <p className="tcard__body">
+        <LocalizedText lang={item.lang} type="body">
+        {item.text}
+        </LocalizedText>
+      </p>
     </motion.article>
   );
 }
@@ -158,10 +171,20 @@ export default function Testimonials({ lang }) {
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="testimonials__label">{t.testimonials.label}</span>
-          <h2 className="testimonials__heading">{t.testimonials.heading}</h2>
+          <span className="testimonials__label">
+            <LocalizedText lang={lang} type="heading">
+              {t.testimonials.label}
+            </LocalizedText>
+          </span>
+          <h2 className="testimonials__heading">
+            <LocalizedText lang={lang} type="heading">
+              {t.testimonials.heading}
+            </LocalizedText>
+          </h2>
           <p className="testimonials__sub">
-            {t.testimonials.subheading}
+            <LocalizedText lang={lang} type="body">
+              {t.testimonials.subheading}
+            </LocalizedText>
           </p>
         </motion.div>
 

@@ -443,6 +443,54 @@
   margin-top: 0.5rem;
 }
 
+.lang--am .contact__label {
+  font-size: 0.9rem;
+}
+
+.lang--am .contact__heading {
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+}
+
+.lang--am .contact__sub {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+.lang--am .cform__title {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.lang--am .cform__lbl {
+  font-size: 0.78rem;
+}
+
+.lang--am .cform__input {
+  font-size: 0.9rem;
+}
+
+.lang--am .cform__rating-lbl {
+  font-size: 0.85rem;
+}
+
+.lang--am .cform__btn {
+  font-size: 1.1rem;
+}
+
+.lang--am .cinfo__label {
+  font-size: 0.95rem;
+}
+
+.lang--am .cinfo__primary {
+  font-size: 1rem;
+}
+
+.lang--am .cinfo__secondary {
+  font-size: 0.85rem;
+}
+
+.lang--am .cinfo__badge {
+  font-size: 0.7rem;
+}
+
 /* ── Responsive ──────────────────────────── */
 @media (max-width: 1024px) {
   .contact { padding-block: var(--space-20); }

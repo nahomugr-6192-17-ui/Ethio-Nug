@@ -13,8 +13,8 @@ const en = {
     },
 
     hero: {
-        headlineTop: "From Ethiopian Farms",
-        headlineAccent: "To Your Family Table",
+        headlineTop: "FROM ETHIOPIAN FARMS",
+        headlineAccent: "TO YOUR FAMILY TABLE",
 
         subheadline:
             "Premium edible oil made from carefully selected Ethiopian niger seeds, refined for purity, freshness, and rich natural taste.",
@@ -362,6 +362,8 @@ const en = {
     },
 
     footer: {
+        name1: "ETHIO ",
+        name2: "NUG",
         slogan: 'From Ethiopian Farms to Your Family Table.',
 
         description:
@@ -380,6 +382,9 @@ const en = {
             testimonials: 'Testimonials',
             contact: 'Contact Us',
         },
+        contactInfo: {
+            location: 'Addis Ababa, Ethiopia'
+        }
     },
 }
 

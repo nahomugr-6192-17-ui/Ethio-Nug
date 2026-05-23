@@ -115,7 +115,7 @@
 .hero__headline {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 2.87rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--color-white);
@@ -265,23 +265,23 @@
 }
 
 .lang--am .hero__headline {
-  font-size: clamp(1.6rem, 4vw, 3.8rem);
+  font-size: clamp(1.6rem, 4vw, 3.6rem);
 }
 
 .lang--am .hero__subheadline {
-  font-size: clamp(0.85rem, 1.5vw, 1.3rem);
+  font-size: clamp(0.85rem, 1.5vw, 0.93rem);
 }
 
 .lang--am .hero__btn{
-  font-size: 1.1rem;
+  font-size: 0.84rem;
 }
 
 .lang--am .hero__stat-value {
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.2rem);
 }
 
 .lang--am .hero__stat-label {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 /* ── RESPONSIVE — Tablet (≤ 1024px) ── */
@@ -370,16 +370,15 @@
   }
 
   .lang--am .hero__headline {
-    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    font-size: clamp(2.5rem, 8vw, 3.2rem);
   }
 
   .lang--am .hero__subheadline {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.85rem, 1.5vw, 1.2rem);
   }
 
   .lang--am .hero__btn{
-    font-size: 1.1rem;
-    padding: 8px 0px;
+    font-size: 0.85rem;
   }
 
   .lang--am .hero__stat-value {
@@ -387,7 +386,7 @@
   }
 
   .lang--am .hero__stat-label {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -398,6 +397,6 @@
   }
 
   .hero__headline {
-    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    font-size: clamp(1.6rem, 8vw, 2.6rem);
   }
 }

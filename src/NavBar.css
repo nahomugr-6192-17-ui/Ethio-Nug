@@ -280,15 +280,15 @@
 /* Amharic Fonts */
 
 .lang--am .navbar__logo-text {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .lang--am .navbar__link {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
 }
 
 .lang--am .navbar__cta {
-  font-size: 1.01rem;
+  font-size: 0.8rem;
 }
 
 /* ─────────────────────────────────────────────
@@ -357,10 +357,6 @@
     margin-left: -15px;
   }
 
-  .lang--am .navbar__mobile-links{
-    padding: var(--space-4) var(--space-5) var(--space-6);
-  }
-
   .lang--am .navbar__mobile-link {
     font-size: 1.1rem;
   }
@@ -398,6 +394,6 @@
   }
 
   .lang--am .navbar__logo-text {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
   }
 }

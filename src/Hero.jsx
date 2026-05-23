@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Leaf, Users, Star, Clock} from 'lucide-react';
 import './Hero.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 
 /* ── Animation variants ── */
@@ -84,15 +85,21 @@ export default function Hero({lang}) {
 
 
           {/* Headline */}
-          <motion.h1 className="hero__headline" variants={fadeUp}>
-            {t.hero.headlineTop}<br />
-            <span className="hero__headline-accent">{t.hero.headlineAccent}</span>
-          </motion.h1>
+            <motion.h1 className="hero__headline" variants={fadeUp}>
+              {t.hero.headlineTop}<br />
+              <span className="hero__headline-accent">
+                <LocalizedText lang={lang} type="heading">
+                  {t.hero.headlineAccent}
+                </LocalizedText>
+              </span>
+            </motion.h1>
 
           {/* Subheadline */}
-          <motion.p className="hero__subheadline" variants={fadeUp}>
-            {t.hero.subheadline}
-          </motion.p>
+            <motion.p className="hero__subheadline" variants={fadeUp}>
+              <LocalizedText lang={lang} type="body">
+                {t.hero.subheadline}
+              </LocalizedText>
+            </motion.p>
 
           {/* CTA Buttons */}
           <motion.div className="hero__ctas" variants={fadeUp}>
@@ -104,7 +111,11 @@ export default function Hero({lang}) {
               transition={{ type: 'spring', stiffness: 360, damping: 20 }}
             >
               <BookOpen size={17} strokeWidth={2} />
-              <span>{t.hero.discoverBtn}</span>
+                <span>
+                  <LocalizedText lang={lang} type="heading">
+                    {t.hero.discoverBtn}
+                  </LocalizedText>
+                </span>
             </motion.a>
 
             <motion.a
@@ -114,7 +125,11 @@ export default function Hero({lang}) {
               whileTap={{ scale: 0.96 }}
               transition={{ type: 'spring', stiffness: 360, damping: 20 }}
             >
-              <span>{t.hero.productsBtn}</span>
+                <span>
+                  <LocalizedText lang={lang} type="heading">
+                    {t.hero.productsBtn}
+                  </LocalizedText>
+                </span>
               <ArrowRight size={17} strokeWidth={2.5} className="hero__btn-arrow" />
             </motion.a>
           </motion.div>
@@ -130,10 +145,18 @@ export default function Hero({lang}) {
             ].map(({ icon, value, label }) => (
               <div className="hero__stat" key={label}>
                 <div className='hero__stat-top'>
-                  <span className="hero__stat-icon">{icon}</span>
-                  <span className="hero__stat-value">{value}</span>
+                    <span className="hero__stat-icon">{icon}</span>
+                    <span className="hero__stat-value">
+                      <LocalizedText lang={lang} type="heading">
+                        {value}
+                      </LocalizedText>
+                    </span>
                 </div>
-                <span className="hero__stat-label">{label}</span>
+                  <span className="hero__stat-label">
+                    <LocalizedText lang={lang} type="body">
+                      {label}
+                    </LocalizedText>
+                  </span>
               </div>
             ))}
           </motion.div>

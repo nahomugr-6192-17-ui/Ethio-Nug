@@ -11,6 +11,7 @@ import {
 import './Process.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 /* ─── Animation variants ────────────────────────────────────────── */
 const sectionVariants = {
@@ -210,16 +211,26 @@ export default function Process({ lang }) {
           animate={headerInView ? 'visible' : 'hidden'}
         >
           <motion.span className="process__label" variants={fadeUp}>
-            {t.process.label}
+            <LocalizedText lang={lang} type="heading">
+              {t.process.label}
+            </LocalizedText>
           </motion.span>
 
           <motion.h2 className="process__heading" variants={fadeUp}>
-            {t.process.headingTop}<br />
-            <span className="process__heading-accent">{t.process.headingAccent}</span>
+            <LocalizedText lang={lang} type="heading">
+              {t.process.headingTop}<br />
+            </LocalizedText>
+            <span className="process__heading-accent">
+              <LocalizedText lang={lang} type="heading">
+                {t.process.headingAccent}
+              </LocalizedText>
+            </span>
           </motion.h2>
 
           <motion.p className="process__subheading" variants={fadeUp}>
-            {t.process.subheading}
+            <LocalizedText lang={lang} type="body">
+              {t.process.subheading}
+            </LocalizedText>
           </motion.p>
         </motion.div>
 
@@ -245,15 +256,21 @@ export default function Process({ lang }) {
         >
           <motion.div className="process__story-card" variants={fadeUp}>
             <motion.span className="process__label process__label--center" variants={fadeUp}>
-              {t.process.commitmentLabel}
+              <LocalizedText lang={lang} type="heading">
+                {t.process.commitmentLabel}
+              </LocalizedText>
             </motion.span>
 
             <motion.h2 className="process__story-heading" variants={fadeUp}>
-              {t.process.commitmentHeading}
+              <LocalizedText lang={lang} type="heading">
+                {t.process.commitmentHeading}
+              </LocalizedText>
             </motion.h2>
 
             <motion.p className="process__story-text" variants={fadeUp}>
-              {t.process.commitmentText}
+              <LocalizedText lang={lang} type="body">
+                {t.process.commitmentText}
+              </LocalizedText>
             </motion.p>
           </motion.div>
         </motion.div>

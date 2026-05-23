@@ -6,6 +6,7 @@ import toast, {Toaster} from 'react-hot-toast';
 import './Contact.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 const INFO_CARDS = [
   {
@@ -200,10 +201,20 @@ const submit = async (e) => {
         {/* Header */}
         <motion.div ref={headerRef} className="contact__header"
           variants={stagger} initial="hidden" animate={headerInView ? 'visible' : 'hidden'}>
-          <motion.span className="contact__label" variants={fadeUp}>{t.contact.label}</motion.span>
-          <motion.h2 className="contact__heading" variants={fadeUp}>{t.contact.heading}</motion.h2>
+          <motion.span className="contact__label" variants={fadeUp}>
+            <LocalizedText lang={lang} type="label">
+              {t.contact.label}
+            </LocalizedText>
+          </motion.span>
+          <motion.h2 className="contact__heading" variants={fadeUp}>
+            <LocalizedText lang={lang} type="heading">
+              {t.contact.heading}
+            </LocalizedText>
+          </motion.h2>
           <motion.p className="contact__sub" variants={fadeUp}>
-            {t.contact.subheading}
+            <LocalizedText lang={lang} type="body">
+              {t.contact.subheading}
+            </LocalizedText>
           </motion.p>
         </motion.div>
 
@@ -223,7 +234,9 @@ const submit = async (e) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <h3 className="phone-modal__title">
-                  {t.contact.modal.title}
+                  <LocalizedText lang={lang} type="heading">
+                    {t.contact.modal.title}
+                  </LocalizedText>
                 </h3>
 
                 <a
@@ -244,7 +257,9 @@ const submit = async (e) => {
                   className="phone-modal__close"
                   onClick={() => setShowPhoneOptions(false)}
                 >
-                  {t.contact.modal.cancel}
+                  <LocalizedText lang={lang} type="button">
+                    {t.contact.modal.cancel}
+                  </LocalizedText>
                 </button>
               </motion.div>
             </div>
@@ -271,16 +286,28 @@ const submit = async (e) => {
             animate={rightInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}>
             <form className="cform" onSubmit={submit} noValidate>
-              <h3 className="cform__title">{t.contact.form.title}</h3>
+              <h3 className="cform__title">
+                <LocalizedText lang={lang} type="heading">
+                  {t.contact.form.title}
+                </LocalizedText>
+              </h3>
 
               <div className="cform__row">
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-name">{t.contact.form.fullName}</label>
+                  <label className="cform__lbl" htmlFor="cf-name">
+                    <LocalizedText lang={lang} type="label">
+                      {t.contact.form.fullName}
+                    </LocalizedText>
+                  </label>
                   <input id="cf-name" name="name" type="text" className="cform__input"
                     placeholder={t.contact.form.fullNamePlaceholder} value={form.name} onChange={set} required />
                 </div>
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-email">{t.contact.form.email}</label>
+                  <label className="cform__lbl" htmlFor="cf-email">
+                    <LocalizedText lang={lang} type="label">
+                      {t.contact.form.email}
+                    </LocalizedText>
+                  </label>
                   <input id="cf-email" name="email" type="email" className="cform__input"
                     placeholder={t.contact.form.emailPlaceholder} value={form.email} onChange={set} />
                 </div>
@@ -288,26 +315,42 @@ const submit = async (e) => {
 
               <div className="cform__row">
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-phone">{t.contact.form.phone}</label>
+                  <label className="cform__lbl" htmlFor="cf-phone">
+                    <LocalizedText lang={lang} type="label">
+                      {t.contact.form.phone}
+                    </LocalizedText>
+                  </label>
                   <input id="cf-phone" name="phone" type="tel" className="cform__input"
                     placeholder={t.contact.form.phonePlaceholder} value={form.phone} onChange={set} />
                 </div>
                 <div className="cform__field">
-                  <label className="cform__lbl" htmlFor="cf-pos">{t.contact.form.position}</label>
+                  <label className="cform__lbl" htmlFor="cf-pos">
+                    <LocalizedText lang={lang} type="label">
+                      {t.contact.form.position}
+                    </LocalizedText>
+                  </label>
                   <input id="cf-pos" name="position" type="text" className="cform__input"
                     placeholder={t.contact.form.positionPlaceholder} value={form.position} onChange={set} />
                 </div>
               </div>
 
               <div className="cform__field">
-                <label className="cform__lbl" htmlFor="cf-msg">{t.contact.form.message}</label>
+                <label className="cform__lbl" htmlFor="cf-msg">
+                  <LocalizedText lang={lang} type="label">
+                    {t.contact.form.message}
+                  </LocalizedText>
+                </label>
                 <textarea id="cf-msg" name="message" className="cform__input cform__textarea"
                   placeholder={t.contact.form.messagePlaceholder}
                   rows={4} value={form.message} onChange={set} required />
               </div>
 
               <div className="cform__rating-row">
-                <span className="cform__rating-lbl">{t.contact.form.rating}</span>
+                <span className="cform__rating-lbl">
+                  <LocalizedText lang={lang} type="label">
+                    {t.contact.form.rating}
+                  </LocalizedText>
+                </span>
                 <StarPicker value={rating} onChange={setRating} />
               </div>
 
@@ -315,7 +358,9 @@ const submit = async (e) => {
                 whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 340, damping: 18 }}
                 disabled={!form.name || !form.message || rating === 0 || sending}>
-                {sending ? 'Sending...' : 'Submit Feedback'}
+                <LocalizedText lang={lang} type="button">
+                </LocalizedText>
+                  {sending ? t.contact.form.sending : t.contact.form.submit}
               </motion.button>
             </form>
           </motion.div>

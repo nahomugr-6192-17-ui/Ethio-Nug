@@ -221,6 +221,34 @@
   background: var(--color-gold-300);
 }
 
+.lang--am .products__label {
+  font-size: 0.9rem;
+}
+
+.lang--am .products__heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.lang--am .products__subheading {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+.lang--am .products__size {
+  font-size: 1.1rem;
+}
+
+.lang--am .products__size-label {
+  font-size: 0.7rem;
+}
+
+.lang--am .products__price {
+  font-size: 1.1rem;
+}
+
+.lang--am .products__btn {
+  font-size: 0.795rem;
+}
+
 /* ── RESPONSIVE — Tablet (≤ 1024px) ───────── */
 @media (max-width: 1024px) {
   .products {

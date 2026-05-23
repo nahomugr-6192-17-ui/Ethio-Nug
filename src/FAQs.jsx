@@ -4,6 +4,7 @@ import { ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import './FAQs.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 const CONTACT_JSX = (
   <span className="faq__contact-links">
@@ -68,7 +69,9 @@ export default function FAQs({ lang }) {
 
   const CONTACT_JSX = (
     <span className="faq__contact-links">
-      {t.faqs.contactText}{' '}
+      <LocalizedText lang={lang} type="body">
+        {t.faqs.contactText}{' '}
+      </LocalizedText>
       
       <a href="tel:+251911979899" className="faq__link">
         <Phone size={13} strokeWidth={2}/>
@@ -159,13 +162,25 @@ export default function FAQs({ lang }) {
           initial="hidden"
           animate={headerInView ? 'visible' : 'hidden'}
         >
-          <motion.span className="faqs__label" variants={fadeUp}>{t.faqs.label}</motion.span>
+          <motion.span className="faqs__label" variants={fadeUp}>
+            <LocalizedText lang={lang} type="heading">
+              {t.faqs.label}
+            </LocalizedText>
+          </motion.span>
           <motion.h2  className="faqs__heading" variants={fadeUp}>
-            {t.faqs.headingTop}<br />
-            <span className="faqs__heading-accent">{t.faqs.headingAccent}</span>
+            <LocalizedText lang={lang} type="heading">
+              {t.faqs.headingTop}<br />
+            </LocalizedText>
+            <span className="faqs__heading-accent">
+              <LocalizedText lang={lang} type="heading">
+                {t.faqs.headingAccent}
+              </LocalizedText>
+            </span>
           </motion.h2>
           <motion.p className="faqs__sub" variants={fadeUp}>
-            {t.faqs.subheading}
+            <LocalizedText lang={lang} type="body">
+              {t.faqs.subheading}
+            </LocalizedText>
           </motion.p>
         </motion.div>
 

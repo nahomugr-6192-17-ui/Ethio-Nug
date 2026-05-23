@@ -6,6 +6,7 @@ import about2 from './assets/about2.jpeg';
 import './About.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
+import LocalizedText from './LocalizedText.jsx';
 
 const AUTO_DELAY = 24000;
 
@@ -150,9 +151,21 @@ export default function About({lang}) {
                 animate="center"
                 exit="exit"
               >
-                <span className="about__label">{slide.label}</span>
-                <h2 className="about__heading">{slide.heading}</h2>
-                <p className="about__body">{slide.body}</p>
+                <span className="about__label">
+                  <LocalizedText lang={lang} type="heading">
+                    {slide.label}
+                  </LocalizedText>
+                </span>
+                <h2 className="about__heading">
+                  <LocalizedText lang={lang} type="heading">
+                    {slide.heading}
+                  </LocalizedText>
+                </h2>
+                <p className="about__body">
+                  <LocalizedText lang={lang} type="body">
+                    {slide.body}
+                  </LocalizedText>
+                </p>
               </motion.div>
             </AnimatePresence>
           </div>
