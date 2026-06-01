@@ -231,7 +231,7 @@
 
 .process__step-num {
   font-family: var(--font-heading);
-  font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--color-gold-500);
@@ -242,7 +242,7 @@
 
 .process__card-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.4rem);
   font-weight: 700;
   color: var(--color-neutral-900);
   line-height: 1.2;
@@ -261,7 +261,7 @@
 /* Description */
 .process__card-desc {
   font-family: var(--font-body);
-  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   line-height: 1.7;
   color: var(--color-neutral-500);
   transition: color var(--transition-base);
