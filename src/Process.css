@@ -458,18 +458,6 @@
     margin-inline: unset;
   }
 
-  .process__step-num {
-    font-size: clamp(0.65rem, 2vw, 0.85rem);
-  }
-
-  .process__card-title {
-    font-size: clamp(1rem, 3vw, 1.3rem);
-  }
-
-  .process__card-desc {
-    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-  }
-
   .lang--am .process__story-heading {
     font-size: clamp(1.8rem, 5vw, 3rem);
   }
