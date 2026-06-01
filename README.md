@@ -1,16 +1,67 @@
-# React + Vite
+# Ethio-Nug 🌿
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Premium Ethiopian Niger Seed Oil Website built with React.
 
-Currently, two official plugins are available:
+Ethio-Nug is a modern bilingual (English + Amharic) web platform designed for showcasing high-quality Ethiopian edible oil products with a clean UI, smooth animations, and responsive user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌍 Bilingual support (English & Amharic)
+- 🎨 Custom Amharic typography using `kewti_components`
+- 📱 Fully responsive design
+- ⚡ Smooth animations with Framer Motion
+- 📦 Product showcase section
+- 🏭 Purification process section
+- 💬 Testimonials section
+- ❓ FAQ section
+- 📞 Contact & feedback form
+- 📧 Email integration using EmailJS
+- 🔔 Toast notifications
+- 🌙 Modern UI/UX design
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- React
+- Vite
+- Framer Motion
+- Lucide React
+- EmailJS
+- React Hot Toast
+- CSS3
+
+---
+
+## 🌐 Language Support
+
+The website supports:
+
+- English 🇬🇧
+- Amharic 🇪🇹
+
+Custom Amharic fonts are integrated using:
+
+- Menbere (body text)
+- Abinet (headings)
+
+through the `kewti_components` package.
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+│
+├── assets/
+├── Translation/
+│   ├── en.js
+│   └── am.js
+│
+├── components/
+├── LocalizedText.jsx
+├── App.jsx
+└── main.jsx
