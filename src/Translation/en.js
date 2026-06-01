@@ -262,7 +262,7 @@ const en = {
             {
             id: 2,
             name: "Bekele Haile",
-            role: "Restaurant Owner · Hawassa",
+            role: "Restaurant Owner · Addis Ababa",
             rating: 5,
             text:
                 "As a restaurant owner, quality matters above everything. Ethio-Nug delivers consistent purity and rich flavor every time. My customers compliment the food and I owe much of that to this oil.",
@@ -271,16 +271,16 @@ const en = {
             {
             id: 3,
             name: "Tigist Alemu",
-            role: "Head Chef · Dire Dawa",
+            role: "Head Chef · Addis Ababa",
             rating: 5,
             text:
-                "I have been using Ethio-Nug for over two years. The 6-step cleaning process really shows in the final product — clean, light, and full of natural flavor. Highly recommended for any professional kitchen.",
+                "I have been using Ethio-Nug for a while now. The 6-step cleaning process really shows in the final product — clean, light, and full of natural flavor. Highly recommended for any professional kitchen.",
             },
 
             {
             id: 4,
             name: "Dawit Mekonnen",
-            role: "Hotel Procurement · Bahir Dar",
+            role: "Hotel Procurement · Addis Ababa",
             rating: 5,
             text:
                 "We supply Ethio-Nug oil to all our hotel kitchens. Delivery is always on time, quality is consistently excellent, and the 20L bulk option is perfect for our volume. A truly trustworthy supplier.",
@@ -289,7 +289,7 @@ const en = {
             {
             id: 5,
             name: "Meron Girma",
-            role: "Food Business Owner · Jimma",
+            role: "Food Business Owner · Addis Ababa",
             rating: 5,
             text:
                 "Ethio-Nug proves that local can mean premium. The oil is clean, golden, and completely natural. Supporting an Ethiopian brand this committed to quality is something I am proud to do every day.",

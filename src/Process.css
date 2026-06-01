@@ -231,7 +231,7 @@
 
 .process__step-num {
   font-family: var(--font-heading);
-  font-size: 0.68rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--color-gold-500);
@@ -242,7 +242,7 @@
 
 .process__card-title {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.4rem);
   font-weight: 700;
   color: var(--color-neutral-900);
   line-height: 1.2;
@@ -261,7 +261,7 @@
 /* Description */
 .process__card-desc {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--color-neutral-500);
   transition: color var(--transition-base);
@@ -321,14 +321,14 @@
 
 .process__story-text {
   font-family: var(--font-body);
-  font-size: clamp(0.92rem, 1.3vw, 1rem);
+  font-size: clamp(0.92rem, 1.3vw, 1.1rem);
   line-height: 1.85;
   color: var(--color-neutral-500);
   max-width: 520px;
 }
 
 .lang--am .process__label {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.93rem);
 }
 
 .lang--am .process__heading{
@@ -340,15 +340,15 @@
 }
 
 .lang--am .process__step-num {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .lang--am .process__card-title {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
 }
 
 .lang--am .process__card-desc {
-  font-size: clamp(0.9rem, 1.5vw, 0.93rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .lang--am .process__story-heading {
