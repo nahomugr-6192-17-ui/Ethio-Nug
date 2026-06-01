@@ -261,7 +261,7 @@
 /* Description */
 .process__card-desc {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   line-height: 1.7;
   color: var(--color-neutral-500);
   transition: color var(--transition-base);
@@ -456,6 +456,18 @@
 
   .process__label--center {
     margin-inline: unset;
+  }
+
+  .process__step-num {
+    font-size: clamp(0.55rem, 2vw, 0.75rem);
+  }
+
+  .process__card-title {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .process__card-desc {
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   }
 
   .lang--am .process__story-heading {
