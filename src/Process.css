@@ -459,15 +459,15 @@
   }
 
   .process__step-num {
-    font-size: clamp(0.55rem, 2vw, 0.75rem);
+    font-size: clamp(0.65rem, 2vw, 0.85rem);
   }
 
   .process__card-title {
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(1rem, 3vw, 1.3rem);
   }
 
   .process__card-desc {
-    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
   }
 
   .lang--am .process__story-heading {
