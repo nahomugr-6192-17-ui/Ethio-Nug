@@ -330,7 +330,7 @@ const en = {
         },
 
         form: {
-            title: 'Share Your Feedback',
+            title: 'SHARE YOUR FEEDBACK',
 
             fullName: 'Full Name',
             email: 'Email',
