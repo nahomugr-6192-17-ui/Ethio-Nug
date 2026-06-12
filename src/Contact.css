@@ -123,6 +123,12 @@
   color: var(--color-neutral-900);
 }
 
+.cinfo:hover .cinfo__badge {
+  background: var(--color-neutral-900);
+  color: var(--color-gold-300);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
 /* Text */
 .cinfo__body {
   display: flex;

@@ -312,7 +312,7 @@ const en = {
 
             location: {
             label: 'Our Location',
-            primary: 'Addis Ababa, Ethiopia',
+            primary: 'St. Rufael, Gullele, Woreda 09, Addis Ababa, Ethiopia',
             secondary: 'Available for visits by appointment',
             },
 
@@ -383,7 +383,7 @@ const en = {
             contact: 'Contact Us',
         },
         contactInfo: {
-            location: 'Addis Ababa, Ethiopia'
+            location: 'St. Rufael, Gullele, Woreda 09, Addis Ababa, Ethiopia'
         }
     },
 }
