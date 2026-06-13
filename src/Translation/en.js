@@ -383,7 +383,7 @@ const en = {
             contact: 'Contact Us',
         },
         contactInfo: {
-            location: 'St. Rufael, Gullele, Woreda 09, Addis Ababa, Ethiopia'
+            location: 'St. Rufael, Gullele, Woreda 09,Addis Ababa, Ethiopia'
         }
     },
 }

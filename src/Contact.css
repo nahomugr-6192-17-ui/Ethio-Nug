@@ -169,7 +169,7 @@
   font-weight: 700;
   color: var(--color-neutral-900);
   transition: color var(--transition-base);
-  white-space: nowrap;
+  white-space: pre-line;
   overflow: hidden;
   text-overflow: ellipsis;
 }
