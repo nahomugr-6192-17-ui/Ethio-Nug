@@ -179,67 +179,84 @@ const en = {
         contactText:
             "You can reach us by phone or WhatsApp to place your order or ask questions.",
 
-        questions: [
-            {
-            id: 1,
-            q: "Is Ethio-Nug 100% pure Noug oil?",
-            a: "Yes. Ethio-Nug contains 100% pure cold-pressed Noug (niger seed) oil with absolutely no additives, preservatives, or blending with other oils. What you pour is exactly what nature provides.",
-            },
+        card: {
+            q1: "About Our Product",
 
-            {
-            id: 2,
-            q: "Where are your seeds sourced?",
-            a: "Our Noug seeds are sourced directly from trusted Ethiopian farmers in prime agricultural regions. We maintain close relationships with our farmers to ensure consistent seed quality from field to bottle.",
-            },
+            q2: "Order & Delivery",
+  
+            q3: "Storage & Care",
+       
+            q4: "Our Shop & Production",
 
-            {
-            id: 3,
-            q: "Does the oil have a strong odor?",
-            a: "Our 6-stage cleaning process significantly reduces the natural earthy scent of raw niger seeds. The result is a clean, mild oil that is pleasant and easy to cook with every day.",
-            },
+            q5: "Still have Questions?",
+            q6: "Can't find the answes you're looking for?\n We are here to help",
 
-            {
-            id: 4,
-            q: "Is Ethio-Nug cold-pressed?",
-            a: "Yes. We use traditional cold-pressing methods to extract the oil without heat or chemicals — preserving its natural nutrients, rich flavor, and full nutritional integrity.",
-            },
-
-            {
-            id: 5,
-            q: "How many cleaning stages does the oil go through?",
-            a: "Every batch passes through a strict 6-stage system: initial screening, fine sieving, brush cleaning, air separation, density sorting, and a final quality check — all before pressing begins.",
-            },
-
-            {
-            id: 6,
-            q: "How do you ensure consistent quality?",
-            a: "Each production batch is tested at multiple checkpoints. Only seeds that pass every stage continue to extraction.",
-            },
-
-            {
-            id: 7,
-            q: "What can I cook with Ethio-Nug oil?",
-            a: "Ethio-Nug is ideal for frying, sautéing, salad dressings, and traditional Ethiopian dishes.",
-            },
-
-            {
-            id: 8,
-            q: "What bottle sizes are available?",
-            a: "We offer five sizes to suit every need: ½ L, 1 L, 3 L, 5 L, and 20 L.",
-            },
-
-            {
-            id: 9,
-            q: "Do you deliver and accept bulk orders?",
-            a: "Yes. We deliver across Ethiopia and welcome bulk orders from businesses, restaurants, and institutions.",
-            },
-
-            {
-            id: 10,
-            q: "How do I place an order or get in touch?",
-            a: null,
-            },
-        ],
+        },
+        about: [
+    {
+      id: 1,
+      q: "Is Ethio-Nug 100% pure Noug oil?",
+      a: "Yes. Ethio-Nug contains 100% pure cold-pressed Noug (niger seed) oil with absolutely no additives, preservatives, or blending with other oils. What you pour is exactly what nature provides.",
+    },
+    {
+      id: 2,
+      q: "Where are your seeds sourced?",
+      a: "Our Noug seeds are sourced directly from trusted Ethiopian farmers in prime agricultural regions. We maintain close relationships with our farmers to ensure consistent seed quality from field to bottle.",
+    },
+    {
+      id: 3,
+      q: "Does the oil have a strong odor?",
+      a: "Our 6-stage cleaning process significantly reduces the natural earthy scent of raw niger seeds. The result is a clean, mild oil that is pleasant and easy to cook with every day.",
+    },
+    {
+      id: 7,
+      q: "What can I cook with Ethio-Nug oil?",
+      a: "Ethio-Nug is ideal for frying, sautéing, salad dressings, and traditional Ethiopian dishes.",
+    }
+  ],
+  production: [
+    {
+      id: 4,
+      q: "Is Ethio-Nug cold-pressed?",
+      a: "Yes. We use traditional cold-pressing methods to extract the oil without heat or chemicals — preserving its natural nutrients, rich flavor, and full nutritional integrity.",
+    },
+    {
+      id: 5,
+      q: "How many cleaning stages does the oil go through?",
+      a: "Every batch passes through a strict 6-stage system: initial screening, fine sieving, brush cleaning, air separation, density sorting, and a final quality check — all before pressing begins.",
+    },
+    {
+      id: 6,
+      q: "How do you ensure consistent quality?",
+      a: "Each production batch is tested at multiple checkpoints. Only seeds that pass every stage continue to extraction.",
+    }
+  ],
+  orders: [
+    {
+      id: 8,
+      q: "What bottle sizes are available?",
+      a: "We offer five sizes to suit every need: ½ L, 1 L, 3 L, 5 L, and 20 L.",
+    },
+    {
+      id: 9,
+      q: "Do you deliver and accept bulk orders?",
+      a: "Yes. We deliver across Ethiopia and welcome bulk orders from businesses, restaurants, and institutions.",
+    },
+    {
+      id: 10,
+      q: "How do I place an order or get in touch?",
+      a: "You can reach us through our contact form below or call our customer service line directly.",
+    }
+  ],
+  storage: [
+    // Note: Your current list didn't have specific storage questions, 
+    // but you can add one like this later:
+    {
+      id: 11,
+      q: "How should I store Ethio-Nug oil?",
+      a: "Store in a cool, dry place away from direct sunlight to maintain its freshness and nutritional value."
+    }
+  ]
     },
     testimonials: {
         label: "Testimonials",
