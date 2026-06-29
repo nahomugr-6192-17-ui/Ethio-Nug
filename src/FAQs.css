@@ -77,8 +77,8 @@
 .sidebar-btn {
   width: 100%;
   padding: 18px 24px;
-  border-radius: 15px;
-  border: 1.5px solid #eee;/* Default: White background */
+  border-radius: var(--radius-md);
+  border: 1.5px solid #eee; /* Default: White background */
   color: var(--color-gold-700); /* Default: Gold text */
   font-family: var(--font-heading);
   font-weight: 700;
@@ -89,6 +89,7 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  margin-bottom: 10px;
 }
 
 /* Hover effect for buttons */
@@ -117,15 +118,15 @@
 .sidebar-footer h4 {
   margin-top: 10px;
   font-family: var(--font-heading);
-  color:whitesmoke;
+  color: whitesmoke;
   font-size: 1.1rem;
 }
 .sidebar-footer p {
-  color:whitesmoke;
+  color: whitesmoke;
 }
-.sidebar-footer{
+.sidebar-footer {
   background-color: goldenrod;
-  border-radius: 30px;
+  border-radius: var(--radius-lg);
   padding: 10px 30px;
   margin-bottom: 40px;
 }
@@ -136,11 +137,11 @@
 }
 /* ── Questions List ──────────────────────── */
 .questions-list {
-   grid-area: questions;
+  grid-area: questions;
   display: flex;
   flex-direction: column;
   /* Push it to the right slightly */
-  padding-left: 20px; 
+  padding-left: 20px;
   width: 100%;
 }
 
@@ -151,7 +152,7 @@
   border-radius: 18px;
   overflow: hidden;
   transition: all 0.3s ease;
-  gap:200px;
+  gap: 200px;
   width: 100%;
 }
 
@@ -243,37 +244,35 @@
   width: 24px;
   border-radius: 10px;
 }
-p{
-   whiteSpace: pre-line;
-    fontSize: 0.85rem;
-     color: #666;
-    marginBottom: 15px; 
+p {
+  white-space: pre-line;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
 }
 
 .faq-container {
   display: grid;
   /* Column 1 is sidebar width, Column 2 is the rest */
-  grid-template-columns: 350px 1fr; 
+  grid-template-columns: 350px 1fr;
   /* Define where things go */
-  grid-template-areas: 
+  grid-template-areas:
     "sidebar questions"
-    "footer  questions"; 
+    "footer  questions";
   gap: 40px;
   align-items: start;
 }
 .sidebar-footer .sidebar-btn.active {
-  width: fit-content;    /* Makes it only as wide as the text */
-  padding: 80px 100px;      /* Smaller padding */
+  width: fit-content; /* Makes it only as wide as the text */
+  padding: 80px 100px; /* Smaller padding */
   font-size: 0.85rem;
   color: goldenrod;
-  background-color: whitesmoke;      /* Smaller font */
+  background-color: whitesmoke; /* Smaller font */
   margin-top: 5px;
   justify-content: center;
   align-items: center;
-  align-self: flex-start;  /* Keeps it aligned to the left */
+  align-self: flex-start; /* Keeps it aligned to the left */
 }
-
-
 
 /* --- Tablet/Mobile Layout (Below 1000px) --- */
 /* =============================================
@@ -283,15 +282,22 @@ p{
   .faq-container {
     display: grid;
     grid-template-columns: 350px 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "sidebar questions"
       "footer  questions";
     gap: 40px;
   }
 
-  .faq-sidebar { grid-area: sidebar; }
-  .questions-list-desktop {grid-area: questions; display: flex !important; }
-  .sidebar-footer { grid-area: footer; }
+  .faq-sidebar {
+    grid-area: sidebar;
+  }
+  .questions-list-desktop {
+    grid-area: questions;
+    display: flex !important;
+  }
+  .sidebar-footer {
+    grid-area: footer;
+  }
 
   /* HIDE the nested list on Desktop */
   .mobile-nested-list {
@@ -354,7 +360,7 @@ p{
     border-radius: 20px;
     border: 1px solid #eee;
     box-sizing: border-box;
-      background-color: goldenrod;
+    background-color: goldenrod;
   }
 }
 
@@ -380,7 +386,7 @@ p{
   .faq-container {
     padding-inline: 15px;
   }
-   .faqs__mobile-card {
+  .faqs__mobile-card {
     display: none;
   }
 }
