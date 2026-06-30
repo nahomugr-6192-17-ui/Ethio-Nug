@@ -179,14 +179,16 @@ const en = {
         contactText:
             "You can reach us by phone or WhatsApp to place your order or ask questions.",
 
+        browseByCategory: "Browse by Category",
+
         card: {
             q1: "About Our Product",
 
             q2: "Order & Delivery",
   
-            q3: "Storage & Care",
-       
-            q4: "Our Shop & Production",
+            q3: "Our Shop & Production",
+        
+            q4: "Storage & Care",
 
             q5: "Still have Questions?",
             q6: "Can't find the answes you're looking for?\n We are here to help",
@@ -195,13 +197,13 @@ const en = {
         about: [
     {
       id: 1,
-      q: "Is Ethio-Nug 100% pure Noug oil?",
-      a: "Yes. Ethio-Nug contains 100% pure cold-pressed Noug (niger seed) oil with absolutely no additives, preservatives, or blending with other oils. What you pour is exactly what nature provides.",
+      q: "Is Ethio Nug 100% pure Noug oil?",
+      a: "Absolutely. Our oil is made from 100% pure Ethiopian Niger (Noug) seed. No mixing, no additives, and no blending with cheaper oils. We maintain strict quality control to ensure every bottle meets our high standards of purity and freshness.",
     },
     {
       id: 2,
       q: "Where are your seeds sourced?",
-      a: "Our Noug seeds are sourced directly from trusted Ethiopian farmers in prime agricultural regions. We maintain close relationships with our farmers to ensure consistent seed quality from field to bottle.",
+      a: "Our Noug seeds are sourced directly from trusted Ethiopian Wollega farmers in prime agricultural regions. Every batch is carefully selected, cleaned and checked before production begins. Good oil starts with good seeds, and we take that responsibility seriously.",
     },
     {
       id: 3,
@@ -209,54 +211,100 @@ const en = {
       a: "Our 6-stage cleaning process significantly reduces the natural earthy scent of raw niger seeds. The result is a clean, mild oil that is pleasant and easy to cook with every day.",
     },
     {
+      id: 4,
+      q: "Do you use chemicals to reduce the odor?",
+      a: "No, we do not use any chemicals to reduce the odor. The lighter smell comes from proper seed selection, careful cleaning, and controlled processing.",
+    },
+    {
+      id: 5,
+      q: "Is Ethio Nug traditionally pressed?",  
+      a: "Yes, we use traditional cold-press methods to help preserve the natural flavour and nutrients of the oil. It takes more time, but good things usually do. We believe in quality over speed, and our customers agree.",
+    },
+    {
+      id: 6,
+      q: "Is Ethio Nug safe for children and babies?",
+      a: "Yes. Our oil is 100% pure and free from additives, chemicals, and contaminants. It is safe for all ages, including children and babies. We recommend consulting with a pediatrician for specific dietary advice for infants.",  
+    },
+    {
       id: 7,
-      q: "What can I cook with Ethio-Nug oil?",
-      a: "Ethio-Nug is ideal for frying, sautéing, salad dressings, and traditional Ethiopian dishes.",
+      q: "Does Ethio Nug filters the oil before bottling?",
+      a: "Yes. We use a slow traditional cloth filtering process to help keep the oil clean while preserving its natural character.",  
+    },
+    {
+      id: 8,
+      q: "How does Ethio Nug ensure consistent quality?",
+      a: "We have strict quality control measures at every stage of production. Each batch is tested for purity, flavor, and nutritional content. Only seeds that meet our high standards are used, ensuring consistent quality in every bottle.",  
+    },
+    {
+      id: 9,
+      q: "Why does Ethio Nug choose to use traditional methods instead of modern industrial techniques?",
+      a: "We believe that traditional methods, when done correctly, produce the best quality oil. Modern industrial techniques can compromise flavor and nutritional integrity. Our approach combines traditional craftsmanship with modern quality control to deliver the best of both worlds.",  
+    },
+    {
+      id: 10,
+      q: "Is your oil suitable for all types of cooking?",
+      a: "Yes. Ethio Nug is suitable for everyday home cooking, international dishes, and traditional Ethiopian meals. From fasting food to Sunday lunch, it is made to be part of daily cooking at home."  
     }
   ],
   production: [
     {
-      id: 4,
-      q: "Is Ethio-Nug cold-pressed?",
-      a: "Yes. We use traditional cold-pressing methods to extract the oil without heat or chemicals — preserving its natural nutrients, rich flavor, and full nutritional integrity.",
-    },
-    {
-      id: 5,
-      q: "How many cleaning stages does the oil go through?",
-      a: "Every batch passes through a strict 6-stage system: initial screening, fine sieving, brush cleaning, air separation, density sorting, and a final quality check — all before pressing begins.",
-    },
-    {
-      id: 6,
-      q: "How do you ensure consistent quality?",
-      a: "Each production batch is tested at multiple checkpoints. Only seeds that pass every stage continue to extraction.",
+      id: 11,
+      q: "How should I store Ethio-Nug oil?",
+      a: "Store in a cool, dry place away from direct sunlight to maintain its freshness and nutritional value."
     }
   ],
   orders: [
     {
-      id: 8,
+      id: 12,
       q: "What bottle sizes are available?",
       a: "We offer five sizes to suit every need: ½ L, 1 L, 3 L, 5 L, and 20 L.",
     },
     {
-      id: 9,
-      q: "Do you deliver and accept bulk orders?",
+      id: 13,
+      q: "Do you sell to restaurants and businesses?",
       a: "Yes. We deliver across Ethiopia and welcome bulk orders from businesses, restaurants, and institutions.",
     },
     {
-      id: 10,
+      id: 14,
       q: "How do I place an order or get in touch?",
       a: "You can reach us through our contact form below or call our customer service line directly.",
+    },
+    {
+      id: 15,
+        q: "What are the delivery options and timelines?",
+        a: "We offer reliable delivery across Ethiopia. Delivery times vary based on location and order size, but we strive to ensure timely service for all customers.",  
+    },
+    {
+      id: 16,
+      q: "Can I order from abroad or outside Ethiopia?",
+      a: "Yes. If you are outside Ethiopia and would like to place an order for family or friends, please contact us on WhatsApp."   
     }
   ],
   storage: [
     // Note: Your current list didn't have specific storage questions, 
     // but you can add one like this later:
     {
-      id: 11,
-      q: "How should I store Ethio-Nug oil?",
-      a: "Store in a cool, dry place away from direct sunlight to maintain its freshness and nutritional value."
+      id: 17,
+      q: "Where are you located and can I visit your production facility?",
+      a: "Our production site and shop are located in Gullele, near St. Rouphael Church, Addis Ababa. We welcome visitors by appointment to see our production process and learn more about our products."
+    },
+    {
+      id: 18,
+      q: "Can I bring my own container for oil refills?",
+      a: "For hygiene and quality control reasons, we only sell our oil in Ethio Nug containers sealed at our premises. This helps us maintain cleanliness, freshness, and consistent quality for every customer."  
+    },
+    {
+      id: 19,
+      q: "Who oversees the quality control of Ethio-Nug oil?",
+      a: "Aklil Fisseha, one of the founders, personally oversees production and quality checks. From seed cleaning to extraction and sealing, Aklil Fisseha is involved in every step."
+    },
+    {
+      id: 20,
+      q: "Why is Ethio-Nug oil more expensive and different than other oils?",
+        a: "Ethio-Nug oil is made from carefully selected Ethiopian niger seeds and goes through a strict 6-step cleaning process before traditional cold pressing. This ensures purity, freshness, and rich natural flavor. The higher price reflects the quality of the seeds, the labor-intensive process, and our commitment to delivering a premium product without additives or shortcuts."  
     }
-  ]
+  ],
+    contactBtn: "Contact Us",
     },
     testimonials: {
         label: "Testimonials",

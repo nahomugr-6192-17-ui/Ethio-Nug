@@ -22,7 +22,20 @@
 
 .faqs__label {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-600);
+  background: rgba(212, 160, 23, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 50px;
+  padding: 6px 20px;
+}
+
+.lang--am .faqs__label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.89rem, 1.5vw, 1rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -41,13 +54,29 @@
   color: #1a1a1a;
 }
 
+.lang--am .faqs__heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  color: #1a1a1a;
+}
+
 .faqs__heading-accent {
   color: var(--color-gold-500);
 }
 
 .faqs__sub {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: #666;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.lang--am .faqs__sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   color: #666;
   max-width: 500px;
   line-height: 1.6;
@@ -92,6 +121,10 @@
   margin-bottom: 10px;
 }
 
+.lang--am .sidebar-btn {
+  font-size: clamp(0.95rem, 1.2vw, 1.06rem);
+}
+
 /* Hover effect for buttons */
 .sidebar-btn:hover {
   border-color: var(--color-gold-300);
@@ -119,17 +152,36 @@
   margin-top: 10px;
   font-family: var(--font-heading);
   color: whitesmoke;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.2rem);
 }
+
+.lang--am .sidebar-footer h4 {
+  font-size: clamp(1.3rem, 1.5vw, 1.4rem);
+}
+
 .sidebar-footer p {
   color: whitesmoke;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  margin-top: 5px;
 }
+
+.lang--am .sidebar-footer p {
+  font-size: clamp(0.95rem, 1.2vw, 0.95rem);
+}
+
 .sidebar-footer {
   background-color: goldenrod;
   border-radius: var(--radius-lg);
   padding: 10px 30px;
   margin-bottom: 40px;
+  transition: all 0.3s ease;
 }
+
+.sidebar-footer:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(236, 173, 14, 0.552);
+}
+
 .questions-list > div > div {
   display: flex;
   flex-direction: column;
@@ -177,7 +229,7 @@
 
 .faq__question {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1rem);
   font-weight: 700;
   color: var(--color-gold-700);
   line-height: 1.4;
@@ -200,13 +252,64 @@
 
 .faq__answer {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
   line-height: 1.8;
   color: #555;
   padding-bottom: 25px;
 }
 
+.lang--am .faq-answer {
+  font-size: clamp(0.95rem, 1.2vw, 1rem);
+}
+
 /* ── Contact Links inside Answer ──────────── */
+.faq__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.faq__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+.faq__contact-item:hover {
+  color: var(--color-gold-500);
+}
+
+.faq__contact-btn {
+  width: fit-content;
+
+  margin-top: 8px;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: var(--color-neutral-900);
+
+  color: white;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.faq__contact-btn:hover {
+  background: var(--color-gold-500);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 160, 23, 0.2);
+}
+
 .faq__contact-links {
   display: block;
   margin-top: 5px;
@@ -347,9 +450,10 @@ p {
 /* Shared Button Logic */
 .small-btn {
   width: fit-content !important;
-  padding: 10px 30px !important;
+  padding: 10px 40px !important;
   justify-content: center !important;
   text-decoration: none;
+  margin-left: 15px;
 }
 /* Optional: Ensure the footer (Contact Us) looks good on mobile */
 @media (max-width: 1000px) {
@@ -361,6 +465,11 @@ p {
     border: 1px solid #eee;
     box-sizing: border-box;
     background-color: goldenrod;
+  }
+
+  .sidebar-footer h4,
+  .sidebar-footer p {
+    margin-left: 15px;
   }
 }
 
@@ -375,7 +484,7 @@ p {
   }
   .faq-sidebar {
     padding-inline: 0; /* Remove horizontal padding from sidebar itself, let container handle it */
-  }
+  }  
 }
 
 /* Adjustments for even smaller phones */
