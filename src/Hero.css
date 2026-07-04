@@ -216,6 +216,7 @@
     background    var(--transition-base),
     box-shadow    var(--transition-base),
     transform     var(--transition-base);
+  cursor: pointer;
 }
 
 .hero__stat:hover {

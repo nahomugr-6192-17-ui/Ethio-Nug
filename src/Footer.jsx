@@ -136,7 +136,7 @@ export default function Footer({ lang }) {
             </LocalizedText>
             {' '}
             <a
-              href="https://t.me/stackminds"
+              href="https://ahadu-hub-temporal.vercel.app"
               className="footer__powered-link"
               target="_blank"
               rel="noopener noreferrer"
