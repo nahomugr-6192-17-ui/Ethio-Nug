@@ -16,29 +16,29 @@ const en = {
     headlineAccent: "TO YOUR FAMILY TABLE",
 
     subheadline:
-      "Premium edible oil made from carefully selected Ethiopian niger seeds, refined for purity, freshness, and rich natural taste.",
+      "Premium Ethiopian Niger Seed Oil. Extracted from carefully selected seeds, then cold-pressed and filtered to preserve ultimate purity, peak freshness, and a rich, natural taste.",
 
     discoverBtn: "Discover Our Story",
     productsBtn: "View Products",
 
     stats: {
       pureOil: {
-        value: "100% PURE NIGER OIL",
+        value: "100% PURE NUG OIL",
         label: "Made from Carefully Selected Ethiopian Niger Seed.",
       },
 
       purification: {
-        value: "6-Step Purification",
+        value: "6-SETP PURIFICATION",
         label: "Advanced Cleaning and Refining for Maximum Purity.",
       },
 
       fresh: {
-        value: "Farm Fresh Quality",
+        value: "FARM FRESH QUALITY",
         label: "Direct Sourced from Trusted Ethiopian Farmers.",
       },
 
       delivery: {
-        value: "Fast & Reliable Delivery",
+        value: "FAST & RELIABLE DELIVERY",
         label: "Safe Packaging and Timely Delivery for Every Order.",
       },
     },
@@ -51,7 +51,7 @@ const en = {
     headingAccent: "clean seeds.",
 
     subheading:
-      "Ethio-Nug selects only the finest Noug seeds, taking them through a strict 6-stage cleaning system before traditional cold pressing — preserving purity, natural flavor, and nutritional integrity. No additives. No shortcuts.",
+      "Ethio-Nug selects only the finest Nug seeds, taking them through a strict 6-stage cleaning system before traditional cold pressing — preserving purity, natural flavor, and nutritional integrity. No additives. No chemicals. No preservatives. No shortcuts",
 
     steps: {
       screening: {
@@ -96,7 +96,7 @@ const en = {
     commitmentHeading: "Why We Do It",
 
     commitmentText:
-      "Many oils today are diluted or blended with cheaper ingredients. Ethio-Nug remains committed to purity, honesty, and traditional craftsmanship — delivering authentic Noug oil you can trust, every single time.",
+      "Many oils today are diluted or blended with cheaper ingredients. Ethio-Nug remains committed to purity, honesty, and traditional craftsmanship — delivering authentic Nug oil you can trust, every single time.",
   },
   products: {
     label: "Our Available Products",
@@ -160,7 +160,7 @@ const en = {
 
       heading: "TRUSTED PURITY YOU CAN TASTE",
 
-      body: "Ethio-Nug delivers premium edible oil crafted from high-quality Ethiopian niger seeds. Through modern refining methods and strict quality control, we ensure every bottle provides exceptional purity, freshness, and rich flavor trusted by families, restaurants, and businesses across Ethiopia.",
+      body: "Ethio-Nug delivers premium edible oil crafted from high-quality Ethiopian niger seeds. Through modern seed cleaning, filtering, and strict quality control, we ensure every bottle provides exceptional purity, freshness, and rich flavor trusted by families, restaurants, and businesses across Ethiopia.",
     },
   },
   faqs: {
@@ -193,13 +193,13 @@ const en = {
     about: [
       {
         id: 1,
-        q: "Is Ethio Nug 100% pure Noug oil?",
-        a: "Absolutely. Our oil is made from 100% pure Ethiopian Niger (Noug) seed. No mixing, no additives, and no blending with cheaper oils. We maintain strict quality control to ensure every bottle meets our high standards of purity and freshness.",
+        q: "Is Ethio Nug 100% pure Nug oil?",
+        a: "Absolutely. Our oil is made from 100% pure Ethiopian Niger (Nug) seed. No mixing, no additives, and no blending with cheaper oils. We maintain strict quality control to ensure every bottle meets our high standards of purity and freshness.",
       },
       {
         id: 2,
         q: "Where are your seeds sourced?",
-        a: "Our Noug seeds are sourced directly from trusted Ethiopian Wollega farmers in prime agricultural regions. Every batch is carefully selected, cleaned and checked before production begins. Good oil starts with good seeds, and we take that responsibility seriously.",
+        a: "Our Nug seeds are sourced directly from trusted Ethiopian Wollega farmers in prime agricultural regions. Every batch is carefully selected, cleaned and checked before production begins. Good oil starts with good seeds, and we take that responsibility seriously.",
       },
       {
         id: 3,

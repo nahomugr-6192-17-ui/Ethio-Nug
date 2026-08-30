@@ -1,11 +1,13 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, BookOpen, Leaf, Users, Star, Clock} from 'lucide-react';
-import './Hero.css';
-import en from './Translation/en.js';
-import am from './Translation/am.js';
-import LocalizedText from './LocalizedText.jsx';
-
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, BookOpen } from "lucide-react";
+import { FaSeedling, FaFilter } from "react-icons/fa";
+import { PiFarmFill } from "react-icons/pi";
+import { TbTruckDelivery } from "react-icons/tb";
+import "./Hero.css";
+import en from "./Translation/en.js";
+import am from "./Translation/am.js";
+import LocalizedText from "./LocalizedText.jsx";
 
 /* ── Animation variants ── */
 const containerVariants = {
@@ -16,7 +18,7 @@ const containerVariants = {
 };
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
@@ -24,7 +26,7 @@ const fadeUp = {
   },
 };
 
-const fadeRight = {
+/*const fadeRight = {
   hidden:  { opacity: 0, x: 60 },
   visible: {
     opacity: 1,
@@ -42,17 +44,17 @@ const badgeVariant = {
     transition: { duration: 0.55, ease: [0.34, 1.56, 0.64, 1] },
   },
 };
-
-export default function Hero({lang}) {
+*/
+export default function Hero({ lang }) {
   const sectionRef = useRef(null);
-  const t = lang === 'am' ? am:en;
+  const t = lang === "am" ? am : en;
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
 
   /* Parallax: background moves slower than the scroll */
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
   return (
     <section
@@ -62,19 +64,15 @@ export default function Hero({lang}) {
       aria-label="Hero section"
     >
       {/* ── Background image with parallax ── */}
-      <motion.div
-        className="hero__bg"
-        style={{ y: bgY }}
-      />
+      <motion.div className="hero__bg" style={{ y: bgY }} />
 
       {/* ── Cinematic overlays ── */}
-      <div className="hero__overlay hero__overlay--main"   aria-hidden="true" />
+      <div className="hero__overlay hero__overlay--main" aria-hidden="true" />
       <div className="hero__overlay hero__overlay--bottom" aria-hidden="true" />
-      <div className="hero__overlay hero__overlay--top"    aria-hidden="true" />
+      <div className="hero__overlay hero__overlay--top" aria-hidden="true" />
 
       {/* ── Content ── */}
       <div className="container hero__container">
-
         {/* LEFT — Text Content */}
         <motion.div
           className="hero__content"
@@ -82,24 +80,23 @@ export default function Hero({lang}) {
           initial="hidden"
           animate="visible"
         >
-
-
           {/* Headline */}
-            <motion.h1 className="hero__headline" variants={fadeUp}>
-              {t.hero.headlineTop}<br />
-              <span className="hero__headline-accent">
-                <LocalizedText lang={lang} type="heading">
-                  {t.hero.headlineAccent}
-                </LocalizedText>
-              </span>
-            </motion.h1>
+          <motion.h1 className="hero__headline" variants={fadeUp}>
+            {t.hero.headlineTop}
+            <br />
+            <span className="hero__headline-accent">
+              <LocalizedText lang={lang} type="heading">
+                {t.hero.headlineAccent}
+              </LocalizedText>
+            </span>
+          </motion.h1>
 
           {/* Subheadline */}
-            <motion.p className="hero__subheadline" variants={fadeUp}>
-              <LocalizedText lang={lang} type="body">
-                {t.hero.subheadline}
-              </LocalizedText>
-            </motion.p>
+          <motion.p className="hero__subheadline" variants={fadeUp}>
+            <LocalizedText lang={lang} type="body">
+              {t.hero.subheadline}
+            </LocalizedText>
+          </motion.p>
 
           {/* CTA Buttons */}
           <motion.div className="hero__ctas" variants={fadeUp}>
@@ -108,14 +105,14 @@ export default function Hero({lang}) {
               className="hero__btn hero__btn--primary"
               whileHover={{ scale: 1.045, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 360, damping: 20 }}
+              transition={{ type: "spring", stiffness: 360, damping: 20 }}
             >
               <BookOpen size={17} strokeWidth={2} />
-                <span>
-                  <LocalizedText lang={lang} type="heading">
-                    {t.hero.discoverBtn}
-                  </LocalizedText>
-                </span>
+              <span>
+                <LocalizedText lang={lang} type="heading">
+                  {t.hero.discoverBtn}
+                </LocalizedText>
+              </span>
             </motion.a>
 
             <motion.a
@@ -123,48 +120,65 @@ export default function Hero({lang}) {
               className="hero__btn hero__btn--secondary"
               whileHover={{ scale: 1.045, x: 4 }}
               whileTap={{ scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 360, damping: 20 }}
+              transition={{ type: "spring", stiffness: 360, damping: 20 }}
             >
-                <span>
-                  <LocalizedText lang={lang} type="heading">
-                    {t.hero.productsBtn}
-                  </LocalizedText>
-                </span>
-              <ArrowRight size={17} strokeWidth={2.5} className="hero__btn-arrow" />
+              <span>
+                <LocalizedText lang={lang} type="heading">
+                  {t.hero.productsBtn}
+                </LocalizedText>
+              </span>
+              <ArrowRight
+                size={17}
+                strokeWidth={2.5}
+                className="hero__btn-arrow"
+              />
             </motion.a>
           </motion.div>
 
           {/* Trust stats */}
           <motion.div className="hero__stats" variants={fadeUp}>
             {[
-              { icon: <Leaf size={24} />, value: t.hero.stats.pureOil.value, label: t.hero.stats.pureOil.label },
-              { icon: <Star size={24} />, value: t.hero.stats.purification.value, label: t.hero.stats.purification.label },
-              { icon: <Clock size={24} />, value: t.hero.stats.fresh.value, label: t.hero.stats.fresh.label },
+              {
+                icon: <FaSeedling size={24} />,
+                value: t.hero.stats.pureOil.value,
+                label: t.hero.stats.pureOil.label,
+              },
+              {
+                icon: <FaFilter size={18} />,
+                value: t.hero.stats.purification.value,
+                label: t.hero.stats.purification.label,
+              },
+              {
+                icon: <PiFarmFill size={24} />,
+                value: t.hero.stats.fresh.value,
+                label: t.hero.stats.fresh.label,
+              },
 
-              { icon: <Users size={24} />, value: t.hero.stats.delivery.value, label: t.hero.stats.delivery.label },
+              {
+                icon: <TbTruckDelivery size={24} />,
+                value: t.hero.stats.delivery.value,
+                label: t.hero.stats.delivery.label,
+              },
             ].map(({ icon, value, label }) => (
               <div className="hero__stat" key={label}>
-                <div className='hero__stat-top'>
-                    <span className="hero__stat-icon">{icon}</span>
-                    <span className="hero__stat-value">
-                      <LocalizedText lang={lang} type="heading">
-                        {value}
-                      </LocalizedText>
-                    </span>
-                </div>
-                  <span className="hero__stat-label">
-                    <LocalizedText lang={lang} type="body">
-                      {label}
+                <div className="hero__stat-top">
+                  <span className="hero__stat-icon">{icon}</span>
+                  <span className="hero__stat-value">
+                    <LocalizedText lang={lang} type="heading">
+                      {value}
                     </LocalizedText>
                   </span>
+                </div>
+                <span className="hero__stat-label">
+                  <LocalizedText lang={lang} type="body">
+                    {label}
+                  </LocalizedText>
+                </span>
               </div>
             ))}
           </motion.div>
         </motion.div>
-
-      
       </div>
-
     </section>
   );
 }

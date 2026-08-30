@@ -2,7 +2,7 @@
    ETHIO-NUG — GLOBAL DESIGN SYSTEM
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Righteous:wght@400;500;600;700&display=swap');
 
 /* ---- CSS CUSTOM PROPERTIES ---- */
 :root {
@@ -40,8 +40,8 @@
   --color-black: #000000;
 
   /* Typography */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body:    'Open Sans', 'Menbere',sans-serif;
+  --font-heading: 'Righteous', sans-serif;
+  --font-body:    'Nunito', 'Menbere',sans-serif;
 
   /* Spacing */
   --space-1:  0.25rem;

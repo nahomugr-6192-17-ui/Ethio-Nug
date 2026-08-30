@@ -15,7 +15,7 @@
 .hero__bg {
   position: absolute;
   inset: -10% 0 -10% 0;
-  background-image: url('./assets/home_bg.webp');
+  background-image: url("./assets/home_bg.webp");
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -35,17 +35,13 @@
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.40) 55%,
+    rgba(0, 0, 0, 0.4) 55%,
     rgba(0, 0, 0, 0.12) 100%
   );
 }
 
 .hero__overlay--bottom {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.55) 0%,
-    transparent 40%
-  );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 40%);
 }
 
 .hero__overlay--top {
@@ -67,6 +63,8 @@
   padding-top: 96px;
   padding-bottom: var(--space-20);
   min-height: 100svh;
+  margin: 0 80px;
+  margin-top: 10px;
 }
 
 /* ── LEFT: Text content ── */
@@ -74,8 +72,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
-  width: 100%;
-  max-width: 680px;
+  width: 150%;
 }
 
 /* Badge */
@@ -107,19 +104,27 @@
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.7); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.7);
+  }
 }
 
 /* Headline */
 .hero__headline {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(1.8rem, 4vw, 2.87rem);
+  font-size: clamp(3.8rem, 4vw, 4rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--color-white);
-  text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  width: 100%;
 }
 
 .hero__headline-accent {
@@ -131,10 +136,11 @@
 .hero__subheadline {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: clamp(0.9rem, 1.5vw, 1.12rem);
+  font-size: clamp(0.8rem, 1.2vw, 1.05rem);
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.78);
   max-width: 540px;
+  margin-bottom: 5px;
 }
 
 /* CTA group */
@@ -181,8 +187,8 @@
 
 .hero__btn--secondary:hover {
   background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(212,160,23,0.6);
-  box-shadow: 0 4px 16px rgba(212,160,23,0.2);
+  border-color: rgba(212, 160, 23, 0.6);
+  box-shadow: 0 4px 16px rgba(212, 160, 23, 0.2);
 }
 
 .hero__btn-arrow {
@@ -199,28 +205,29 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   padding-top: var(--space-2);
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  width: 650px;
 }
 
 .hero__stat {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  border: 2px solid rgba(255,255,255,0.15);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-lg);
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   transition:
     border-color var(--transition-base),
-    background    var(--transition-base),
-    box-shadow    var(--transition-base),
-    transform     var(--transition-base);
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   cursor: pointer;
 }
 
 .hero__stat:hover {
-  border-color: rgba(212,160,23,0.35);
+  border-color: rgba(212, 160, 23, 0.35);
   background: var(--color-gold-400);
   box-shadow: 0 8px 28px rgba(212, 160, 23, 0.45);
   transform: scale(1.05);
@@ -242,14 +249,16 @@
 
 .hero__stat-label {
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.6);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.03em;
   margin-left: 24px;
   line-height: 1.4;
 }
 
-.hero__stat-icon { color: var(--color-gold-400); }
+.hero__stat-icon {
+  color: var(--color-gold-400);
+}
 
 .hero__stat:hover .hero__stat-icon,
 .hero__stat:hover .hero__stat-value,
@@ -273,7 +282,7 @@
   font-size: clamp(0.85rem, 1.5vw, 0.93rem);
 }
 
-.lang--am .hero__btn{
+.lang--am .hero__btn {
   font-size: 0.84rem;
 }
 
@@ -315,8 +324,8 @@
   .hero__overlay--main {
     background: linear-gradient(
       180deg,
-      rgba(0,0,0,0.5) 0%,
-      rgba(0,0,0,0.6) 100%
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.6) 100%
     );
   }
 
@@ -378,7 +387,7 @@
     font-size: clamp(0.85rem, 1.5vw, 1.2rem);
   }
 
-  .lang--am .hero__btn{
+  .lang--am .hero__btn {
     font-size: 0.85rem;
   }
 
