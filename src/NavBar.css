@@ -301,6 +301,7 @@
   .navbar__link {
     font-size: 0.74rem;
     padding: var(--space-2) 8px;
+
   }
 
   .navbar__lang-toggle {
@@ -347,6 +348,7 @@
 
   .navbar__inner {
     height: 64px;
+    margin: 0;
   }
 
   .navbar__logo-icon {
