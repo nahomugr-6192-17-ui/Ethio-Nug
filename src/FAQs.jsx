@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { ChevronRight, Phone, MessageCircle } from "lucide-react";
+import { ChevronRight, Phone, MapPin } from "lucide-react";
 import "./FAQs.css";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";

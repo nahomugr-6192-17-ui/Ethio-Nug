@@ -46,9 +46,9 @@ const en = {
   process: {
     label: "Our Process",
 
-    headingTop: "Pure oil starts with",
+    headingTop: "PURE OIL STARTS WITH",
 
-    headingAccent: "clean seeds.",
+    headingAccent: "CLEAN SEEDS.",
 
     subheading:
       "Ethio-Nug selects only the finest Nug seeds, taking them through a strict 6-stage cleaning system before traditional cold pressing — preserving purity, natural flavor, and nutritional integrity. No additives. No chemicals. No preservatives. No shortcuts",
