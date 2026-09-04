@@ -55,7 +55,7 @@
 
 /* Section heading */
 .process__heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.12;
@@ -230,7 +230,7 @@
 }
 
 .process__step-num {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -241,7 +241,7 @@
 }
 
 .process__card-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 700;
   color: var(--color-neutral-900);
@@ -311,7 +311,7 @@
 }
 
 .process__story-heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-weight: 800;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   letter-spacing: -0.02em;

@@ -37,7 +37,12 @@
   justify-content: space-between;
   height: 72px;
   gap: var(--space-4);
-  margin: 0 80px;
+}
+
+.navbar__inner.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 0px;
 }
 
 /* ── Logo container ── */
@@ -46,6 +51,7 @@
   align-items: center;
   gap: var(--space-2);
   flex-shrink: 0;
+  margin-right: 40px;
 }
 
 .navbar__logo {
@@ -58,23 +64,35 @@
 .navbar__logo-icon {
   width: 90px;
   flex-shrink: 0;
-  filter: drop-shadow(0 2px 6px rgba(212,160,23,0.4));
+  filter: drop-shadow(0 2px 6px rgba(212, 160, 23, 0.4));
   transition: filter var(--transition-base);
 }
 
 .navbar__logo-text {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.15rem;
+  font-family: var(--font-logo);
+  font-weight: 900;
+  font-size: 1.35rem;
+  margin-left: -4px;
   letter-spacing: 0.04em;
   line-height: 1;
   white-space: nowrap;
 }
 
-.navbar__logo-primary { color: var(--color-white); }
-.navbar__logo-accent  { color: var(--color-gold-500); }
+.navbar__logo-primary {
+  color: var(--color-white);
+}
+.navbar__logo-accent {
+  color: var(--color-gold-500);
+}
 
 /* ── Desktop nav links ── */
+.navbar__links__container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-left: 00px;
+}
+
 .navbar__links {
   display: flex;
   align-items: center;
@@ -86,8 +104,8 @@
 
 .navbar__link {
   position: relative;
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-family: var(--font-subheading);
+  font-size: 0.81rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -139,11 +157,11 @@
   align-items: center;
   width: 100px;
   padding: 4px;
-  border-radius: var(--radius-full);
-  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -153,13 +171,17 @@
   top: 4px;
   bottom: 4px;
   width: calc(50% - 4px);
-  border-radius: var(--radius-full);
+  border-radius: 6px;
   background: var(--color-gold-400);
   transition: left 0.3s ease;
 }
 
-.navbar__lang-slider.left  { left: 4px; }
-.navbar__lang-slider.right { left: calc(50%); }
+.navbar__lang-slider.left {
+  left: 4px;
+}
+.navbar__lang-slider.right {
+  left: calc(50%);
+}
 
 .navbar__lang-option {
   position: relative;
@@ -171,32 +193,36 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.navbar__lang-option.active { color: var(--color-white); }
-.navbar__lang-option:hover  { color: var(--color-white); }
+.navbar__lang-option.active {
+  color: var(--color-white);
+}
+.navbar__lang-option:hover {
+  color: var(--color-white);
+}
 
 /* ── CTA Button ── */
 .navbar__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-neutral-900);
   background: var(--color-gold-400);
-  border-radius: var(--radius-full);
+  border-radius: 10px;
   padding: 10px 20px;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 4px 18px rgba(212,160,23,0.4);
+  box-shadow: 0 4px 18px rgba(212, 160, 23, 0.4);
   transition:
     transform var(--transition-spring),
     box-shadow var(--transition-base);
@@ -204,10 +230,12 @@
 
 .navbar__cta:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 8px 28px rgba(212,160,23,0.55);
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.55);
 }
 
-.navbar__cta:active { transform: scale(0.97); }
+.navbar__cta:active {
+  transform: scale(0.97);
+}
 
 /* ── Hamburger (mobile only) ── */
 .navbar__hamburger {
@@ -215,17 +243,19 @@
   align-items: center;
   justify-content: center;
   color: var(--color-white);
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   padding: 8px;
   flex-shrink: 0;
-  transition: background var(--transition-base), border-color var(--transition-base);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .navbar__hamburger:hover {
-  background: rgba(212,160,23,0.15);
-  border-color: rgba(212,160,23,0.35);
+  background: rgba(212, 160, 23, 0.15);
+  border-color: rgba(212, 160, 23, 0.35);
 }
 
 /* ── Mobile Menu ── */
@@ -233,7 +263,7 @@
   background: rgba(10, 8, 3, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(212,160,23,0.15);
+  border-top: 1px solid rgba(212, 160, 23, 0.15);
   overflow: hidden;
 }
 
@@ -250,11 +280,13 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   padding: var(--space-3) 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
-  transition: color var(--transition-base), padding-left var(--transition-base);
+  transition:
+    color var(--transition-base),
+    padding-left var(--transition-base);
 }
 
 .navbar__mobile-link:hover {
@@ -270,7 +302,9 @@
   flex-wrap: wrap;
 }
 
-.navbar__lang-btn--mobile { display: flex; }
+.navbar__lang-btn--mobile {
+  display: flex;
+}
 
 .navbar__cta--mobile {
   flex: 1;
@@ -301,7 +335,6 @@
   .navbar__link {
     font-size: 0.74rem;
     padding: var(--space-2) 8px;
-
   }
 
   .navbar__lang-toggle {
@@ -347,8 +380,9 @@
   }
 
   .navbar__inner {
-    height: 64px;
-    margin: 0;
+    max-width: var(--container-max);
+    margin-inline: 10px;
+    padding: 0 190px;
   }
 
   .navbar__logo-icon {

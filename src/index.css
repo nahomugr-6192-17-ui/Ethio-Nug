@@ -2,7 +2,8 @@
    ETHIO-NUG — GLOBAL DESIGN SYSTEM
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
 
 /* ---- CSS CUSTOM PROPERTIES ---- */
 :root {
@@ -41,8 +42,9 @@
 
   /* Typography */
   --font-heading: 'Ubuntu', sans-serif;
-  --font-body:    'Montserrat', 'Menbere',sans-serif;
-  --font-subheading: 'Sora', sans-serif;
+  --font-body:    'DM Sans', 'Menbere',sans-serif;
+  --font-subheading: 'Montserrat', sans-serif;
+  --font-logo: 'Montserrat', sans-serif;
 
   /* Spacing */
   --space-1:  0.25rem;

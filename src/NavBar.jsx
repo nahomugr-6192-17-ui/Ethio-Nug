@@ -1,32 +1,40 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Globe } from 'lucide-react';
-import './NavBar.css';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import "./NavBar.css";
 import logo from "./assets/logo.png";
-import en from './Translation/en.js';
-import am from './Translation/am.js';
-import LocalizedText from './LocalizedText.jsx';
+import en from "./Translation/en.js";
+import am from "./Translation/am.js";
+import LocalizedText from "./LocalizedText.jsx";
 
 const logoVariants = {
-  hidden:  { opacity: 0, x: -30 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const linkContainerVariants = {
-  hidden:  {},
+  hidden: {},
   visible: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } },
 };
 
 const linkVariants = {
-  hidden:  { opacity: 0, y: -12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: -12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const mobileMenuVariants = {
-  hidden:  { opacity: 0, height: 0 },
+  hidden: { opacity: 0, height: 0 },
   visible: {
     opacity: 1,
-    height: 'auto',
+    height: "auto",
     transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
   },
   exit: {
@@ -37,7 +45,7 @@ const mobileMenuVariants = {
 };
 
 const mobileLinkVariants = {
-  hidden:  { opacity: 0, x: -20 },
+  hidden: { opacity: 0, x: -20 },
   visible: (i) => ({
     opacity: 1,
     x: 0,
@@ -45,93 +53,91 @@ const mobileLinkVariants = {
   }),
 };
 
-export default function NavBar({lang, setLang}) {
+export default function NavBar({ lang, setLang }) {
   const navLinks = [
     {
-      label: lang === 'am' ? 'መነሻ' : 'Home',
-      href: '#home'
+      label: lang === "am" ? "መነሻ" : "Home",
+      href: "#home",
     },
     {
-      label: lang === 'am' ? 'የማጣራት ሂደት' : 'Process',
-      href: '#process'
+      label: lang === "am" ? "የማጣራት ሂደት" : "Process",
+      href: "#process",
     },
     {
-      label: lang === 'am' ? 'ምርቶቻችን' : 'Our Products',
-      href: '#products'
+      label: lang === "am" ? "ምርቶቻችን" : "Our Products",
+      href: "#products",
     },
     {
-      label: lang === 'am' ? 'ስለ እኛ' : 'About Us',
-      href: '#about'
+      label: lang === "am" ? "ስለ እኛ" : "About Us",
+      href: "#about",
     },
     {
-      label: lang === 'am' ? 'አስተያየቶች' : 'Testimonials',
-      href: '#testimonials'
+      label: lang === "am" ? "አስተያየቶች" : "Testimonials",
+      href: "#testimonials",
     },
     {
-      label: lang === 'am' ? 'ጥያቄዎች' : 'FAQs',
-      href: '#faqs'
+      label: lang === "am" ? "ጥያቄዎች" : "FAQs",
+      href: "#faqs",
     },
   ];
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
-  const t = lang === 'am' ? am:en;
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
+  const t = lang === "am" ? am : en;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll("section[id]");
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      sections.forEach(section => {
+      sections.forEach((section) => {
         const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+        const sectionId = section.getAttribute("id");
 
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
           setActiveLink(sectionId);
         }
-      })
-    }
+      });
+    };
 
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleLang = () => setLang(prev => prev === 'en' ? 'am' : 'en');
-  const closeMenu  = () => setMenuOpen(false);
+  /*const toggleLang = () => setLang(prev => prev === 'en' ? 'am' : 'en');*/
+  const closeMenu = () => setMenuOpen(false);
 
   const handleMobileNavClick = (e, href) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const target = document.querySelector(href);
+    const target = document.querySelector(href);
 
-  if (target) {
-    closeMenu();
+    if (target) {
+      closeMenu();
 
-    setTimeout(() => {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }, 250);
-      }
-    };
+      setTimeout(() => {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 250);
+    }
+  };
 
   return (
     <motion.header
-      className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}
+      className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
       initial="hidden"
       animate="visible"
     >
       <div className="navbar__inner container">
-
-      
         <div className="navbar__logo-container">
           {/* ── LOGO ── */}
           <motion.a
@@ -140,7 +146,7 @@ export default function NavBar({lang, setLang}) {
             variants={logoVariants}
             onClick={closeMenu}
           >
-            <img src= {logo} alt="logo" className='navbar__logo-icon' />
+            <img src={logo} alt="logo" className="navbar__logo-icon" />
             <span className="navbar__logo-text">
               <LocalizedText lang={lang} type="heading">
                 <span className="navbar__logo-primary">{t.nav.name1}</span>
@@ -149,106 +155,113 @@ export default function NavBar({lang, setLang}) {
             </span>
           </motion.a>
 
-            {/* Language Selector */}
-            <motion.div
-              className="navbar__lang-toggle"
-              variants={linkVariants}
+          {/* Language Selector */}
+          <motion.div className="navbar__lang-toggle" variants={linkVariants}>
+            {/* Sliding Background */}
+            <div
+              className={`navbar__lang-slider ${
+                lang === "en" ? "left" : "right"
+              }`}
+            />
+
+            {/* EN */}
+            <button
+              className={`navbar__lang-option ${lang === "en" ? "active" : ""}`}
+              onClick={() => setLang("en")}
             >
-              {/* Sliding Background */}
-              <div
-                className={`navbar__lang-slider ${
-                  lang === "en" ? "left" : "right"
-                }`}
-              />
+              En
+            </button>
 
-              {/* EN */}
-              <button
-                className={`navbar__lang-option ${
-                  lang === "en" ? "active" : ""
-                }`}
-                onClick={() => setLang("en")}
-              >
-                En
-              </button>
-
-              {/* AMH */}
-              <button
-                className={`navbar__lang-option ${
-                  lang === "am" ? "active" : ""
-                }`}
-                onClick={() => setLang("am")}
-              >
-                አማ
-              </button>
-            </motion.div>
+            {/* AMH */}
+            <button
+              className={`navbar__lang-option ${lang === "am" ? "active" : ""}`}
+              onClick={() => setLang("am")}
+            >
+              አማ
+            </button>
+          </motion.div>
         </div>
         {/* ── DESKTOP NAV ── */}
-        <motion.nav
-          className="navbar__links"
-          role="navigation"
-          aria-label="Main navigation"
-          variants={linkContainerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {navLinks.map(link => (
+        <div className="navbar__links__container">
+          <motion.nav
+            className="navbar__links"
+            role="navigation"
+            aria-label="Main navigation"
+            variants={linkContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {navLinks.map((link) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                className={`navbar__link ${
+                  activeLink === link.href.replace("#", "") ? "active" : ""
+                }`}
+                variants={linkVariants}
+              >
+                <LocalizedText lang={lang} type="heading">
+                  {link.label}
+                </LocalizedText>
+                <span className="navbar__link-underline" aria-hidden="true" />
+              </motion.a>
+            ))}
+          </motion.nav>
+
+          {/* ── DESKTOP ACTIONS ── */}
+          <motion.div
+            className="navbar__actions"
+            variants={linkContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* CTA */}
             <motion.a
-              key={link.label}
-              href={link.href}
-              className={`navbar__link ${
-                activeLink === link.href.replace('#', '') ? 'active' : ''
-              }`}
+              href="#contact"
+              className="navbar__cta"
               variants={linkVariants}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
             >
               <LocalizedText lang={lang} type="heading">
-                {link.label}
+                {t.nav.contact}
               </LocalizedText>
-              <span className="navbar__link-underline" aria-hidden="true" />
             </motion.a>
-          ))}
-        </motion.nav>
-
-        {/* ── DESKTOP ACTIONS ── */}
-        <motion.div
-          className="navbar__actions"
-          variants={linkContainerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-
-          {/* CTA */}
-          <motion.a
-            href="#contact"
-            className="navbar__cta"
-            variants={linkVariants}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            <LocalizedText lang={lang} type="heading">
-              {t.nav.contact}
-            </LocalizedText>
-          </motion.a>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* ── HAMBURGER ── */}
         <motion.button
           className="navbar__hamburger"
-          onClick={() => setMenuOpen(prev => !prev)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           variants={linkVariants}
           initial="hidden"
           animate="visible"
         >
           <AnimatePresence mode="wait" initial={false}>
-            {menuOpen
-              ? <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                  <X size={22} />
-                </motion.span>
-              : <motion.span key="open"  initial={{ rotate: 90,  opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                  <Menu size={22} />
-                </motion.span>
-            }
+            {menuOpen ? (
+              <motion.span
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X size={22} />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="open"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Menu size={22} />
+              </motion.span>
+            )}
           </AnimatePresence>
         </motion.button>
       </div>
@@ -263,7 +276,11 @@ export default function NavBar({lang, setLang}) {
             animate="visible"
             exit="exit"
           >
-            <nav className="navbar__mobile-links" role="navigation" aria-label="Mobile navigation">
+            <nav
+              className="navbar__mobile-links"
+              role="navigation"
+              aria-label="Mobile navigation"
+            >
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.label}
@@ -289,11 +306,17 @@ export default function NavBar({lang, setLang}) {
                 initial="hidden"
                 animate="visible"
               >
-                  <a href="#contact" className="navbar__cta navbar__cta--mobile" onClick={(e) => {handleMobileNavClick(e, '#contact');}}>
-                    <LocalizedText lang={lang} type="heading">
-                      {lang === 'am' ? 'ያግኙን' : 'Contact Us'}
-                    </LocalizedText>
-                  </a>
+                <a
+                  href="#contact"
+                  className="navbar__cta navbar__cta--mobile"
+                  onClick={(e) => {
+                    handleMobileNavClick(e, "#contact");
+                  }}
+                >
+                  <LocalizedText lang={lang} type="heading">
+                    {lang === "am" ? "ያግኙን" : "Contact Us"}
+                  </LocalizedText>
+                </a>
               </motion.div>
             </nav>
           </motion.div>

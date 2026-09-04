@@ -131,7 +131,8 @@
   color: var(--color-gold-400);
   display: inline-block;
   font-family: var(--font-subheading);
-  font-size: clamp(3rem, 3.6vw, 3.8rem);
+  font-size: clamp(3rem, 3.75vw, 3.8rem);
+  word-spacing: 1.7px;
 }
 
 /* Subheadline */
@@ -157,11 +158,11 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  border-radius: var(--radius-full);
+  border-radius: 12px;
   padding: 14px 28px;
   text-decoration: none;
   white-space: nowrap;
@@ -242,8 +243,9 @@
 }
 
 .hero__stat-value {
-  font-family: var(--font-heading);
-  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  font-family: var(--font-subheading);
+  font-size: clamp(0.9rem, 1.125vw, 1.5rem);
+  margin-top: -7px;
   font-weight: 800;
   color: var(--color-gold-500);
   line-height: 1;
