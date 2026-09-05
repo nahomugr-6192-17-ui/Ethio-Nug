@@ -308,7 +308,7 @@
 /* ── RESPONSIVE — Small Tablet / Large Mobile (≤ 900px) ── */
 @media (max-width: 900px) {
   .hero__bg {
-    background-image: url("./assets/home_bg_mobile.png");
+    background-image: url("./assets/home_bg_mobile.webp");
     background-size: cover;
     background-position: 50% center;
   }
