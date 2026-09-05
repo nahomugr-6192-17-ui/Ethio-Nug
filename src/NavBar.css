@@ -375,14 +375,22 @@
     display: none;
   }
 
+  .navbar__link {
+    font-family: var(--font-subheading);
+  }
+
   .navbar__hamburger {
     display: flex;
   }
 
-  .navbar__inner {
-    max-width: var(--container-max);
-    margin-inline: 10px;
-    padding: 0 190px;
+  .navbar__cta {
+    border-radius: 8px;
+    font-family: var(--font-subheading);
+  }
+
+  .navbar__inner.container {
+    max-width: 900px;
+    padding: 0 20px;
   }
 
   .navbar__logo-icon {
