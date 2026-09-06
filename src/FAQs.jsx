@@ -4,19 +4,16 @@ import { ChevronRight, Phone, MapPin } from "lucide-react";
 import "./FAQs.css";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";
-import LocalizedText from "./LocalizedText.jsx";
 
 /* ─── Single FAQ card Component ────────────────────────── */
-function FaqCard({ item, isOpen, onToggle, lang, t }) {
+function FaqCard({ item, isOpen, onToggle, t }) {
   const answer =
     item.a !== null ? (
       item.a
     ) : (
       <div className="faq__contact">
         <p>
-          <LocalizedText lang={lang} type="body">
             {t.faqs.contactText}
-          </LocalizedText>
         </p>
 
         <a href="tel:+251911979899" className="faq__contact-item">

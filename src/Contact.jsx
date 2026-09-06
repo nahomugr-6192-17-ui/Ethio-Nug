@@ -6,7 +6,6 @@ import toast, { Toaster } from "react-hot-toast";
 import "./Contact.css";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";
-import LocalizedText from "./LocalizedText.jsx";
 
 const INFO_CARDS = [
   {
@@ -242,19 +241,13 @@ export default function Contact({ lang }) {
           animate={headerInView ? "visible" : "hidden"}
         >
           <motion.span className="contact__label" variants={fadeUp}>
-            <LocalizedText lang={lang} type="label">
               {t.contact.label}
-            </LocalizedText>
           </motion.span>
           <motion.h2 className="contact__heading" variants={fadeUp}>
-            <LocalizedText lang={lang} type="heading">
               {t.contact.heading}
-            </LocalizedText>
           </motion.h2>
           <motion.p className="contact__sub" variants={fadeUp}>
-            <LocalizedText lang={lang} type="body">
               {t.contact.subheading}
-            </LocalizedText>
           </motion.p>
         </motion.div>
 
@@ -273,9 +266,7 @@ export default function Contact({ lang }) {
                 onClick={(e) => e.stopPropagation()}
               >
                 <h3 className="phone-modal__title">
-                  <LocalizedText lang={lang} type="heading">
                     {t.contact.modal.title}
-                  </LocalizedText>
                 </h3>
 
                 <a href="tel:+251911979899" className="phone-modal__btn">
@@ -290,9 +281,7 @@ export default function Contact({ lang }) {
                   className="phone-modal__close"
                   onClick={() => setShowPhoneOptions(false)}
                 >
-                  <LocalizedText lang={lang} type="button">
                     {t.contact.modal.cancel}
-                  </LocalizedText>
                 </button>
               </motion.div>
             </div>
@@ -330,17 +319,13 @@ export default function Contact({ lang }) {
           >
             <form className="cform" onSubmit={submit} noValidate>
               <h3 className="cform__title">
-                <LocalizedText lang={lang} type="heading">
                   {t.contact.form.title}
-                </LocalizedText>
               </h3>
 
               <div className="cform__row">
                 <div className="cform__field">
                   <label className="cform__lbl" htmlFor="cf-name">
-                    <LocalizedText lang={lang} type="label">
                       {t.contact.form.fullName}
-                    </LocalizedText>
                   </label>
                   <input
                     id="cf-name"
@@ -355,9 +340,7 @@ export default function Contact({ lang }) {
                 </div>
                 <div className="cform__field">
                   <label className="cform__lbl" htmlFor="cf-email">
-                    <LocalizedText lang={lang} type="label">
                       {t.contact.form.email}
-                    </LocalizedText>
                   </label>
                   <input
                     id="cf-email"
@@ -374,9 +357,7 @@ export default function Contact({ lang }) {
               <div className="cform__row">
                 <div className="cform__field">
                   <label className="cform__lbl" htmlFor="cf-phone">
-                    <LocalizedText lang={lang} type="label">
                       {t.contact.form.phone}
-                    </LocalizedText>
                   </label>
                   <input
                     id="cf-phone"
@@ -390,9 +371,7 @@ export default function Contact({ lang }) {
                 </div>
                 <div className="cform__field">
                   <label className="cform__lbl" htmlFor="cf-pos">
-                    <LocalizedText lang={lang} type="label">
                       {t.contact.form.position}
-                    </LocalizedText>
                   </label>
                   <input
                     id="cf-pos"
@@ -408,9 +387,7 @@ export default function Contact({ lang }) {
 
               <div className="cform__field">
                 <label className="cform__lbl" htmlFor="cf-msg">
-                  <LocalizedText lang={lang} type="label">
                     {t.contact.form.message}
-                  </LocalizedText>
                 </label>
                 <textarea
                   id="cf-msg"
@@ -426,9 +403,7 @@ export default function Contact({ lang }) {
 
               <div className="cform__rating-row">
                 <span className="cform__rating-lbl">
-                  <LocalizedText lang={lang} type="label">
                     {t.contact.form.rating}
-                  </LocalizedText>
                 </span>
                 <StarPicker value={rating} onChange={setRating} />
               </div>
@@ -441,9 +416,7 @@ export default function Contact({ lang }) {
                 transition={{ type: "spring", stiffness: 340, damping: 18 }}
                 disabled={sending}
               >
-                <LocalizedText lang={lang} type="button">
                   {sending ? t.contact.form.sending : t.contact.form.submit}
-                </LocalizedText>
               </motion.button>
             </form>
           </motion.div>

@@ -172,7 +172,7 @@
   bottom: 4px;
   width: calc(50% - 4px);
   border-radius: 6px;
-  background: var(--color-gold-600);
+  background: var(--color-gold-500);
   transition: left 0.3s ease;
 }
 
@@ -202,7 +202,8 @@
   font-family: var(--font-subheading);
 }
 .navbar__lang-option.am {
-  font-family: var(--font-subheadline-amharic);
+  font-family: var(--font-heading2-amharic);
+  font-size: 0.9rem;
 }
 
 .navbar__lang-option.active {
@@ -322,16 +323,19 @@
 /* Amharic Fonts */
 
 .lang--am .navbar__logo-text {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
+  font-family: var(--font-heading2-amharic);
 }
 
 .navbar.lang--am .navbar__link {
   font-size: 1.15rem;
-  font-family: var(--font-heading-amharic);
+  font-family: var(--font-heading2-amharic);
 }
 
 .navbar.lang--am .navbar__cta {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
+  font-family: var(--font-heading2-amharic);
+  padding: 6px 18px;
 }
 
 /* ─────────────────────────────────────────────
@@ -408,19 +412,26 @@
     margin-left: -15px;
   }
 
+  .lang--am .navbar__logo-text {
+    font-size: 1.3rem;
+    font-family: var(--font-heading2-amharic);
+  }
+
   .lang--am .navbar__mobile-link {
     font-size: 1.1rem;
+    font-family: var(--font-heading2-amharic);
   }
 
   .lang--am .navbar__lang-btn--mobile {
     font-size: 1.1rem;
+    font-family: var(--font-heading2-amharic);
   }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
   .navbar__logo-text {
-    font-size: 0.95rem;
+    font-size: 1.125rem;
   }
 
   .navbar__logo-icon {
@@ -445,6 +456,6 @@
   }
 
   .lang--am .navbar__logo-text {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
   }
 }

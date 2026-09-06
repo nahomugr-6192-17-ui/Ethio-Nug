@@ -7,10 +7,8 @@ import threeLtr from './assets/three-ltr.png';
 import fiveLtr from './assets/five-ltr.png';
 import twentyLtr from './assets/twenty-ltr.png';
 import './OurProducts.css';
-import { image } from 'framer-motion/client';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
-import LocalizedText from './LocalizedText.jsx';
 
 /* ─── Product data ──────────────────────────────── */
 const PRODUCT_IMAGES = [
@@ -64,20 +62,14 @@ export default function OurProducts({lang}) {
           animate={headerInView ? 'visible' : 'hidden'}
         >
           <motion.span className="products__label" variants={fadeUp}>
-            <LocalizedText lang={lang} type="heading">
               {t.products.label}
-            </LocalizedText>
           </motion.span>
           <motion.h2 className="products__heading" variants={fadeUp}>
-            <LocalizedText lang={lang} type="heading">
               {t.products.headingTop}{' '}
-            </LocalizedText>
             <span className="products__heading-accent">{t.products.headingAccent}</span>
           </motion.h2>
           <motion.p className="products__subheading" variants={fadeUp}>
-            <LocalizedText lang={lang} type="body">
               {t.products.subheading}
-            </LocalizedText>
           </motion.p>
         </motion.div>
 
@@ -143,20 +135,14 @@ export default function OurProducts({lang}) {
                   <div className="products__card-body">
                     <div className="products__meta">
                       <span className="products__size">
-                        <LocalizedText lang={lang} type="heading">
                           {product.size}
-                        </LocalizedText>
                       </span>
                       <span className="products__size-label">
-                        <LocalizedText lang={lang} type="heading">
                           {product.label}
-                        </LocalizedText>
                       </span>
                     </div>
                     <span className="products__price">
-                      <LocalizedText lang={lang} type="heading">
                         {product.price}
-                      </LocalizedText>
                     </span>
                   </div>
 
@@ -170,9 +156,7 @@ export default function OurProducts({lang}) {
                       transition={{ type: 'spring', stiffness: 340, damping: 18 }}
                     >
                       <ShoppingBag size={14} strokeWidth={2.2} />
-                      <LocalizedText lang={lang} type="heading">
                         {t.products.orderBtn}
-                      </LocalizedText>
                     </motion.a>
                   </div>
                 </motion.div>

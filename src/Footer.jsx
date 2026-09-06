@@ -1,10 +1,8 @@
-import { motion } from 'framer-motion';
 import { Phone, MapPin, Send, Mail } from 'lucide-react';
 import logo from './assets/logo.png';
 import './Footer.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
-import LocalizedText from './LocalizedText.jsx';
 
 export default function Footer({ lang }) {
   const t = lang === 'am' ? am : en;
@@ -55,26 +53,18 @@ export default function Footer({ lang }) {
             <img src={logo} alt="Ethio-Nug logo" className="footer__logo-img" />
             <span className="footer__logo-text">
               <span className="footer__logo-primary">
-                <LocalizedText lang={lang} type="heading">
                   {t.footer.name1}
-                </LocalizedText>
               </span>
               <span className="footer__logo-accent">
-                <LocalizedText lang={lang} type="heading">
                   {t.footer.name2}
-                </LocalizedText>
               </span>
             </span>
           </a>
           <p className="footer__slogan">
-            <LocalizedText lang={lang} type="body">
               {t.footer.slogan}
-            </LocalizedText>
           </p>
           <p className="footer__desc">
-            <LocalizedText lang={lang} type="body">
               {t.footer.description}
-            </LocalizedText>
           </p>
         </div>
 
@@ -85,9 +75,7 @@ export default function Footer({ lang }) {
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <a href={link.href} className="footer__nav-link">
-                  <LocalizedText lang={lang} type="body">
-                    {link.label}
-                  </LocalizedText>
+                  {link.label}
                 </a>
               </li>
             ))}
@@ -97,9 +85,7 @@ export default function Footer({ lang }) {
         {/* Contact info */}
         <div className="footer__contact-col">
           <h4 className="footer__col-title">
-            <LocalizedText lang={lang} type="heading">
               {t.footer.contact}
-            </LocalizedText>
           </h4>
           <ul className="footer__contact-list">
             {CONTACT_INFO.map((item) => {
@@ -126,14 +112,10 @@ export default function Footer({ lang }) {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p className="footer__copy">
-            <LocalizedText lang={lang} type="body">
               {t.footer.copyright}
-            </LocalizedText>
           </p>
           <p className="footer__powered">
-            <LocalizedText lang={lang} type="body">
               {t.footer.powered}
-            </LocalizedText>
             {' '}
             <a
               href="https://ahadu-hub-temporal.vercel.app"

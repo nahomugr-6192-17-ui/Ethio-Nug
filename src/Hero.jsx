@@ -7,7 +7,6 @@ import { TbTruckDelivery } from "react-icons/tb";
 import "./Hero.css";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";
-import LocalizedText from "./LocalizedText.jsx";
 
 /* ── Animation variants ── */
 const containerVariants = {
@@ -59,7 +58,7 @@ export default function Hero({ lang }) {
   return (
     <section
       id="home"
-      className="hero"
+      className= {`hero ${lang === "am" ? "lang--am" : "lang--en"}`}
       ref={sectionRef}
       aria-label="Hero section"
     >
@@ -82,20 +81,18 @@ export default function Hero({ lang }) {
         >
           {/* Headline */}
           <motion.h1 className="hero__headline" variants={fadeUp}>
-            {t.hero.headlineTop}
+            <span className="hero__headline-top">
+              {t.hero.headlineTop}
+            </span>
             <br />
             <span className="hero__headline-accent">
-              <LocalizedText lang={lang} type="heading">
-                {t.hero.headlineAccent}
-              </LocalizedText>
+              {t.hero.headlineAccent}
             </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p className="hero__subheadline" variants={fadeUp}>
-            <LocalizedText lang={lang} type="body">
-              {t.hero.subheadline}
-            </LocalizedText>
+            {t.hero.subheadline}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -109,9 +106,7 @@ export default function Hero({ lang }) {
             >
               <BookOpen size={17} strokeWidth={2} />
               <span>
-                <LocalizedText lang={lang} type="heading">
                   {t.hero.discoverBtn}
-                </LocalizedText>
               </span>
             </motion.a>
 
@@ -123,9 +118,7 @@ export default function Hero({ lang }) {
               transition={{ type: "spring", stiffness: 360, damping: 20 }}
             >
               <span>
-                <LocalizedText lang={lang} type="heading">
                   {t.hero.productsBtn}
-                </LocalizedText>
               </span>
               <ArrowRight
                 size={17}
@@ -164,15 +157,11 @@ export default function Hero({ lang }) {
                 <div className="hero__stat-top">
                   <span className="hero__stat-icon">{icon}</span>
                   <span className="hero__stat-value">
-                    <LocalizedText lang={lang} type="heading">
-                      {value}
-                    </LocalizedText>
+                    {value}
                   </span>
                 </div>
                 <span className="hero__stat-label">
-                  <LocalizedText lang={lang} type="body">
                     {label}
-                  </LocalizedText>
                 </span>
               </div>
             ))}

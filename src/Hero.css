@@ -116,7 +116,7 @@
 }
 
 /* Headline */
-.hero__headline {
+.lang--en .hero__headline-top {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(3.8rem, 4.6vw, 4.4rem);
@@ -125,6 +125,16 @@
   color: var(--color-white);
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
   width: 100%;
+  margin-bottom: -5px;
+}
+
+.lang--am .hero__headline-top{
+  font-family: var(--font-heading2-amharic);
+  font-size: clamp(2.5rem, 5.6vw, 5.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero__headline-accent {
@@ -133,6 +143,16 @@
   font-family: var(--font-subheading);
   font-size: clamp(3rem, 3.75vw, 3.8rem);
   word-spacing: 1.7px;
+  margin-bottom: -35px;
+  margin-top: -5px;
+}
+
+.lang--am .hero__headline-accent {
+  font-family: var(--font-logo-amharic);
+  font-size: clamp(2.5rem, 3.75vw, 3.8rem);
+  word-spacing: 1.7px;
+  margin-top: -50px;
+  line-height: -1.1;
 }
 
 /* Subheadline */
