@@ -172,7 +172,7 @@
   bottom: 4px;
   width: calc(50% - 4px);
   border-radius: 6px;
-  background: var(--color-gold-400);
+  background: var(--color-gold-600);
   transition: left 0.3s ease;
 }
 
@@ -196,6 +196,13 @@
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+.navbar__lang-option.en {
+  font-family: var(--font-subheading);
+}
+.navbar__lang-option.am {
+  font-family: var(--font-subheadline-amharic);
 }
 
 .navbar__lang-option.active {
@@ -275,7 +282,7 @@
 }
 
 .navbar__mobile-link {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -318,11 +325,12 @@
   font-size: 1.1rem;
 }
 
-.lang--am .navbar__link {
-  font-size: 0.95rem;
+.navbar.lang--am .navbar__link {
+  font-size: 1.15rem;
+  font-family: var(--font-heading-amharic);
 }
 
-.lang--am .navbar__cta {
+.navbar.lang--am .navbar__cta {
   font-size: 0.8rem;
 }
 
@@ -335,6 +343,7 @@
   .navbar__link {
     font-size: 0.74rem;
     padding: var(--space-2) 8px;
+    font-family: var(--font-subheading);
   }
 
   .navbar__lang-toggle {
@@ -347,6 +356,7 @@
   .navbar__link {
     font-size: 0.7rem;
     padding: var(--space-2) 6px;
+    font-family: var(--font-subheading);  
   }
 
   .navbar__logo-icon {
@@ -373,10 +383,6 @@
   .navbar__links,
   .navbar__actions {
     display: none;
-  }
-
-  .navbar__link {
-    font-family: var(--font-subheading);
   }
 
   .navbar__hamburger {

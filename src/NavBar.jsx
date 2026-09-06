@@ -5,7 +5,6 @@ import "./NavBar.css";
 import logo from "./assets/logo.png";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";
-import LocalizedText from "./LocalizedText.jsx";
 
 const logoVariants = {
   hidden: { opacity: 0, x: -30 },
@@ -133,7 +132,7 @@ export default function NavBar({ lang, setLang }) {
 
   return (
     <motion.header
-      className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
+      className={`navbar${scrolled ? " navbar--scrolled" : ""} ${lang === "am" ? "lang--am" : ""}`}
       initial="hidden"
       animate="visible"
     >
@@ -148,10 +147,8 @@ export default function NavBar({ lang, setLang }) {
           >
             <img src={logo} alt="logo" className="navbar__logo-icon" />
             <span className="navbar__logo-text">
-              <LocalizedText lang={lang} type="heading">
                 <span className="navbar__logo-primary">{t.nav.name1}</span>
                 <span className="navbar__logo-accent"> {t.nav.name2}</span>
-              </LocalizedText>
             </span>
           </motion.a>
 
@@ -166,7 +163,7 @@ export default function NavBar({ lang, setLang }) {
 
             {/* EN */}
             <button
-              className={`navbar__lang-option ${lang === "en" ? "active" : ""}`}
+              className={`navbar__lang-option en ${lang === "en" ? "active" : ""}`}
               onClick={() => setLang("en")}
             >
               En
@@ -174,7 +171,7 @@ export default function NavBar({ lang, setLang }) {
 
             {/* AMH */}
             <button
-              className={`navbar__lang-option ${lang === "am" ? "active" : ""}`}
+              className={`navbar__lang-option am ${lang === "am" ? "active" : ""}`}
               onClick={() => setLang("am")}
             >
               አማ
@@ -200,9 +197,7 @@ export default function NavBar({ lang, setLang }) {
                 }`}
                 variants={linkVariants}
               >
-                <LocalizedText lang={lang} type="heading">
                   {link.label}
-                </LocalizedText>
                 <span className="navbar__link-underline" aria-hidden="true" />
               </motion.a>
             ))}
@@ -223,9 +218,7 @@ export default function NavBar({ lang, setLang }) {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              <LocalizedText lang={lang} type="heading">
                 {t.nav.contact}
-              </LocalizedText>
             </motion.a>
           </motion.div>
         </div>
@@ -313,9 +306,7 @@ export default function NavBar({ lang, setLang }) {
                     handleMobileNavClick(e, "#contact");
                   }}
                 >
-                  <LocalizedText lang={lang} type="heading">
-                    {lang === "am" ? "ያግኙን" : "Contact Us"}
-                  </LocalizedText>
+                  {lang === "am" ? "ያግኙን" : "Contact Us"}
                 </a>
               </motion.div>
             </nav>

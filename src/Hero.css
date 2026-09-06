@@ -389,6 +389,7 @@
 
   .hero__stat {
     padding: 10px 12px;
+    border-radius: 13px;
   }
 
   .hero__stat-value {
