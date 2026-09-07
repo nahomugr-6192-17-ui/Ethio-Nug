@@ -416,10 +416,10 @@
   }
 
   .hero__headline{
-    gap: -10px;
+    gap: 0px;
     display: flex;
     flex-direction: column;
-    line-height: 0.1;
+    line-height: 1.1;
     margin-bottom: 20px;
   }
 
