@@ -483,4 +483,8 @@
   .lang--am .hero__stat-label {
     font-size: 0.7rem;
   }
+
+  @media (max-width: 390px) {
+    
+  }
 }

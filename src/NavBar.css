@@ -458,4 +458,11 @@
   .lang--am .navbar__logo-text {
     font-size: 1.3rem;
   }
+
+  @media (max-width: 380px){
+    .navbar__inner.container{
+      max-width: 360px;
+      gap: 1px;
+    }
+  }
 }
