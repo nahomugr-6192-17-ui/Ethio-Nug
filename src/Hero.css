@@ -527,7 +527,7 @@
     font-size: 0.7rem;
   }
 
-  @media (max-width: 390px) {
+  @media (max-width: 395px) {
     .hero__bg {
       background-image: url("./assets/home_bg_mobile.webp");
       background-size: cover;

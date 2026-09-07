@@ -356,7 +356,11 @@
 }
 
 /* Small desktop / large tablet: tighten more */
-@media (max-width: 1024px) {
+@media (min-width: 900px) and (max-width: 1024px) {
+  .navbar__inner.container {
+    max-width: 1024px;
+    padding: 0 20px;
+  }
   .navbar__link {
     font-size: 0.7rem;
     padding: var(--space-2) 6px;
