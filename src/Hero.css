@@ -415,6 +415,14 @@
     gap: var(--space-8);
   }
 
+  .hero__headline{
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
   .hero__headline-top {
     font-size: 1px;
   }
