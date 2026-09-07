@@ -84,7 +84,6 @@ export default function Hero({ lang }) {
             <span className="hero__headline-top">
               {t.hero.headlineTop}
             </span>
-            <br />
             <span className="hero__headline-accent">
               {t.hero.headlineAccent}
             </span>
