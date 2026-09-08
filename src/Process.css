@@ -63,7 +63,7 @@
 .lang--en .process__heading {
   font-family: var(--font-subheading);
   font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(3rem, 4vw, 3.2rem);
   line-height: 1.12;
   letter-spacing: -0.025em;
   color: var(--color-neutral-900);
@@ -183,9 +183,8 @@
   justify-content: center;
   margin-right: 0.0125px;
   margin-left: 0.011px;
-  margin-top: 0.015px;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10.5px;
   border-radius: 50%;
   background: var(--color-gold-500);
 }
@@ -368,11 +367,24 @@
   line-height: 1.15;
 }
 
+.lang--am .process__story-heading {
+  font-family: var(--font-heading2-amharic);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+}
+
 .process__story-text {
   font-family: var(--font-body);
   font-size: clamp(0.92rem, 1.3vw, 1.05rem);
   line-height: 1.85;
   color: var(--color-neutral-500);
+  max-width: 520px;
+}
+
+.lang--am .process__story-text {
+  font-family: var(--font-body-amharic);
+  font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+  line-height: 1.85;
   max-width: 520px;
 }
 
@@ -403,8 +415,9 @@
   }
 }
 
-/* ── RESPONSIVE — Mobile (≤ 640px) ──────────── */
-@media (max-width: 640px) {
+
+/* ── RESPONSIVE — Mobile (≤ 480px) ──────────── */
+@media (max-width: 480px) {
   .process {
     padding-block: var(--space-12);
   }
@@ -421,7 +434,7 @@
 
   /* Move spine line to the left */
   .process__spine-line {
-    left: 10px;
+    left: 16px;
     transform: none;
   }
 
@@ -452,8 +465,54 @@
     display: none;
   }
 
+  .lang--en .process__heading {
+    font-size: clamp(2.6rem, 5vw, 3rem);
+  }
+
+  .lang--am .process__heading {
+    font-size: clamp(2.4rem, 5vw, 2.8rem);
+  }
+
+  .process__heading-accent {
+    font-size: clamp(2.4rem, 5vw, 2.4rem);
+  }
+
+  .lang--en .process__subheading {
+    font-size: clamp(0.98rem, 1.4vw, 1.4rem);
+  }
+
+  .lang--am .process__subheading {
+    font-size: clamp(0.9rem, 1.4vw, 0.95rem);
+  }
+
+  .process__dot {
+    width: 18px;
+    height: 18px;
+  }
+
+  .process__dot-inner{
+    width: 8px;
+    height: 8px;
+  }
+
   .process__card {
     padding: var(--space-4) var(--space-5);
+  }
+
+  .lang--en .process__card-title {
+    font-size: clamp(1.15rem, 2.5vw, 1.2rem);
+  }
+
+  .lang--am .process__card-title {
+    font-size: clamp(1.08rem, 2.5vw, 1.25rem);
+  }
+
+  .lang--en .process__card-desc {
+    font-size: clamp(0.89rem, 1.5vw, 0.95rem);
+  }
+
+  .lang--am .process__card-desc {
+    font-size: clamp(0.78rem, 1.5vw, 0.9rem);
   }
 
   .process__icon-wrap {
@@ -477,10 +536,10 @@
   }
 
   .lang--am .process__story-heading {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(1.9rem, 5vw, 3rem);
   }
 
   .lang--am .process__story-text {
-    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-size: clamp(0.88rem, 2vw, 1rem);
   }
 }
