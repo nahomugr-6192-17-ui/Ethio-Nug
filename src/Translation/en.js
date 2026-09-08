@@ -44,11 +44,11 @@ const en = {
     },
   },
   process: {
-    label: "Our Process",
+    label: "CLEANING PROCESS",
 
     headingTop: "PURE OIL STARTS WITH",
 
-    headingAccent: "CLEAN SEEDS.",
+    headingAccent: "CLEAN SEEDS",
 
     subheading:
       "Ethio-Nug selects only the finest Nug seeds, taking them through a strict 6-stage cleaning system before traditional cold pressing — preserving purity, natural flavor, and nutritional integrity. No additives. No chemicals. No preservatives. No shortcuts",
@@ -91,13 +91,13 @@ const en = {
       },
     },
 
-    commitmentLabel: "Our Commitment",
+    commitmentLabel: "WHY NIGER SEED OIL?",
 
-    commitmentHeading: "Why We Do It",
+    commitmentHeading: "More Than Just Cooking Oil",
 
     commitmentText:
-      "Many oils today are diluted or blended with cheaper ingredients. Ethio-Nug remains committed to purity, honesty, and traditional craftsmanship — delivering authentic Nug oil you can trust, every single time.",
-  },
+      "Naturally rich in essential linoleic acid and predominantly unsaturated fats, Niger seed oil brings nutritional value, distinctive flavor, and generations of Ethiopian heritage to the table. It is a simple, authentic choice for everyday cooking."
+    },
   products: {
     label: "Our Available Products",
 

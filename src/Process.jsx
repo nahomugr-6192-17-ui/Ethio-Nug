@@ -198,7 +198,7 @@ export default function Process({ lang }) {
   const storyInView = useInView(storyRef, { once: true, margin: '-80px' });
 
   return (
-    <section id="process" className="process" aria-label="Our production process">
+    <section id="process" className={`process ${lang === 'am' ? 'lang--am' : 'lang--en'}`} aria-label="Our production process">
       <div className="container">
 
         {/* ── Section Header ── */}
