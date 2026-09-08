@@ -542,4 +542,45 @@
   .lang--am .process__story-text {
     font-size: clamp(0.88rem, 2vw, 1rem);
   }
+
+  @media (max-width: 380px) {
+    .lang--en .process__heading {
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
+    }
+
+    .lang--am .process__heading {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+    .lang--en .process__heading-accent {
+      font-size: clamp(2.1rem, 5vw, 2.5rem);
+    }
+
+    .lang--am .process__heading-accent {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .lang--am .process__subheading {
+      font-size: clamp(0.83rem, 1.4vw, 0.9rem);
+    }
+    
+    .process__card {
+      padding: var(--space-3) var(--space-4);
+    }
+
+    .process__story-card {
+      padding: var(--space-6) var(--space-4);
+    }
+
+    .process__story {
+      margin-top: var(--space-8);
+    }
+
+    .lang--am .process__story-heading {
+      font-size: clamp(1.9rem, 5vw, 2.5rem);
+    }
+
+    .lang--am .process__story-text {
+      font-size: clamp(0.83rem, 2vw, 1rem);
+    }
+  }
 }
