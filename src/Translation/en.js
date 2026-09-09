@@ -99,7 +99,7 @@ const en = {
       "Naturally rich in essential linoleic acid and predominantly unsaturated fats, Niger seed oil brings nutritional value, distinctive flavor, and generations of Ethiopian heritage to the table. It is a simple, authentic choice for everyday cooking."
     },
   products: {
-    label: "Our Available Products",
+    label: "Available Products",
 
     headingTop: "Carefully Prepared",
     headingAccent: "Edible Oil",
@@ -411,8 +411,8 @@ const en = {
     },
 
     modal: {
-      title: "Choose a phone number",
-      cancel: "Cancel",
+      title: "CHOOSE A WAY TO CONTACT US",
+      cancel: "CANCEL",
     },
   },
 

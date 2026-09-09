@@ -6,6 +6,7 @@ import oneLtr from './assets/one-ltr.png';
 import threeLtr from './assets/three-ltr.png';
 import fiveLtr from './assets/five-ltr.png';
 import twentyLtr from './assets/twenty-ltr.png';
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 import './OurProducts.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
@@ -34,6 +35,7 @@ const headerVariants = {
 export default function OurProducts({lang}) {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [showPhoneOptions, setShowPhoneOptions] = useState(false);
   const t = lang === 'am' ? am:en;
 
   useEffect(() => {
@@ -75,6 +77,47 @@ export default function OurProducts({lang}) {
 
         {/* ── Product Grid ── */}
         <div ref={gridRef} className="products__grid">
+
+          {showPhoneOptions && (
+            <div
+              className="phone-modal-overlay"
+              onClick={() => setShowPhoneOptions(false)}
+            >
+              <motion.div
+                className="phone-modal"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h3 className="phone-modal__title">
+                    {lang === 'am' ? "ለማዘዝ ከስር ባለው ስልክ ይደውሉ" : "CALL US TO PLACE AN ORDER"}
+                </h3>
+
+                <a href="tel:+251911979899" className="phone-modal__btn">
+                  <FaPhoneAlt size={14} strokeWidth={2.2} />
+                  +251 91 197 9899
+                </a>
+
+                <a href="tel:+251982323334" className="phone-modal__btn">
+                  <FaPhoneAlt size={14} strokeWidth={2.2} />
+                  +251 98 232 3334
+                </a>
+                <a href="https://wa.me/17025610844" className="phone-modal__btn">
+                  <FaWhatsapp size={18} strokeWidth={2.2} />
+                  +1 702 561 0844
+                </a>
+
+                <button
+                  className="phone-modal__close"
+                  onClick={() => setShowPhoneOptions(false)}
+                >
+                    {t.contact.modal.cancel}
+                </button>
+              </motion.div>
+            </div>
+          )}
           {t.products.items.map((product, i) => {
             const isDimmed = !isMobile && hoveredIdx !== null && hoveredIdx !== i;
             const isActive = !isMobile && hoveredIdx === i;
@@ -149,7 +192,7 @@ export default function OurProducts({lang}) {
                   {/* CTA */}
                   <div className="products__card-footer">
                     <motion.a
-                      href="#contact"
+                      onClick={() => setShowPhoneOptions(true)}
                       className="products__btn"
                       whileHover={{ scale: 1.06 }}
                       whileTap={{ scale: 0.95 }}
