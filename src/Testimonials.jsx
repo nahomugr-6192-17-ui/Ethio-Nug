@@ -14,7 +14,7 @@ function Stars({ count = 5 }) {
   return (
     <div className="tcard__stars" aria-label={`${count} stars out of 5`}>
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={13} fill="currentColor" strokeWidth={0} className="tcard__star" />
+        <Star key={i} size={20} fill="currentColor" strokeWidth={0} className="tcard__star" />
       ))}
     </div>
   );
