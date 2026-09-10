@@ -107,21 +107,29 @@
 
 .about__label {
   display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-family: var(--font-heading);
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-gold-600);
   background: rgba(212, 160, 23, 0.08);
   border: 1px solid rgba(212, 160, 23, 0.25);
-  border-radius: var(--radius-full);
-  padding: 5px 16px;
+  border-radius: 8px;
+  padding: 6px 18px;
   width: fit-content;
 }
 
+.lang--am .about__label {
+  font-size: 0.87rem;
+  padding: 4px 20px;
+  font-family: var(--font-heading2-amharic);
+}
+
 .about__heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-subheading);
   font-weight: 800;
   font-size: clamp(1.75rem, 3.2vw, 2.8rem);
   line-height: 1.12;
@@ -129,12 +137,22 @@
   color: var(--color-neutral-900);
 }
 
+.lang--am .about__heading {
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  font-family: var(--font-heading2-amharic);
+}
+
 .about__body {
   font-family: var(--font-body);
-  font-size: clamp(0.92rem, 1.3vw, 1.02rem);
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
   line-height: 1.85;
   color: var(--color-neutral-500);
   max-width: 500px;
+}
+
+.lang--am .about__body {
+  font-size: clamp(0.9rem, 1.5vw, 0.95rem);
+  font-family: var(--font-body-amharic);
 }
 
 /* ── RIGHT: Image column ────────────────── */
@@ -214,7 +232,7 @@
 }
 
 /* ── RESPONSIVE — Small Tablet (≤ 800px) ── */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .about__container {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -224,11 +242,20 @@
   .about__image-col {
     order: -1;
     height: 320px;
+    margin-bottom: -20px; /* Overlap the gold line */
   }
 
   /* Hide desktop nav buttons on tablet/mobile */
-  .about__nav {
+  .about__nav-btn {
     display: none;
+  }
+
+  .about__dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    inset: auto 0 0 0;
+    padding-block: 28px;
   }
 
   .about__text-col {
