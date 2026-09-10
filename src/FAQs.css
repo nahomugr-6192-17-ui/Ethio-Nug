@@ -512,7 +512,7 @@ p {
     margin-bottom: 10px;
   }
   .faqs__heading {
-    font-size: clamp(2.105rem, 4vw, 2.2rem);
+    font-size: clamp(2rem, 4vw, 2.2rem);
     margin-top: 8px;
   }
 
@@ -521,11 +521,11 @@ p {
   }
 
   .faqs__heading-accent {
-    font-size: clamp(2rem, 4vw, 2rem);
+    font-size: clamp(1.8rem, 4vw, 2rem);
   }
 
   .lang--am .faqs__heading-accent {
-    font-size: clamp(2.1rem, 4vw, 2rem);
+    font-size: clamp(2rem, 4vw, 2rem);
   }
 
   .faqs__sub {
@@ -537,7 +537,7 @@ p {
   }
 
   .sidebar-title {
-    font-size: clamp(1.3rem, 1.5vw, 1.2rem);
+    font-size: clamp(1.2rem, 1.5vw, 1.2rem);
   }
 
   .sidebar-footer {

@@ -466,7 +466,7 @@
   }
 
   .lang--en .process__heading {
-    font-size: clamp(2.6rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
   }
 
   .lang--am .process__heading {
@@ -474,7 +474,7 @@
   }
 
   .process__heading-accent {
-    font-size: clamp(2.4rem, 5vw, 2.4rem);
+    font-size: clamp(1.9rem, 5vw, 2.4rem);
   }
 
   .lang--en .process__subheading {

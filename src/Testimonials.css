@@ -11,7 +11,7 @@
 }
 
 .testimonials::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 0 auto 0;
   height: 2px;
@@ -105,10 +105,10 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transition:
-    background   var(--transition-base),
+    background var(--transition-base),
     border-color var(--transition-base),
-    color        var(--transition-base),
-    box-shadow   var(--transition-base);
+    color var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .testimonials__nav-btn:hover {
@@ -153,7 +153,7 @@
   -webkit-backdrop-filter: blur(6px);
   transition:
     border-color var(--transition-base),
-    box-shadow   var(--transition-base);
+    box-shadow var(--transition-base);
   cursor: default;
 }
 
@@ -251,9 +251,9 @@
   gap: 3px;
 }
 
-.tcard__star { 
+.tcard__star {
   color: var(--color-gold-400);
-  margin: -5px 0; /* Adjust vertical alignment */ 
+  margin: -5px 0; /* Adjust vertical alignment */
 }
 
 /* Body text */
@@ -299,7 +299,7 @@
   padding: 0;
   transition:
     background var(--transition-base),
-    width    var(--transition-base);
+    width var(--transition-base);
 }
 
 .testimonials__dot--on {
@@ -309,8 +309,12 @@
 
 /* ── Responsive ──────────────────────────── */
 @media (max-width: 1024px) {
-  .testimonials { padding-block: var(--space-20); }
-  .testimonials__slot { padding-inline: var(--space-2); }
+  .testimonials {
+    padding-block: var(--space-20);
+  }
+  .testimonials__slot {
+    padding-inline: var(--space-2);
+  }
 }
 
 @media (max-width: 768px) {
@@ -322,15 +326,29 @@
     text-align: left;
     margin-bottom: var(--space-10);
   }
-  .testimonials__sub { max-width: 100%; }
+  .testimonials__sub {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 560px) {
-  .testimonials { padding-block: var(--space-12); }
-  .tcard { padding: var(--space-5); min-height: unset; }
-  .tcard__name-tab { padding: var(--space-2) var(--space-3); }
-  .tcard__avatar-ring { width: 46px; height: 46px; }
-  .testimonials__heading { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+  .testimonials {
+    padding-block: var(--space-12);
+  }
+  .tcard {
+    padding: var(--space-5);
+    min-height: unset;
+  }
+  .tcard__name-tab {
+    padding: var(--space-2) var(--space-3);
+  }
+  .tcard__avatar-ring {
+    width: 46px;
+    height: 46px;
+  }
+  .testimonials__heading {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
   .lang--am .testimonials__heading {
     font-size: clamp(1.8rem, 4vw, 3.8rem);
   }

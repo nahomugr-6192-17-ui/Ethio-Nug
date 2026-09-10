@@ -288,4 +288,7 @@
   .about__img-back {
     transform: translate(10px, 10px) scale(1.03);
   }
+  .about__heading {
+    font-size: clamp(2rem, 3.2vw, 2.4rem);
+  }
 }

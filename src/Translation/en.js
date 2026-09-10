@@ -166,9 +166,9 @@ const en = {
   faqs: {
     label: "FAQs",
 
-    headingTop: "Good Questions.",
+    headingTop: "Customers Questions",
 
-    headingAccent: "Honest Answers.",
+    headingAccent: "Honest Answers",
 
     subheading:
       "We get these questions a lot, so we thought we would answer them here.",
@@ -199,12 +199,12 @@ const en = {
       {
         id: 2,
         q: "Where are your seeds sourced?",
-        a: "Our Nug seeds are sourced directly from trusted Ethiopian Wollega farmers in prime agricultural regions. Every batch is carefully selected, cleaned and checked before production begins. Good oil starts with good seeds, and we take that responsibility seriously.",
+        a: "Our Nug seeds are sourced directly from trusted Ethiopian farmers in prime agricultural regions. Every batch is carefully selected, cleaned and checked before production begins. Good oil starts with good seeds, and we take that responsibility seriously.",
       },
       {
         id: 3,
         q: "Does the oil have a strong odor?",
-        a: "Our 6-stage cleaning process significantly reduces the natural earthy scent of raw niger seeds. The result is a clean, mild oil that is pleasant and easy to cook with every day.",
+        a: "Our 6-stage cleaning process and unique filtration system significantly reduces the natural earthy scent of raw niger seeds. The result is a clean, mild oil that is pleasant and easy to cook with every day.",
       },
       {
         id: 4,
@@ -374,7 +374,7 @@ const en = {
 
       telegram: {
         label: "Telegram",
-        primary: "@EthioNug",
+        primary: "EthioNug",
         secondary: "Message us on Telegram",
       },
 
