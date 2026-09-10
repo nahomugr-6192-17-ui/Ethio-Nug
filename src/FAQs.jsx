@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronRight, Phone, MapPin } from "lucide-react";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import "./FAQs.css";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";
@@ -12,9 +13,7 @@ function FaqCard({ item, isOpen, onToggle, t }) {
       item.a
     ) : (
       <div className="faq__contact">
-        <p>
-            {t.faqs.contactText}
-        </p>
+        <p>{t.faqs.contactText}</p>
 
         <a href="tel:+251911979899" className="faq__contact-item">
           <Phone size={16} />
@@ -105,6 +104,7 @@ export default function FAQs({ lang }) {
   const [mobIdx, setMobIdx] = useState(0);
   const [mobOpen, setMobOpen] = useState(null);
   const [isListVisible, setIsListVisible] = useState(false);
+  const [showPhoneOptions, setShowPhoneOptions] = useState(false);
 
   // 3. Refs & Animation Logic
   const headerRef = useRef(null);
@@ -150,6 +150,49 @@ export default function FAQs({ lang }) {
           </h2>
           <p className="faqs__sub">{t.faqs.subheading}</p>
         </motion.div>
+
+        {showPhoneOptions && (
+          <div
+            className="phone-modal-overlay"
+            onClick={() => setShowPhoneOptions(false)}
+          >
+            <motion.div
+              className="phone-modal"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="phone-modal__title">
+                {lang === "am"
+                  ? "ለማዘዝ ከስር ባለው ስልክ ይደውሉ"
+                  : "CALL US TO PLACE AN ORDER"}
+              </h3>
+
+              <a href="tel:+251911979899" className="phone-modal__btn">
+                <FaPhoneAlt size={14} strokeWidth={2.2} />
+                +251 91 197 9899
+              </a>
+
+              <a href="tel:+251982323334" className="phone-modal__btn">
+                <FaPhoneAlt size={14} strokeWidth={2.2} />
+                +251 98 232 3334
+              </a>
+              <a href="https://wa.me/17025610844" className="phone-modal__btn">
+                <FaWhatsapp size={18} strokeWidth={2.2} />
+                +1 702 561 0844
+              </a>
+
+              <button
+                className="phone-modal__close"
+                onClick={() => setShowPhoneOptions(false)}
+              >
+                {t.contact.modal.cancel}
+              </button>
+            </motion.div>
+          </div>
+        )}
 
         <div className="faq-container">
           {/* --- SIDEBAR AREA --- */}
@@ -199,7 +242,7 @@ export default function FAQs({ lang }) {
             <div className="sidebar-footer">
               <h4>{t.faqs.card.q5}</h4>
               <p>{t.faqs.card.q6}</p>
-              <a href="#contact" className="sidebar-btn active small-btn">
+              <a onClick={() => setShowPhoneOptions(true)} className="sidebar-btn active small-btn">
                 {t.faqs.contactBtn}
               </a>
             </div>
