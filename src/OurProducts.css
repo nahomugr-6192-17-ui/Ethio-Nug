@@ -12,7 +12,7 @@
 }
 
 .products::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 0 auto 0;
   height: 2px;
@@ -121,8 +121,8 @@
   height: 100%;
   transition:
     border-color var(--transition-base),
-    box-shadow   var(--transition-base),
-    background   var(--transition-base);
+    box-shadow var(--transition-base),
+    background var(--transition-base);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   overflow: hidden;
@@ -177,7 +177,7 @@
   will-change: transform;
   user-select: none;
   pointer-events: none;
-  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.1));
 }
 
 /* ── Card Body ─────────────────────────────── */
@@ -205,7 +205,7 @@
   letter-spacing: -0.02em;
 }
 
-.lang--am .products__size{
+.lang--am .products__size {
   font-family: var(--font-heading2-amharic);
 }
 
@@ -216,7 +216,7 @@
   letter-spacing: 0.03em;
 }
 
-.lang--am .products__size-label{
+.lang--am .products__size-label {
   font-family: var(--font-body-amharic);
   font-size: 0.65rem;
 }
@@ -229,7 +229,7 @@
   white-space: nowrap;
 }
 
-.lang--am .products__price{
+.lang--am .products__price {
   font-family: var(--font-heading2-amharic);
   font-size: 1rem;
   font-weight: 700;
@@ -301,14 +301,14 @@
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 600;
-  text-align: center;;
+  text-align: center;
 }
 
 .lang--am .phone-modal__title {
   font-family: var(--font-heading2-amharic);
   font-size: 1.2rem;
   font-weight: 600;
-  text-align: center;;
+  text-align: center;
 }
 
 .phone-modal__btn {
@@ -448,5 +448,12 @@
 
   .lang--am .products__size {
     margin-right: 15px;
+  }
+
+  @media (max-width: 390px) {
+    .products__grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: -17px;
+    }
   }
 }
