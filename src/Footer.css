@@ -89,7 +89,6 @@
   font-size: clamp(0.8rem, 1.5vw, 0.82rem);
   font-family: var(--font-body-amharic);
 }
-
 /* Column Titles */
 .footer__col-title {
   font-family: var(--font-subheading);

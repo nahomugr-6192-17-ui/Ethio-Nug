@@ -370,7 +370,7 @@ const am = {
 
       telegram: {
         label: "ቴሌግራም",
-        primary: "@EthioNug",
+        primary: "EthioNug",
         secondary: "በቴሌግራም መልዕክት ይላኩልን",
       },
 

@@ -166,7 +166,7 @@ export default function FAQs({ lang }) {
             >
               <h3 className="phone-modal__title">
                 {lang === "am"
-                  ? "ለማዘዝ ከስር ባለው ስልክ ይደውሉ"
+                  ? "ለደንበኛ አገልግሎት ከስር ባለው ስልክ ይደውሉ"
                   : "CALL US TO PLACE AN ORDER"}
               </h3>
 
