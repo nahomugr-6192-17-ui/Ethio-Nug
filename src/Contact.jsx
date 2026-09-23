@@ -270,11 +270,11 @@ export default function Contact({ lang }) {
                 </h3>
 
                 <a href="tel:+251911979899" className="phone-modal__btn">
-                  +251 91 1979 899
+                  +251 911 97 98 99
                 </a>
 
                 <a href="tel:+251982323334" className="phone-modal__btn">
-                  +251 98 2323 334
+                  +251 982 32 33 34
                 </a>
 
                 <button

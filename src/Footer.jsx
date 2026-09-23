@@ -18,7 +18,7 @@ export default function Footer({ lang }) {
   const CONTACT_INFO = [
     {
       icon: Phone,
-      text: '+251 91 1979 899',
+      text: '+251 911 97 98 99',
       href: 'tel:+251911979899'
     },
 

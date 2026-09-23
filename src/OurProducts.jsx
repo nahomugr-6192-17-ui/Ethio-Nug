@@ -97,12 +97,12 @@ export default function OurProducts({lang}) {
 
                 <a href="tel:+251911979899" className="phone-modal__btn">
                   <FaPhoneAlt size={14} strokeWidth={2.2} />
-                  +251 91 197 9899
+                  +251 911 97 98 99
                 </a>
 
                 <a href="tel:+251982323334" className="phone-modal__btn">
                   <FaPhoneAlt size={14} strokeWidth={2.2} />
-                  +251 98 232 3334
+                  +251 982 32 33 34
                 </a>
                 <a href="https://wa.me/17025610844" className="phone-modal__btn">
                   <FaWhatsapp size={18} strokeWidth={2.2} />

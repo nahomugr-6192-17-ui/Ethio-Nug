@@ -12,8 +12,8 @@ const en = {
   },
 
   hero: {
-    headlineTop: "FROM ETHIOPIAN FARMS",
-    headlineAccent: "TO YOUR FAMILY TABLE",
+    headlineTop: "PURE ETHIOPIAN NUG SEED OIL",
+    headlineAccent: "THAT YOU CAN TRUST",
 
     subheadline:
       "Premium Ethiopian Niger Seed Oil. Extracted from carefully selected seeds, then cold-pressed and filtered to preserve ultimate purity, peak freshness, and a rich, natural taste.",
@@ -51,7 +51,7 @@ const en = {
     headingAccent: "CLEAN SEEDS",
 
     subheading:
-      "Ethio-Nug selects only the finest Nug seeds, taking them through a strict 6-stage cleaning system before traditional cold pressing — preserving purity, natural flavor, and nutritional integrity. No additives. No chemicals. No preservatives. No shortcuts",
+      "Ethio-Nug selects only the finest Nug seeds, taking them through a strict 6-stage cleaning system before traditional cold pressing — preserving purity, natural flavor, and nutritional integrity. No additives! No chemicals! No preservatives! No shortcuts!",
 
     steps: {
       screening: {
@@ -268,7 +268,7 @@ const en = {
       {
         id: 15,
         q: "What are the delivery options and timelines?",
-        a: "We offer reliable delivery across Ethiopia. Delivery times vary based on location and order size, but we strive to ensure timely service for all customers.",
+        a: "We offer reliable delivery across Addis Ababa. Delivery times vary based on location and order size, but we strive to ensure timely service for all customers.",
       },
       {
         id: 16,
@@ -313,43 +313,51 @@ const en = {
     items: [
       {
         id: 1,
-        name: "Selamawit Tadesse",
-        role: "Home Cook · Addis Ababa",
+        name: "Ribka Berhanu",
+        role: "Home Cook | Accountant · Addis Ababa",
         rating: 5,
-        text: "Ethio-Nug has completely changed the way I cook. The purity and freshness are unmatched — my family immediately noticed the difference in taste. I will never switch to another brand.",
+        text: "I really appreciate the systematic extraction and refining process. The purity,safety and shelf life of the oil are impressive, and the final testing and quality assurance gave me confidence in the product.",
       },
 
       {
         id: 2,
-        name: "Bekele Haile",
-        role: "Restaurant Owner · Addis Ababa",
+        name: "Tsega Menkir",
+        role: "Customer · London",
         rating: 5,
-        text: "As a restaurant owner, quality matters above everything. Ethio-Nug delivers consistent purity and rich flavor every time. My customers compliment the food and I owe much of that to this oil.",
-      },
+        text: "It was a real pleasure visiting the factory and meeting the family behind Ethio Nug. I was genuinely amazed by the care and attention to detail throughout the process."      },
 
       {
         id: 3,
-        name: "Tigist Alemu",
-        role: "Head Chef · Addis Ababa",
+        name: "Isabella",
+        role: "Customer · Addis Ababa",
         rating: 5,
-        text: "I have been using Ethio-Nug for a while now. The 6-step cleaning process really shows in the final product — clean, light, and full of natural flavor. Highly recommended for any professional kitchen.",
-      },
+        text: "We are really enjoying Ethio Nug oil. We were so happy to discover the product, and the home delivery and personal invitation to visit the factory made the experience even more special. We hope to visit soon."      },
 
       {
         id: 4,
-        name: "Dawit Mekonnen",
-        role: "Hotel Procurement · Addis Ababa",
+        name: "Elisabeth",
+        role: "Customer · Rome",
         rating: 5,
-        text: "We supply Ethio-Nug oil to all our hotel kitchens. Delivery is always on time, quality is consistently excellent, and the 20L bulk option is perfect for our volume. A truly trustworthy supplier.",
-      },
+        text: "You can tell a lot of care goes into this oil. From the packaging to the taste, everything feels thoughtful and well made. "      },
 
       {
         id: 5,
-        name: "Meron Girma",
-        role: "Food Business Owner · Addis Ababa",
+        name: "Abel",
+        role: "Restaurant Owner · Addis Ababa",
         rating: 5,
-        text: "Ethio-Nug proves that local can mean premium. The oil is clean, golden, and completely natural. Supporting an Ethiopian brand this committed to quality is something I am proud to do every day.",
-      },
+        text: "After visiting the production site and seeing the process myself, I understood why the oil tastes so clean. The attention to quality is obvious."      },
+      {
+        id: 6,
+        name: "Hiliwna",
+        role: "Customer · Las Vegas",
+        rating: 5,
+        text: "I placed the order from abroad through WhatsApp for my family in Addis. The delivery arrived the next day, and my family was surprised and happy. It was a nice feeling being able to send them something from home."      },
+      {
+        id: 7,
+        name: "Helen",
+        role: "Customer · Addis Ababa",
+        rating: 5,
+        text: "What impressed me most was how clean the oil felt without the strong smell many oils usually have — all achieved without chemical processing. The colour, taste, and overall quality reminded me of the Noug oil used in my grandmother’s cooking. Very nostalgic."      }
     ],
   },
   contact: {
@@ -361,8 +369,8 @@ const en = {
     cards: {
       phone: {
         label: "Call Us",
-        primary: "+251 91 1979 899",
-        secondary: "+251 98 2323 334",
+        primary: "+251 911 97 98 99",
+        secondary: "+251 982 32 33 34",
         badge: "Recommended",
       },
 
