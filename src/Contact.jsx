@@ -276,7 +276,7 @@ export default function Contact({ lang }) {
                 </a>
 
                 <a href="tel:+251982323334" className="phone-modal__btn">
-                  +251 982 32 33 34Q
+                  +251 982 32 33 34
                 </a>
 
                 <button
