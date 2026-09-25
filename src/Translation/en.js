@@ -28,7 +28,7 @@ const en = {
       },
 
       purification: {
-        value: "6-SETP PURIFICATION",
+        value: "6-STEP PURIFICATION",
         label: "Advanced Cleaning and Refining for Maximum Purity.",
       },
 
