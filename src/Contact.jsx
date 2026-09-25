@@ -275,7 +275,7 @@ export default function Contact({ lang }) {
                   +251 911 97 98 99
                 </a>
 
-                <a href="tel:+251982323334" className="phone-modal__btn">
+                <a href="tel:+251982323334" className="phone-modal__btn" >
                   +251 982 32 33 34
                 </a>
 
