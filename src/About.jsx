@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import about1 from './assets/about2.webp';
-import about2 from './assets/qr.png';
+import about2 from './assets/qr.webp';
 import './About.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';

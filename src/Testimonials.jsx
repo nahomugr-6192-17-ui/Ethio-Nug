@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import avatar from './assets/avatar.jpg';
+import avatar from './assets/avatar.webp';
 import './Testimonials.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
@@ -59,7 +59,7 @@ export default function Testimonials({ lang }) {
 
   const TESTIMONIALS = t.testimonials.items.map((item, index) => ({
     ...item,
-    avatar: [avatar, avatar, avatar, avatar, avatar][index],
+    avatar: [avatar, avatar, avatar, avatar, avatar, avatar, avatar, avatar, avatar, avatar][index],
   }));
 
   const EXTENDED     = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS]; // triple for infinite effect

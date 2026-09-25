@@ -1,5 +1,6 @@
-import { Phone, MapPin, Send, Mail } from 'lucide-react';
-import logo from './assets/logo.png';
+import { Phone, MapPin, Mail } from 'lucide-react';
+import { LiaTelegram } from 'react-icons/lia';
+import logo from './assets/logo.webp';
 import './Footer.css';
 import en from './Translation/en.js';
 import am from './Translation/am.js';
@@ -29,8 +30,8 @@ export default function Footer({ lang }) {
     },
 
     {
-      icon: Send,
-      text: '@EthioNug (Telegram)',
+      icon: LiaTelegram,
+      text: 'EthioNug (Telegram)',
       href: 'https://t.me/stackminds'
     },
 

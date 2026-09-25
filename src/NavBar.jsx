@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import "./NavBar.css";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.webp";
 import en from "./Translation/en.js";
 import am from "./Translation/am.js";
 

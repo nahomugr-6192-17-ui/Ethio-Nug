@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Phone, MapPin, Send, MessageCircle, Star } from "lucide-react";
+import { Phone, MapPin, Star } from "lucide-react";
+import { LiaTelegramPlane } from "react-icons/lia";
+import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import "./Contact.css";
@@ -20,12 +22,12 @@ const INFO_CARDS = [
   },
   {
     id: "telegram",
-    icon: Send,
+    icon: LiaTelegramPlane,
     href: "https://t.me/+251911979899",
   },
   {
     id: "whatsapp",
-    icon: MessageCircle,
+    icon: FaWhatsapp,
     href: "https://wa.me/17025610844",
   },
 ];
@@ -274,7 +276,7 @@ export default function Contact({ lang }) {
                 </a>
 
                 <a href="tel:+251982323334" className="phone-modal__btn">
-                  +251 982 32 33 34
+                  +251 982 32 33 34Q
                 </a>
 
                 <button

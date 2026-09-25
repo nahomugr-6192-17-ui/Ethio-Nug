@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ShoppingBag } from 'lucide-react';
-import halfLtr from './assets/half-ltr.png';
-import oneLtr from './assets/one-ltr.png';
-import threeLtr from './assets/three-ltr.png';
-import fiveLtr from './assets/five-ltr.png';
-import twentyLtr from './assets/twenty-ltr.png';
+import halfLtr from './assets/half-ltr.webp';
+import oneLtr from './assets/one-ltr.webp';
+import threeLtr from './assets/three-ltr.webp';
+import fiveLtr from './assets/five-ltr.webp';
+import twentyLtr from './assets/twenty-ltr.webp';
 import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 import './OurProducts.css';
 import en from './Translation/en.js';
