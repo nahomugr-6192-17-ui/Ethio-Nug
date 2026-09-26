@@ -119,12 +119,12 @@ export default function Footer({ lang }) {
               {t.footer.powered}
             {' '}
             <a
-              href="https://ahadu-hub-temporal.vercel.app"
+              href="https://portfolio-temporal.vercel.app"
               className="footer__powered-link"
               target="_blank"
               rel="noopener noreferrer"
             >
-              AhaduHub
+              Papa Smurf
             </a>
           </p>
         </div>
