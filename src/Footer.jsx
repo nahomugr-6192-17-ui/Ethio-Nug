@@ -32,7 +32,7 @@ export default function Footer({ lang }) {
     {
       icon: LiaTelegram,
       text: 'EthioNug (Telegram)',
-      href: 'https://t.me/stackminds'
+      href: 'https://t.me/+251911979899'
     },
 
     {
