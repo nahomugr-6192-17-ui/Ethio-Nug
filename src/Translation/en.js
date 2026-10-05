@@ -113,35 +113,35 @@ const en = {
       {
         size: "½ L",
         label: "Half Litre",
-        price: "ETB 345",
+        price: "ETB 379.5",
         tag: null,
       },
 
       {
         size: "1 L",
         label: "One Litre",
-        price: "ETB 690",
+        price: "ETB 759",
         tag: null,
       },
 
       {
         size: "3 L",
         label: "Three Litres",
-        price: "ETB 2,070",
+        price: "ETB 2,385",
         tag: null,
       },
 
       {
         size: "5 L",
         label: "Five Litres",
-        price: "ETB 3,450",
+        price: "ETB 3,975",
         tag: "Popular",
       },
 
       {
         size: "20 L",
         label: "Twenty Litres",
-        price: "ETB 13,800",
+        price: "ETB 15,180",
         tag: "Bulk",
       },
     ],

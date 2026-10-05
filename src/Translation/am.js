@@ -109,35 +109,35 @@ const am = {
       {
         size: "½ ሊትር",
         label: "ግማሽ ሊትር",
-        price: "345 ብር",
+        price: "379.5 ብር",
         tag: null,
       },
 
       {
         size: "1 ሊትር",
         label: "አንድ ሊትር",
-        price: "690 ብር",
+        price: "759 ብር",
         tag: null,
       },
 
       {
         size: "3 ሊትር",
         label: "ሶስት ሊትር",
-        price: "2,070 ብር",
+        price: "2,385 ብር",
         tag: null,
       },
 
       {
         size: "5 ሊትር",
         label: "አምስት ሊትር",
-        price: "3,450 ብር",
+        price: "3,975 ብር",
         tag: "ተወዳጅ",
       },
 
       {
         size: "20 ሊትር",
         label: "ሃያ ሊትር",
-        price: "13,800 ብር",
+        price: "15,180 ብር",
         tag: "ለጅምላ",
       },
     ],
