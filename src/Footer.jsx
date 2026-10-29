@@ -124,7 +124,16 @@ export default function Footer({ lang }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Papa Smurf
+              Nahom Aklil
+            </a>
+            <i> & </i>
+            <a
+              href="https://ribka-portofolio-t7fh.vercel.app/"
+              className="footer__powered-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ribka Mafito
             </a>
           </p>
         </div>
